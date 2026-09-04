@@ -1,0 +1,479 @@
+:root {
+    --navy-950: #061426;
+    --navy-900: #0a1f3d;
+    --navy-800: #12345f;
+    --white: #ffffff;
+}
+
+.header {
+    width: 100%;
+    min-height: 78px;
+    padding: 0 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    background: var(--navy-950);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    flex: 0 0 auto;
+}
+
+.logo-icon {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    border-radius: 9px;
+}
+
+.logo h2 {
+    color: var(--white);
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.8px;
+}
+
+.logo h2 span {
+    color: #8bb8dc;
+}
+
+.header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    flex: 0 0 auto;
+}
+
+.login-btn,
+.primary-btn {
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 17px;
+    border-radius: 9px;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1;
+    transition: 0.25s ease;
+    white-space: nowrap;
+}
+
+.login-btn {
+    color: var(--white);
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.login-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.primary-btn {
+    color: var(--white);
+    background: var(--navy-800);
+    border: 1px solid #1b4d82;
+}
+
+.primary-btn:hover {
+    color: var(--white);
+    background: #194774;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 1100px) {
+.header {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .main-navigation {
+        gap: 1px;
+    }
+
+    .main-navigation a {
+        padding: 9px 10px;
+        font-size: 10px;
+    }
+
+    .header-buttons {
+        gap: 6px;
+    }
+
+    .login-btn,
+    .primary-btn {
+        padding: 9px 13px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 900px) {
+.header {
+        flex-wrap: wrap;
+        min-height: auto;
+        padding-top: 14px;
+        padding-bottom: 14px;
+        row-gap: 12px;
+    }
+
+    .main-navigation {
+        order: 3;
+        width: 100%;
+        margin: 0;
+        justify-content: flex-start;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+}
+
+@media (max-width: 760px) {
+.header {
+        min-height: auto;
+        padding: 15px 20px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 13px;
+        position: relative;
+    }
+
+    .logo {
+        gap: 8px;
+    }
+
+    .logo-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .logo h2 {
+        font-size: 22px;
+    }
+
+    .header-buttons {
+        margin-left: auto;
+    }
+
+    .login-btn,
+    .primary-btn {
+        min-height: 37px;
+        padding: 8px 12px;
+        font-size: 9px;
+    }
+
+    .main-navigation {
+        width: 100%;
+        order: 3;
+        justify-content: flex-start;
+        padding-bottom: 2px;
+        gap: 3px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .main-navigation::-webkit-scrollbar {
+        display: none;
+    }
+
+    .main-navigation a {
+        flex: 0 0 auto;
+        padding: 8px 11px;
+        font-size: 9px;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 420px) {
+.header {
+        padding: 14px 16px;
+    }
+
+    .logo-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .logo h2 {
+        font-size: 20px;
+    }
+
+    .header-buttons {
+        gap: 5px;
+    }
+
+    .login-btn,
+    .primary-btn {
+        min-height: 35px;
+        padding: 7px 10px;
+        font-size: 8px;
+    }
+
+    .main-navigation {
+        gap: 2px;
+    }
+
+    .main-navigation a {
+        padding: 7px 9px;
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 340px) {
+.header {
+        justify-content: center;
+    }
+
+    .header-buttons {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 900px) {
+.main-navigation {
+        width: 100%;
+        margin: 0;
+        order: 3;
+        justify-content: flex-start;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+}
+
+@media (max-width: 760px) {
+.main-navigation {
+        width: 100%;
+        order: 3;
+        justify-content: flex-start;
+        gap: 3px;
+        padding-bottom: 2px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-x;
+    }
+
+    .main-navigation a {
+        flex: 0 0 auto;
+        white-space: nowrap;
+        padding: 8px 11px;
+        font-size: 9px;
+    }
+}
+
+.main-navigation {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4px;
+    margin-left: auto;
+    margin-right: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    touch-action: pan-x;
+}
+
+.main-navigation::-webkit-scrollbar {
+    display: none;
+}
+
+.main-navigation a {
+    flex: 0 0 auto;
+    padding: 10px 14px;
+    color: #aebfd2;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.4;
+    border-radius: 9px;
+    transition: 0.25s ease;
+    white-space: nowrap;
+}
+
+.main-navigation a:hover {
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.main-navigation a.active {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.22);
+    font-weight: 700;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+
+.header-profile-image {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+@media (max-width: 480px) {
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow-x: hidden;
+    }
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    img,
+    svg,
+    video,
+    canvas,
+    iframe {
+        max-width: 100%;
+        height: auto;
+    }
+
+    input,
+    select,
+    textarea,
+    button {
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    table {
+        width: 100%;
+        max-width: 100%;
+        table-layout: fixed;
+    }
+
+    th,
+    td {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    pre,
+    code {
+        max-width: 100%;
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+    }
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    label,
+    span {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+    }
+
+    .container,
+    .page-container,
+    .page-content,
+    .main-content,
+    .content,
+    .main,
+    .app,
+    .wrapper {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    [class*="grid"] {
+        min-width: 0;
+    }
+
+    [class*="row"],
+    [class*="actions"],
+    [class*="header"],
+    [class*="toolbar"] {
+        min-width: 0;
+        flex-wrap: wrap;
+    }
+
+    [class*="card"],
+    [class*="panel"],
+    [class*="modal"],
+    [class*="section"] {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    [class*="modal"] {
+        max-height: calc(100vh - 24px);
+        overflow-y: auto;
+    }
+
+    .table-responsive,
+    [class*="table-wrap"],
+    [class*="table-container"] {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    button,
+    .btn,
+    [class*="button"] {
+        max-width: 100%;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+}
+
+@media (max-width: 360px) {
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: clamp(20px, 7vw, 28px);
+    }
+
+    h2 {
+        font-size: clamp(18px, 6vw, 24px);
+    }
+
+    h3 {
+        font-size: clamp(16px, 5vw, 20px);
+    }
+
+    input,
+    select,
+    textarea,
+    button {
+        font-size: 14px;
+    }
+}

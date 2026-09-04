@@ -1,0 +1,1426 @@
+:root {
+    --navy-950: #07152f;
+    --navy-900: #0b1f45;
+    --navy-800: #102d61;
+    --navy-700: #173d7a;
+    --navy-600: #1f4f96;
+    --navy-500: #315fa8;
+    --navy-100: #eaf0f9;
+    --navy-50: #f5f8fc;
+    --white: #ffffff;
+    --gray-50: #f8fafc;
+    --gray-100: #f1f5f9;
+    --gray-200: #e2e8f0;
+    --gray-300: #cbd5e1;
+    --gray-400: #94a3b8;
+    --gray-500: #64748b;
+    --gray-600: #475569;
+    --gray-700: #334155;
+    --gray-800: #1e293b;
+    --gray-900: #0f172a;
+    --green: #15803d;
+    --green-light: #dcfce7;
+    --orange: #c2410c;
+    --orange-light: #ffedd5;
+    --red: #dc2626;
+    --red-light: #fee2e2;
+    --purple: #7c3aed;
+    --purple-light: #ede9fe;
+    --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
+    --shadow-md: 0 8px 25px rgba(15, 23, 42, 0.08);
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --transition: 0.2s ease;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: var(--gray-50);
+    color: var(--gray-900);
+    min-height: 100vh;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.reports-page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 28px;
+}
+
+.reports-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 26px;
+}
+
+.reports-header-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.reports-header h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: 27px;
+    line-height: 1.2;
+    color: var(--navy-950);
+    font-weight: 700;
+}
+
+.reports-header p {
+    margin-top: 6px;
+    color: var(--gray-500);
+    font-size: 14px;
+}
+
+.reports-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.reports-mobile-menu {
+    display: none;
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--gray-200);
+    border-radius: 10px;
+    background: var(--white);
+    color: var(--navy-800);
+}
+
+.reports-icon-button {
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--gray-200);
+    border-radius: 10px;
+    background: var(--white);
+    color: var(--navy-800);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.reports-icon-button:hover {
+    border-color: var(--navy-600);
+    color: var(--navy-600);
+}
+
+.reports-export-button {
+    min-height: 42px;
+    padding: 0 17px;
+    border: 1px solid var(--navy-800);
+    border-radius: 10px;
+    background: var(--navy-900);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.reports-export-button:hover {
+    background: var(--navy-700);
+}
+
+.reports-toolbar {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-md);
+    padding: 16px 18px;
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    margin-bottom: 22px;
+    box-shadow: var(--shadow-sm);
+}
+
+.reports-filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.reports-filter-group label {
+    color: var(--gray-600);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.reports-filter-group select,
+.reports-filter-group input {
+    height: 40px;
+    min-width: 175px;
+    padding: 0 12px;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    background: var(--white);
+    color: var(--gray-800);
+    outline: none;
+    font-size: 13px;
+}
+
+.reports-filter-group select:focus,
+.reports-filter-group input:focus {
+    border-color: var(--navy-600);
+    box-shadow: 0 0 0 3px rgba(31, 79, 150, 0.08);
+}
+
+.reports-custom-date-wrapper {
+    display: none;
+    align-items: flex-end;
+    gap: 12px;
+}
+
+.reports-custom-date-wrapper.active {
+    display: flex;
+}
+
+.reports-apply-button {
+    height: 40px;
+    padding: 0 15px;
+    border: 1px solid var(--navy-800);
+    border-radius: 8px;
+    background: var(--navy-800);
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.reports-filter-status {
+    margin-left: auto;
+    height: 40px;
+    padding: 0 13px;
+    border-radius: 8px;
+    background: var(--navy-50);
+    color: var(--navy-800);
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.reports-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.reports-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.report-summary-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-md);
+    padding: 17px;
+    min-width: 0;
+    box-shadow: var(--shadow-sm);
+}
+
+.report-summary-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 17px;
+}
+
+.report-summary-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: var(--navy-50);
+    color: var(--navy-800);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+}
+
+.overdue-icon {
+    background: var(--red-light);
+    color: var(--red);
+}
+
+.report-growth {
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.report-growth.positive {
+    color: var(--green);
+}
+
+.report-growth.negative {
+    color: var(--red);
+}
+
+.report-summary-label {
+    color: var(--gray-500);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.report-summary-value {
+    margin-top: 7px;
+    color: var(--navy-950);
+    font-family: "Poppins", sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.report-summary-description {
+    margin-top: 5px;
+    color: var(--gray-400);
+    font-size: 11px;
+}
+
+.report-summary-badge {
+    padding: 4px 7px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.report-summary-badge.paid {
+    background: var(--green-light);
+    color: var(--green);
+}
+
+.report-summary-badge.pending {
+    background: var(--orange-light);
+    color: var(--orange);
+}
+
+.report-summary-badge.overdue {
+    background: var(--red-light);
+    color: var(--red);
+}
+
+.reports-main-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.55fr) minmax(340px, 1fr);
+    gap: 20px;
+}
+
+.reports-panel {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    padding: 21px;
+    min-width: 0;
+}
+
+.reports-panel-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.reports-panel-header h2 {
+    color: var(--navy-950);
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.reports-panel-header p {
+    margin-top: 5px;
+    color: var(--gray-500);
+    font-size: 12px;
+}
+
+.reports-panel-header select {
+    height: 36px;
+    padding: 0 10px;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    color: var(--gray-700);
+    background: var(--white);
+    outline: none;
+    font-size: 12px;
+}
+
+.revenue-chart-wrapper {
+    width: 100%;
+    min-height: 285px;
+}
+
+.revenue-chart {
+    width: 100%;
+    height: 285px;
+    display: flex;
+    align-items: stretch;
+    gap: 12px;
+    padding: 12px 4px 0;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.revenue-chart-column {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+}
+
+.revenue-chart-bar-area {
+    height: 225px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.revenue-chart-bar {
+    width: min(52px, 72%);
+    min-height: 3px;
+    background: var(--navy-800);
+    border-radius: 7px 7px 2px 2px;
+    position: relative;
+    transition: height 0.35s ease;
+}
+
+.revenue-chart-bar:hover {
+    background: var(--navy-600);
+}
+
+.revenue-chart-tooltip {
+    position: absolute;
+    bottom: calc(100% + 7px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--navy-950);
+    color: var(--white);
+    padding: 6px 8px;
+    border-radius: 6px;
+    font-size: 10px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition);
+}
+
+.revenue-chart-bar:hover .revenue-chart-tooltip {
+    opacity: 1;
+}
+
+.revenue-chart-label {
+    color: var(--gray-500);
+    font-size: 10px;
+}
+
+.invoice-statistics {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.invoice-stat-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.invoice-stat-label {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--gray-600);
+    font-size: 13px;
+}
+
+.invoice-stat-row strong {
+    color: var(--navy-950);
+    font-size: 13px;
+}
+
+.invoice-status-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--gray-300);
+}
+
+.invoice-status-dot.draft {
+    background: var(--gray-400);
+}
+
+.invoice-status-dot.pending {
+    background: var(--orange);
+}
+
+.invoice-status-dot.paid {
+    background: var(--green);
+}
+
+.invoice-status-dot.overdue {
+    background: var(--red);
+}
+
+.invoice-status-progress {
+    display: flex;
+    width: 100%;
+    height: 9px;
+    margin-top: 25px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: var(--gray-100);
+}
+
+.invoice-progress-segment {
+    width: 0;
+    transition: width 0.35s ease;
+}
+
+.invoice-progress-segment.paid {
+    background: var(--green);
+}
+
+.invoice-progress-segment.pending {
+    background: var(--orange);
+}
+
+.invoice-progress-segment.overdue {
+    background: var(--red);
+}
+
+.invoice-status-percentages {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.invoice-status-percentages div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.invoice-status-percentages span {
+    color: var(--gray-400);
+    font-size: 10px;
+}
+
+.invoice-status-percentages strong {
+    color: var(--gray-800);
+    font-size: 12px;
+}
+
+.client-revenue-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.client-revenue-row {
+    display: grid;
+    grid-template-columns: minmax(100px, 1fr) minmax(100px, 2fr) auto;
+    align-items: center;
+    gap: 12px;
+}
+
+.client-revenue-name {
+    color: var(--gray-700);
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.client-revenue-track {
+    height: 8px;
+    background: var(--gray-100);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.client-revenue-fill {
+    height: 100%;
+    width: 0;
+    background: var(--navy-700);
+    border-radius: inherit;
+}
+
+.client-revenue-value {
+    color: var(--navy-950);
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.tax-summary {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.tax-summary-item {
+    padding: 14px;
+    border: 1px solid var(--gray-200);
+    border-radius: 10px;
+    background: var(--gray-50);
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.tax-summary-item span {
+    color: var(--gray-500);
+    font-size: 11px;
+}
+
+.tax-summary-item strong {
+    color: var(--navy-950);
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+}
+
+.estimate-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.estimate-stat-item {
+    padding: 15px;
+    border: 1px solid var(--gray-200);
+    border-radius: 10px;
+}
+
+.estimate-stat-item span {
+    color: var(--gray-500);
+    display: block;
+    font-size: 11px;
+    margin-bottom: 7px;
+}
+
+.estimate-stat-item strong {
+    color: var(--navy-950);
+    font-family: "Poppins", sans-serif;
+    font-size: 17px;
+}
+
+.payment-method-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.payment-method-row {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.payment-method-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.payment-method-name {
+    color: var(--gray-700);
+    font-size: 12px;
+}
+
+.payment-method-value {
+    color: var(--navy-950);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.payment-method-track {
+    height: 7px;
+    background: var(--gray-100);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.payment-method-fill {
+    height: 100%;
+    width: 0;
+    background: var(--navy-700);
+    border-radius: inherit;
+}
+
+.reports-table-panel {
+    overflow: hidden;
+}
+
+.reports-table-header {
+    align-items: center;
+}
+
+.reports-table-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.reports-secondary-button {
+    height: 35px;
+    padding: 0 11px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    background: var(--white);
+    color: var(--navy-800);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.reports-secondary-button:hover {
+    border-color: var(--navy-600);
+}
+
+.reports-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.reports-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 760px;
+}
+
+.reports-table th {
+    padding: 12px 10px;
+    background: var(--navy-50);
+    color: var(--navy-800);
+    text-align: left;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.reports-table td {
+    padding: 13px 10px;
+    border-bottom: 1px solid var(--gray-100);
+    color: var(--gray-600);
+    font-size: 12px;
+}
+
+.reports-table tbody tr:hover {
+    background: var(--gray-50);
+}
+
+.report-invoice-number {
+    color: var(--navy-800);
+    font-weight: 700;
+}
+
+.report-client-name {
+    color: var(--gray-800);
+    font-weight: 600;
+}
+
+.report-status {
+    display: inline-flex;
+    padding: 4px 7px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.report-status.paid {
+    background: var(--green-light);
+    color: var(--green);
+}
+
+.report-status.pending {
+    background: var(--orange-light);
+    color: var(--orange);
+}
+
+.report-status.overdue {
+    background: var(--red-light);
+    color: var(--red);
+}
+
+.report-status.draft {
+    background: var(--gray-100);
+    color: var(--gray-600);
+}
+
+.report-status.cancelled {
+    background: var(--purple-light);
+    color: var(--purple);
+}
+
+.reports-table-loading,
+.reports-table-empty {
+    text-align: center !important;
+    padding: 45px 20px !important;
+    color: var(--gray-400) !important;
+}
+
+.reports-empty-state {
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--gray-400);
+}
+
+.reports-empty-state i {
+    font-size: 28px;
+}
+
+.reports-empty-state p {
+    font-size: 12px;
+}
+
+.reports-loading-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(7, 21, 47, 0.18);
+    backdrop-filter: blur(2px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.reports-loading-overlay.active {
+    display: flex;
+}
+
+.reports-loading-card {
+    min-width: 170px;
+    padding: 20px;
+    border-radius: 12px;
+    background: var(--white);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--navy-900);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.reports-spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--gray-200);
+    border-top-color: var(--navy-800);
+    border-radius: 50%;
+    animation: reportsSpin 0.7s linear infinite;
+}
+
+@keyframes reportsSpin {
+to {
+        transform: rotate(360deg);
+    }
+}
+
+.reports-toast {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 10000;
+    min-width: 220px;
+    max-width: 350px;
+    padding: 13px 15px;
+    border-radius: 9px;
+    background: var(--navy-950);
+    color: var(--white);
+    box-shadow: var(--shadow-md);
+    font-size: 12px;
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+    transition: 0.25s ease;
+}
+
+.reports-toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 1350px) {
+.reports-summary-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 1050px) {
+.reports-page {
+        padding: 20px;
+    }
+
+    .reports-main-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 720px) {
+.reports-page {
+        padding: 14px;
+    }
+
+    .reports-header {
+        align-items: flex-start;
+    }
+
+    .reports-header-left {
+        align-items: flex-start;
+    }
+
+    .reports-mobile-menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .reports-header h1 {
+        font-size: 23px;
+    }
+
+    .reports-header p {
+        font-size: 12px;
+    }
+
+    .reports-export-button span {
+        display: none;
+    }
+
+    .reports-export-button {
+        width: 42px;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .reports-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .reports-filter-group select,
+    .reports-filter-group input {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .reports-custom-date-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .reports-custom-date-wrapper .reports-filter-group {
+        width: 100%;
+    }
+
+    .reports-apply-button {
+        width: 100%;
+    }
+
+    .reports-filter-status {
+        margin-left: 0;
+    }
+
+    .reports-summary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .report-summary-card {
+        padding: 14px;
+    }
+
+    .report-summary-value {
+        font-size: 17px;
+    }
+
+    .reports-panel {
+        padding: 16px;
+    }
+
+    .reports-panel-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .reports-panel-header select {
+        width: 100%;
+    }
+
+    .tax-summary,
+    .estimate-stat-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reports-table-header {
+        flex-direction: column;
+    }
+
+    .reports-table-actions {
+        width: 100%;
+    }
+
+    .reports-secondary-button {
+        flex: 1;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 430px) {
+.reports-summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .invoice-status-percentages {
+        grid-template-columns: 1fr;
+    }
+
+    .client-revenue-row {
+        grid-template-columns: 90px minmax(80px, 1fr) auto;
+    }
+}
+
+.reports-upgrade-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(7, 24, 46, 0.72);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.reports-upgrade-overlay.active {
+    display: flex;
+}
+
+.reports-upgrade-card {
+    width: 100%;
+    max-width: 390px;
+    padding: 30px 26px 26px;
+    background: #ffffff;
+    border: 1px solid #e6ebf2;
+    border-radius: 16px;
+    box-shadow: 0 24px 70px rgba(7, 24, 46, 0.28);
+    text-align: center;
+    animation: reportsUpgradeCardIn 0.25s ease-out;
+}
+
+.reports-upgrade-icon {
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #eef3f9;
+    color: #0b1f45;
+    font-size: 25px;
+}
+
+.reports-upgrade-card h2 {
+    margin: 0 0 10px;
+    color: #0b1f45;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.reports-upgrade-card p {
+    margin: 0 auto 24px;
+    max-width: 330px;
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.reports-upgrade-button {
+    width: 100%;
+    height: 46px;
+    border: 0;
+    border-radius: 9px;
+    background: #0b1f45;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease,
+        transform 0.1s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.reports-upgrade-button:hover {
+    background: #132f61;
+}
+
+.reports-upgrade-button:active {
+    background: #07152f;
+    transform: scale(0.97);
+}
+
+.reports-upgrade-button i {
+    font-size: 17px;
+}
+
+@keyframes reportsUpgradeCardIn {
+from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 480px) {
+.reports-upgrade-card {
+        max-width: 350px;
+        padding: 27px 21px 22px;
+    }
+
+    .reports-upgrade-card h2 {
+        font-size: 19px;
+    }
+
+    .reports-upgrade-card p {
+        font-size: 12.5px;
+    }
+}
+@media (max-width: 480px) {
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow-x: hidden;
+    }
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    img,
+    svg,
+    video,
+    canvas,
+    iframe {
+        max-width: 100%;
+        height: auto;
+    }
+
+    input,
+    select,
+    textarea,
+    button {
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    table {
+        width: 100%;
+        max-width: 100%;
+        table-layout: fixed;
+    }
+
+    th,
+    td {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    pre,
+    code {
+        max-width: 100%;
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+    }
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    label,
+    span {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+    }
+
+    .container,
+    .page-container,
+    .page-content,
+    .main-content,
+    .content,
+    .main,
+    .app,
+    .wrapper {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    [class*="grid"] {
+        min-width: 0;
+    }
+
+    [class*="row"],
+    [class*="actions"],
+    [class*="header"],
+    [class*="toolbar"] {
+        min-width: 0;
+        flex-wrap: wrap;
+    }
+
+    [class*="card"],
+    [class*="panel"],
+    [class*="modal"],
+    [class*="section"] {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    [class*="modal"] {
+        max-height: calc(100vh - 24px);
+        overflow-y: auto;
+    }
+
+    .table-responsive,
+    [class*="table-wrap"],
+    [class*="table-container"] {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    button,
+    .btn,
+    [class*="button"] {
+        max-width: 100%;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+}
+
+@media (max-width: 360px) {
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: clamp(20px, 7vw, 28px);
+    }
+
+    h2 {
+        font-size: clamp(18px, 6vw, 24px);
+    }
+
+    h3 {
+        font-size: clamp(16px, 5vw, 20px);
+    }
+
+    input,
+    select,
+    textarea,
+    button {
+        font-size: 14px;
+    }
+}
+
+
+.report-client-cell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+}
+
+.report-client-image,
+.report-client-initials {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    border-radius: 50%;
+}
+
+.report-client-image {
+    display: block;
+    object-fit: cover;
+}
+
+.report-client-initials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #dbe4f0;
+    color: #0b1f45;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.report-client-name {
+    display: block;
+    min-width: 0;
+    max-width: 100%;
+    color: #334155;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.invoice-status-dot.draft {
+    background: #94A3B8;
+}
+
+.invoice-status-dot.pending {
+    background: #F59E0B;
+}
+
+.invoice-status-dot.paid {
+    background: #22C55E;
+}
+
+.invoice-status-dot.overdue {
+    background: #EF4444;
+}
+
+.invoice-progress-segment.draft {
+    background: #94A3B8;
+}
+
+.invoice-progress-segment.pending {
+    background: #F59E0B;
+}
+
+.invoice-progress-segment.paid {
+    background: #22C55E;
+}
+
+.invoice-progress-segment.overdue {
+    background: #EF4444;
+}
+
+.report-status.draft {
+    background: #F1F5F9;
+    color: #64748B;
+}
+
+.report-status.pending {
+    background: #FEF3C7;
+    color: #B45309;
+}
+
+.report-status.paid {
+    background: #DCFCE7;
+    color: #15803D;
+}
+
+.report-status.overdue {
+    background: #FEE2E2;
+    color: #DC2626;
+}
+
+.invoice-status-percentages {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 42px;
+    margin-top: 10px;
+}
+
+.invoice-status-percentages > div {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    white-space: nowrap;
+}
+
+.invoice-status-percentages > div:nth-child(1) {
+    left: 0;
+}
+
+.invoice-status-percentages > div:nth-child(2) {
+    left: var(--pending-position, 0%);
+}
+
+.invoice-status-percentages > div:nth-child(3) {
+    left: var(--paid-position, 0%);
+}
+
+.invoice-status-percentages > div:nth-child(4) {
+    left: var(--overdue-position, 0%);
+}
+
+.report-client-cell.no-client-image {
+    gap: 0;
+}

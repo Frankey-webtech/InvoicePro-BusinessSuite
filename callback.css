@@ -1,0 +1,162 @@
+:root {
+--navy-950: #06152d;
+--navy-900: #0a1f3d;
+--navy-800: #0e2d55;
+--navy-700: #153f73;
+--navy-600: #1d5594;
+--blue-50: #f5f9ff;
+--white: #ffffff;
+--text: #10233f;
+--muted: #64748b;
+--border: #dce5f0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+html,
+body {
+width: 100%;
+min-height: 100%;
+}
+
+body {
+font-family: "Inter", sans-serif;
+background: linear-gradient(
+135deg,
+#f5f9ff 0%,
+#eaf3ff 100%
+);
+color: var(--text);
+}
+
+.callback-page {
+width: 100%;
+min-height: 100vh;
+padding: 24px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.callback-card {
+width: min(100%, 440px);
+padding: 50px 35px;
+text-align: center;
+border: 1px solid var(--border);
+border-radius: 22px;
+background: var(--white);
+box-shadow:
+0 20px 55px rgba(6, 21, 45, 0.10);
+}
+
+.status-icon {
+width: 72px;
+height: 72px;
+margin: 0 auto 24px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.spinner {
+width: 54px;
+height: 54px;
+border: 5px solid #dce8f5;
+border-top-color: var(--navy-700);
+border-radius: 50%;
+animation: spin 0.8s linear infinite;
+}
+
+.callback-card h1 {
+margin-bottom: 10px;
+color: var(--navy-900);
+font-size: 24px;
+font-weight: 800;
+letter-spacing: -0.6px;
+}
+
+.callback-card p {
+max-width: 300px;
+margin: 0 auto;
+color: var(--muted);
+font-size: 14px;
+line-height: 1.7;
+}
+
+.status-icon.success {
+border-radius: 50%;
+background: #eaf8f1;
+color: #16845b;
+animation: successIn 0.35s ease forwards;
+}
+
+.status-icon.success::after {
+content: "✓";
+font-size: 34px;
+font-weight: 800;
+}
+
+.status-icon.error {
+border-radius: 50%;
+background: #fff1f1;
+color: #c83b3b;
+}
+
+.status-icon.error::after {
+content: "!";
+font-size: 34px;
+font-weight: 800;
+}
+
+.status-icon.success .spinner,
+.status-icon.error .spinner {
+display: none;
+}
+
+@keyframes spin {
+from {
+transform: rotate(0deg);
+}
+
+to {
+    transform: rotate(360deg);
+}
+
+}
+
+@keyframes successIn {
+from {
+opacity: 0;
+transform: scale(0.7);
+}
+
+to {
+    opacity: 1;
+    transform: scale(1);
+}
+
+}
+
+@media (max-width: 500px) {
+
+.callback-page {
+    padding: 18px;
+}
+
+.callback-card {
+    padding: 42px 24px;
+}
+
+.callback-card h1 {
+    font-size: 22px;
+}
+
+.callback-card p {
+    font-size: 13px;
+}
+
+}
