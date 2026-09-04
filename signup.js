@@ -420,10 +420,10 @@ async function initializeAuth0() {
     auth0Client = await auth0.createAuth0Client({
 
         domain:
-            "dev-2tvu028qm4wmvd0l.us.auth0.com",
+            "dev-4mpuls6ree381pqd.us.auth0.com",
 
         clientId:
-            "LpoyuFK4GqAA6gzsVzu2yxGarfb8mXs6",
+            "CfxLswv3awjuN3irjFb44ddd8wP2QAe2",
 
         authorizationParams: {
 
