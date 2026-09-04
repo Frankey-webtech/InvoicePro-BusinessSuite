@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icon-192.png">
+
+
+    <title>InvoicePro | Login</title>
+
+    <script src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+
+    <script src="api.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="signup.css">
+
+    <link rel="stylesheet" href="login.css">
+    
+    <link rel="stylesheet" href="profile.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
+
+</head>
+
+<body>
+
+<div class="page">
+
+    <header class="topbar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+
+<img src="logo.png" alt="" />
+
+            </div>
+
+            <h2>Invoice<span>Pro</span></h2>
+
+        </div>
+
+        <div class="top-right">
+
+            <p>Don't have an account?</p>
+
+            <a href="signup.html" class="signup-btn">Sign Up</a>
+
+        </div>
+
+    </header>
+
+    <main class="login-container">
+
+        <section class="left-panel">
+
+            <div class="left-content">
+
+                <div class="hero-badge">
+
+                    <i class="ri-shield-check-line"></i>
+
+                    Secure Business Management
+
+                </div>
+
+                <h1>
+
+                    Welcome Back!<br>
+
+                    Log in to <span>your account</span>
+
+                </h1>
+
+                <p class="hero-text">
+
+                    Access your invoices, clients, payments and more.<br>
+
+                    Manage your business in one place.
+
+                </p>
+
+
+
+                <div class="features">
+
+                    <div class="feature">
+
+                        <div class="icon purple">
+
+                            <i class="ri-file-list-3-line feature-icon"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>Create Invoices</h3>
+
+                            <p>Create and send professional invoices in seconds.</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="feature">
+
+                        <div class="icon green">
+
+                            <i class="ri-group-line feature-icon"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>Manage Clients</h3>
+
+                            <p>Keep all your client information organized.</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="feature">
+
+                        <div class="icon orange">
+
+                            <i class="ri-wallet-3-line feature-icon"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>Track Payments</h3>
+
+                            <p>Get paid faster with payment tracking.</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="feature">
+
+                        <div class="icon blue">
+
+                            <i class="ri-bar-chart-box-line feature-icon"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>Powerful Reports</h3>
+
+                            <p>Monitor business performance and growth.</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="stats">
+
+                    <div class="stat">
+
+                        <h2>5,000+</h2>
+
+                        <p>Happy Businesses</p>
+
+                    </div>
+
+                    <div class="stat">
+
+                        <h2>1M+</h2>
+
+                        <p>Invoices Generated</p>
+
+                    </div>
+
+                    <div class="stat">
+
+                        <h2>99.9%</h2>
+
+                        <p>Uptime Guarantee</p>
+
+                    </div>
+
+                    <div class="stat">
+
+                        <h2>24/7</h2>
+
+                        <p>Customer Support</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="right-panel">
+
+            <div class="login-card">
+
+                <div class="login-header">
+
+                    <div class="login-icon">
+
+                        <i class="ri-lock-password-line"></i>
+
+                    </div>
+
+                    <h2>Log in to your account</h2>
+
+                    <p class="subtitle">
+
+                        Enter your email and password to access your account.
+
+                    </p>
+
+                </div>
+
+                <form id="loginForm">
+
+                    <div class="input-group">
+
+                        <label for="email">Email Address</label>
+
+                        <div class="input-box">
+
+                            <i class="ri-mail-line input-icon"></i>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Enter your email address"
+                                autocomplete="email"
+                                required>
+
+                        </div>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label for="password">Password</label>
+
+                        <div class="input-box">
+
+                            <i class="ri-lock-line input-icon"></i>
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="••••••••"
+                                autocomplete="current-password"
+                                required>
+
+                            <button
+                                type="button"
+                                class="toggle-password"
+                                aria-label="Show password">
+
+                                <i class="ri-eye-line"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="login-options">
+
+                        <label class="remember">
+
+                            <input type="checkbox">
+
+                            <span>Remember me</span>
+
+                        </label>
+
+                        <a href="reset-password.html" class="forgot-password">
+
+                            Forgot Password?
+
+                        </a>
+
+                    </div>
+
+                    <button
+                        class="login-btn"
+                        id="loginBtn"
+                        type="submit">
+
+                        <span>Log In</span>
+
+                    </button>
+
+                </form>
+
+                <div class="divider">
+
+                    <span>or continue with</span>
+
+                </div>
+
+                <div class="social-login">
+
+                            <button
+                            type="button"
+                            class="social-btn"
+                            id="googleBtn"
+                        >
+
+                            <img
+                                src="google.svg"
+                                alt="Google"
+                            >
+
+                            Google
+
+                        </button>
+
+
+
+                </div>
+
+                <div class="login-security">
+
+                    <i class="ri-shield-check-line"></i>
+
+                    <span>Your information is securely protected.</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <p>© 2026 InvoicePro. All rights reserved.</p>
+
+        <div>
+
+            <a href="privacy.html">Privacy Policy</a>
+
+            <span>•</span>
+
+            <a href="terms.html">Terms of Service</a>
+
+        </div>
+
+    </footer>
+
+</div>
+<script src="https://cdn.auth0.com/js/auth0-spa-js/2.1/auth0-spa-js.production.js"></script>
+<script src="login.js"></script>
+</body>
+
+</html>

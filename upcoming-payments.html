@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icon-192.png">
+
+<link rel="stylesheet" href="upcoming-payments.css">
+   <title>InvoicePro | Upcoming Payments</title>
+       <script src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+
+    <script src="api.js"></script>
+    <link rel="stylesheet" href="profile.css">
+    <link
+rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
+</head>
+
+<body>
+    
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay">
+</div>
+<aside
+    class="sidebar"
+    id="sidebar">
+
+    <div class="sidebar-logo">
+
+        <div class="logo-icon">
+
+            <img src="logo.png" alt="">
+
+        </div>
+
+        <div class="logo-text">
+
+            <h2>InvoicePro</h2>
+
+            <span>Business Suite</span>
+
+        </div>
+
+    </div>
+
+    <nav class="sidebar-nav">
+
+        <a href="index.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-home-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Home
+            </span>
+
+        </a>
+
+        <a href="dashboard.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-dashboard-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Dashboard
+            </span>
+
+        </a>
+
+        <a href="invoice.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-file-list-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Invoices
+            </span>
+
+        </a>
+
+        <a href="estimates.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-draft-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Estimates
+            </span>
+
+        </a>
+
+        <a href="clients.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-group-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Clients
+            </span>
+
+        </a>
+
+        <a href="upcoming-payments.html" class="nav-item active">
+
+            <span class="nav-icon">
+                <i class="ri-calendar-check-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Upcoming Payments
+            </span>
+
+        </a>
+
+        <a href="paid-invoices.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-money-dollar-circle-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Paid Invoices
+            </span>
+
+        </a>
+
+        <a href="recurring-invoices.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-repeat-2-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Recurring Invoices
+            </span>
+
+        </a>
+        
+         <a href="expenses.html" class="nav-item">
+
+            <span class="nav-icon">
+               <i class="ri-wallet-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Expenses
+            </span>
+
+        </a>
+
+        <a href="reports.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-bar-chart-box-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Reports
+            </span>
+
+        </a>
+
+        <a href="subscription.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-vip-crown-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Subscription
+            </span>
+
+        </a>
+
+        <a href="subscription-history.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-history-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Subscription Payment History
+            </span>
+
+        </a>
+
+        <div
+            class="nav-dropdown"
+            id="settingsDropdown">
+
+            <button
+                class="nav-dropdown-btn"
+                id="settingsToggle">
+
+                <div class="nav-dropdown-left">
+
+                    <span class="nav-icon">
+                        <i class="ri-layout-4-line"></i>
+                    </span>
+
+                    <span>
+                        Templates
+                    </span>
+
+                </div>
+
+                <i
+                    id="settingsArrow"
+                    class="ri-arrow-down-s-line dropdown-arrow"></i>
+
+            </button>
+
+            <div
+                class="dropdown-menu"
+                id="settingsMenu">
+
+                <a
+                    href="invoices-design.html"
+                    class="dropdown-item">
+
+                    <span class="nav-icon">
+                        <i class="ri-file-text-line"></i>
+                    </span>
+
+                    Invoice Template
+
+                </a>
+
+                <a
+                    href="estimates-design.html"
+                    class="dropdown-item">
+
+                    <span class="nav-icon">
+                        <i class="ri-draft-line"></i>
+                    </span>
+
+                    Estimate Template
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <a href="settings.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-settings-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Settings
+            </span>
+
+        </a>
+
+        <a href="profile.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-user-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Profile
+            </span>
+
+        </a>
+
+        <a href="business-profile.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-building-2-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Business Profile
+            </span>
+
+        </a>
+
+        <a href="live-chat.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-chat-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Live Chat
+            </span>
+
+        </a>
+
+        <a
+            href="account-mgt.html"
+            class="nav-item logout-item"
+            id="logoutBtn">
+
+            <span class="nav-icon">
+                <i class="ri-logout-box-r-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Logout
+            </span>
+
+        </a>
+
+    </nav>
+
+</aside>
+<div class="page-wrapper">
+<header class="page-header">
+
+        <div class="header-left">
+
+            <button
+                class="menu-toggle"
+                id="menuToggle">
+
+               <i class="ri-menu-line"></i>
+
+            </button>
+
+            <div class="page-title">
+
+              
+
+                <h1>
+
+                    Upcoming Payments 
+
+                </h1>
+
+            </div>
+
+        </div>
+
+        <div class="header-right">
+
+            <button
+                class="notification-btn"
+                id="notificationBtn" style="display: none;">
+
+                <i class="ri-notification-3-line"></i>
+
+                <span
+                    class="notification-badge"
+                    id="notificationBadge">
+
+                    3
+
+                </span>
+
+            </button>
+
+            <button
+                class="header-avatar"
+                id="profileMenuBtn">
+
+                <img
+                    src="
+                    profile.png"
+                    alt="Profile"
+                    id="headerProfileImage">
+
+            </button>
+
+        </div>
+
+    </header>
+    
+   <div class="upcomingPaymentsPage" id="upcomingPaymentsPage">
+
+    <div class="upcomingPaymentsHeader">
+
+        <div class="upcomingPaymentsHeaderContent">
+
+            <span class="upcomingPaymentsEyebrow">
+                Payment Schedule
+            </span>
+
+            <h1 class="upcomingPaymentsTitle">
+                Upcoming Payments
+            </h1>
+
+            <p class="upcomingPaymentsDescription">
+                View all your pending payments that are due soon.
+            </p>
+
+        </div>
+
+        <div class="upcomingPaymentsCount" id="upcomingPaymentsCount">
+            0 Payments
+        </div>
+
+    </div>
+
+    <div class="upcomingPaymentsList" id="upcomingPaymentsList">
+
+        <div class="upcomingPaymentLoading">
+
+            <div class="upcomingPaymentLoadingIcon">
+                <i class="ri-loader-4-line"></i>
+            </div>
+
+            <div>
+
+                <h3>
+                    Loading payments...
+                </h3>
+
+                <p>
+                    Please wait while your upcoming payments are loaded.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="upcomingPaymentsEmpty" id="upcomingPaymentsEmpty" style="display: none;">
+
+        <div class="upcomingPaymentsEmptyIcon">
+            <i class="ri-calendar-check-line"></i>
+        </div>
+
+        <h2>
+            No Upcoming Payments
+        </h2>
+
+        <p>
+            You don't have any pending payments due within the reminder period.
+        </p>
+
+    </div>
+
+    <div class="upcomingPaymentsError" id="upcomingPaymentsError" style="display: none;">
+
+        <div class="upcomingPaymentsErrorIcon">
+            <i class="ri-error-warning-line"></i>
+        </div>
+
+        <h2>
+            Unable to Load Payments
+        </h2>
+
+        <p id="upcomingPaymentsErrorMessage">
+            Something went wrong while loading your upcoming payments.
+        </p>
+
+        <button
+            type="button"
+            id="retryUpcomingPayments"
+            class="upcomingPaymentsRetryButton"
+        >
+            <i class="ri-refresh-line"></i>
+            Try Again
+        </button>
+
+    </div>
+
+</div>
+<script src="upcoming-payments.js"></script>
+</body>
+
+</html>

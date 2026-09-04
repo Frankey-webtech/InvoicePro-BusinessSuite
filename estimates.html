@@ -1,0 +1,2694 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+    
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icon-192.png">
+
+    <title>
+
+        InvoicePro | Estimates
+
+    </title>
+    
+<link rel="stylesheet" href="profile.css">
+<link rel="stylesheet" href="invoices-design.css">
+<link rel="stylesheet"href="estimates.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
+<link
+rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
+
+ <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com">
+
+    <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin>
+
+    <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+    <script src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+<script src="api.js"></script>
+</head>
+
+<body>
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay">
+</div>
+<aside
+    class="sidebar"
+    id="sidebar">
+
+    <div class="sidebar-logo">
+
+        <div class="logo-icon">
+
+            <img src="logo.png" alt="">
+
+        </div>
+
+        <div class="logo-text">
+
+            <h2>InvoicePro</h2>
+
+            <span>Business Suite</span>
+
+        </div>
+
+    </div>
+
+    <nav class="sidebar-nav">
+
+        <a href="index.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-home-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Home
+            </span>
+
+        </a>
+
+        <a href="dashboard.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-dashboard-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Dashboard
+            </span>
+
+        </a>
+
+        <a href="invoice.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-file-list-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Invoices
+            </span>
+
+        </a>
+
+        <a href="estimates.html" class="nav-item active">
+
+            <span class="nav-icon">
+                <i class="ri-draft-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Estimates
+            </span>
+
+        </a>
+
+        <a href="clients.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-group-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Clients
+            </span>
+
+        </a>
+
+        <a href="upcoming-payments.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-calendar-check-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Upcoming Payments
+            </span>
+
+        </a>
+
+        <a href="paid-invoices.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-money-dollar-circle-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Paid Invoices
+            </span>
+
+        </a>
+
+        <a href="recurring-invoices.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-repeat-2-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Recurring Invoices
+            </span>
+
+        </a>
+        
+         <a href="expenses.html" class="nav-item">
+
+            <span class="nav-icon">
+               <i class="ri-wallet-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Expenses
+            </span>
+
+        </a>
+
+        <a href="reports.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-bar-chart-box-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Reports
+            </span>
+
+        </a>
+
+        <a href="subscription.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-vip-crown-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Subscription
+            </span>
+
+        </a>
+
+        <a href="subscription-history.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-history-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Subscription History
+            </span>
+
+        </a>
+
+        <div
+            class="nav-dropdown"
+            id="settingsDropdown">
+
+            <button
+                class="nav-dropdown-btn"
+                id="settingsToggle">
+
+                <div class="nav-dropdown-left">
+
+                    <span class="nav-icon">
+                        <i class="ri-layout-4-line"></i>
+                    </span>
+
+                    <span>
+                        Templates
+                    </span>
+
+                </div>
+
+                <i
+                    id="settingsArrow"
+                    class="ri-arrow-down-s-line dropdown-arrow"></i>
+
+            </button>
+
+            <div
+                class="dropdown-menu"
+                id="settingsMenu">
+
+                <a
+                    href="invoices-design.html"
+                    class="dropdown-item">
+
+                    <span class="nav-icon">
+                        <i class="ri-file-text-line"></i>
+                    </span>
+
+                    Invoice Template
+
+                </a>
+
+                <a
+                    href="estimates-design.html"
+                    class="dropdown-item">
+
+                    <span class="nav-icon">
+                        <i class="ri-draft-line"></i>
+                    </span>
+
+                    Estimate Template
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <a href="settings.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-settings-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Settings
+            </span>
+
+        </a>
+
+        <a href="profile.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-user-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Profile
+            </span>
+
+        </a>
+
+        <a href="business-profile.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-building-2-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Business Profile
+            </span>
+
+        </a>
+
+        <a href="live-chat.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-chat-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Live Chat
+            </span>
+
+        </a>
+
+        <a
+            href="account-mgt.html"
+            class="nav-item logout-item"
+            id="logoutBtn">
+
+            <span class="nav-icon">
+                <i class="ri-logout-box-r-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Logout
+            </span>
+
+        </a>
+
+    </nav>
+
+</aside>
+<div class="page-wrapper">
+<header class="page-header">
+
+        <div class="header-left">
+
+            <button
+                class="menu-toggle"
+                id="menuToggle">
+
+               <i class="ri-menu-line"></i>
+
+            </button>
+
+            <div class="page-title">
+
+              
+
+                <h1>
+
+                    Estimates
+
+                </h1>
+
+            </div>
+
+        </div>
+
+        <div class="header-right">
+
+            <button
+                class="notification-btn"
+                id="notificationBtn" style="display: none;">
+
+                <i class="ri-notification-3-line"></i>
+
+                <span
+                    class="notification-badge"
+                    id="notificationBadge">
+
+                    3
+
+                </span>
+
+            </button>
+
+            <button
+                class="header-avatar"
+                id="profileMenuBtn">
+
+                <img
+                    src="
+                    profile.png"
+                    alt="Profile"
+                    id="headerProfileImage">
+
+            </button>
+
+        </div>
+
+    </header>
+
+    <main
+    class="main-content"
+    id="mainContent">
+
+        <header
+        class="top-header"
+        id="topHeader">
+
+        </header>
+        
+        
+
+<section class="estimates-page" id="estimatesPage">
+
+<section
+class="page-title-section"
+id="pageTitleSection">
+
+    <div
+    class="page-header"
+    id="pageHeader">
+
+        <div
+        class="page-heading"
+        id="pageHeading">
+
+            <p
+            class="page-description"
+            id="pageDescription">
+
+                Create, send and manage professional estimates before converting them into invoices.
+
+            </p>
+
+        </div>
+
+        <button
+        class="create-estimate-btn"
+        id="createEstimateButton">
+
+           <i class="ri-add-line"></i>
+
+            <span
+            id="createEstimateText">
+
+                Create Estimate
+
+            </span>
+
+        </button>
+
+
+    </div>
+
+</section>
+
+<section
+class="stats-grid"
+id="statsGrid">
+            
+            <div
+class="stat-card"
+id="totalEstimates">
+
+    <div
+    class="stat-icon"
+    id="totalEstimatesIcon">
+
+        <i class="ri-file-list-3-line"></i>
+
+    </div>
+
+    <div
+    class="stat-content"
+    id="totalEstimatesContent">
+
+        <p
+        class="stat-label"
+        id="totalEstimatesLabel">
+
+            Total Estimates
+
+        </p>
+
+        <h2
+        class="stat-value"
+        id="totalEstimatesValue">
+
+            0
+
+        </h2>
+
+    </div>
+
+</div>
+
+<div
+class="stat-card"
+id="pendingEstimates">
+
+    <div
+    class="stat-icon"
+    id="pendingEstimatesIcon">
+
+      <i class="ri-time-line"></i>
+
+    </div>
+
+    <div
+    class="stat-content"
+    id="pendingEstimatesContent">
+
+        <p
+        class="stat-label"
+        id="pendingEstimatesLabel">
+
+            Pending Approval
+
+        </p>
+
+        <h2
+        class="stat-value"
+        id="pendingEstimatesValue">
+
+            0
+
+        </h2>
+
+    </div>
+
+</div>
+
+<div
+class="stat-card"
+id="approvedEstimates">
+
+    <div
+    class="stat-icon"
+    id="approvedEstimatesIcon">
+
+        <i class="ri-checkbox-circle-line"></i>
+
+    </div>
+
+    <div
+    class="stat-content"
+    id="approvedEstimatesContent">
+
+        <p
+        class="stat-label"
+        id="approvedEstimatesLabel">
+
+            Approved
+
+        </p>
+
+        <h2
+        class="stat-value"
+        id="approvedEstimatesValue">
+
+            0
+
+        </h2>
+
+    </div>
+
+</div>
+
+<div
+class="stat-card"
+id="estimatedValue">
+
+    <div
+    class="stat-icon"
+    id="estimatedValueIcon">
+
+        <i class="ri-wallet-3-line"></i>
+
+    </div>
+
+    <div
+    class="stat-content"
+    id="estimatedValueContent">
+
+        <p
+        class="stat-label"
+        id="estimatedValueLabel">
+
+            Estimated Value
+
+        </p>
+
+        <h2
+        class="stat-value"
+        id="estimatedValueValue">
+
+            $0
+
+        </h2>
+
+    </div>
+
+</div>
+
+</section>
+
+<section
+            class="statistics-section"
+            id="statisticsSection">
+
+            </section>
+
+<div
+class="estimate-preview-overlay"
+id="estimatePreviewOverlay"></div>
+
+<div
+class="estimates-content-layout" 
+id="estimatesContentLayout"
+>
+
+    <section
+class="estimates-table-section"
+id="estimatesTableSection">
+
+
+    <div
+    class="table-toolbar"
+    id="tableToolbar">
+
+        <div
+        class="toolbar-left"
+        id="toolbarLeft">
+
+            <div
+            class="table-search"
+            id="tableSearch">
+
+               <i class="ri-search-line"></i>
+
+                <input
+                type="text"
+                class="table-search-input"
+                id="estimateSearchInput"
+                placeholder="Search estimates...">
+
+            </div>
+
+        </div>
+
+        <div
+        class="toolbar-right"
+        id="toolbarRight">
+
+            <select
+            class="table-select"
+            id="estimateStatusFilter">
+
+<option value="">
+    All Status
+</option>
+
+<option value="Draft">
+    Draft
+</option>
+
+<option value="Sent">
+    Sent
+</option>
+
+<option value="Approved">
+    Approved
+</option>
+
+<option value="Rejected">
+    Rejected
+</option>
+
+<option value="Expired">
+    Expired
+</option>
+
+<option value="Converted">
+    Converted
+</option>
+
+            </select>
+
+            <select
+            class="table-select"
+            id="sortEstimates">
+
+                <option value="newest">
+
+                    Newest
+
+                </option>
+
+                <option value="oldest">
+
+                    Oldest
+
+                </option>
+
+                <option value="amount">
+
+                    Amount
+
+                </option>
+
+                <option value="client">
+
+                    Client Name
+
+                </option>
+
+            </select>
+
+<div
+class="export-dropdown"
+id="exportDropdown">
+
+    <button
+    type="button"
+    class="export-btn"
+    id="exportEstimatesPdfButton">
+
+        <i class="ri-file-pdf-2-line"></i>
+
+        Export PDF
+
+    </button>
+
+</div>
+
+        </div>
+
+    </div>
+
+
+    <div
+    class="table-wrapper"
+    id="tableWrapper">
+
+        <table
+        class="estimates-table"
+        id="estimatesTable">
+
+            <thead>
+
+                <tr>
+
+                    <th>
+
+                        Estimate No.
+
+                    </th>
+
+                    <th>
+
+                        Client
+
+                    </th>
+
+                    <th>
+
+                        Created
+
+                    </th>
+
+                    <th>
+
+                        Expires
+
+                    </th>
+
+                    <th>
+
+                        Amount
+
+                    </th>
+
+                    <th>
+
+                        Status
+
+                    </th>
+
+                    <th>
+
+                        Actions
+
+                    </th>
+
+                </tr>
+
+            </thead>
+
+            <tbody
+            id="estimatesTableBody">
+
+            </tbody>
+
+        </table>
+        
+<div class="empty-state" id="emptyState" style="display: none;">
+
+    <div class="empty-state-icon">
+        <i class="ri-file-search-line"></i>
+    </div>
+
+    <h3 id="emptyStateTitle">
+        No estimates yet
+    </h3>
+
+    <p id="emptyStateDescription">
+        Create your first estimate to get started.
+    </p>
+
+    <button
+        type="button"
+        class="primary-button"
+        id="emptyStateCreateEstimateButton">
+
+        <i class="ri-add-line"></i>
+        Create Estimate
+
+    </button>
+
+</div>
+    </div>
+    
+
+<div
+class="table-footer"
+id="tableFooter">
+
+    <div
+    class="table-info"
+    id="tableInfo">
+
+        Showing
+
+        <span id="startRecord">
+
+            0
+
+        </span>
+
+        -
+
+        <span id="endRecord">
+
+            0
+
+        </span>
+
+        of
+
+        <span id="totalRecords">
+
+            0
+
+        </span>
+
+        estimates
+
+    </div>
+
+    <div
+    class="pagination"
+    id="pagination">
+
+        <button
+        class="pagination-button"
+        id="previousPageButton">
+
+            Previous
+
+        </button>
+
+        <button
+        class="pagination-button active"
+        id="pageOneButton">
+
+            1
+
+        </button>
+
+        <button
+        class="pagination-button"
+        id="pageTwoButton">
+
+            2
+
+        </button>
+
+        <button
+        class="pagination-button"
+        id="pageThreeButton">
+
+            3
+
+        </button>
+
+        <button
+        class="pagination-button"
+        id="nextPageButton">
+
+            Next
+
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+</div>
+
+<div
+class="delete-overlay"
+id="deleteEstimateOverlay"></div>
+
+<div
+class="delete-modal"
+id="deleteEstimateModal">
+
+    <div
+    class="delete-modal-icon">
+
+        <i class="ri-delete-bin-6-line"></i>
+
+    </div>
+
+    <h2
+    class="delete-modal-title"
+    id="deleteEstimateTitle">
+
+        Delete Estimate?
+
+    </h2>
+
+    <p
+    class="delete-modal-description"
+    id="deleteEstimateDescription">
+
+        This action cannot be undone. The selected estimate will be permanently deleted.
+
+    </p>
+
+    <div
+    class="delete-modal-buttons">
+
+        <button
+        class="cancel-delete-button"
+        id="cancelDeleteEstimateButton">
+
+            Cancel
+
+        </button>
+
+        <button
+        class="confirm-delete-button"
+        id="confirmDeleteEstimateButton">
+
+            Delete Estimate
+
+        </button>
+
+    </div>
+
+</div>
+
+<div
+class="convert-overlay"
+id="convertEstimateOverlay"></div>
+
+<div
+class="convert-modal"
+id="convertEstimateModal">
+
+    <div
+    class="convert-modal-icon">
+
+        <i class="ri-file-paper-2-line"></i>
+
+    </div>
+
+    <h2
+    class="convert-modal-title"
+    id="convertEstimateTitle">
+
+        Convert to Invoice?
+
+    </h2>
+
+    <p
+    class="convert-modal-description"
+    id="convertEstimateDescription">
+
+        This estimate will be converted into an invoice. The estimate will remain in your records and will be marked as <strong>Converted</strong>.
+
+    </p>
+
+    <div
+    class="convert-modal-summary"
+    id="convertEstimateSummary">
+
+        <div
+        class="summary-item">
+
+            <span>
+
+                Estimate
+
+            </span>
+
+            <strong
+            id="convertEstimateNumber">
+
+                EST-000001
+
+            </strong>
+
+        </div>
+
+        <div
+        class="summary-item">
+
+            <span>
+
+                Client
+
+            </span>
+
+            <strong
+            id="convertEstimateClient">
+
+                Client Name
+
+            </strong>
+
+        </div>
+
+        <div
+        class="summary-item">
+
+            <span>
+
+                Amount
+
+            </span>
+
+            <strong
+            id="convertEstimateAmount">
+
+                $0.00
+
+            </strong>
+
+        </div>
+
+    </div>
+
+    <div
+    class="convert-modal-buttons">
+
+        <button
+        class="cancel-convert-button"
+        id="cancelConvertEstimateButton">
+
+            Cancel
+
+        </button>
+
+        <button
+        class="confirm-convert-button"
+        id="confirmConvertEstimateButton">
+
+            Convert
+
+        </button>
+
+    </div>
+
+</div>
+
+</main>
+
+</div>
+
+<div
+class="modal-overlay"
+id="createEstimateOverlay"></div>
+
+<div
+class="create-estimate-modal"
+id="createEstimateModal">
+
+    <div
+    class="modal-header"
+    id="createEstimateHeader">
+
+        <div
+        class="modal-heading">
+
+
+            <h2
+            class="modal-title"
+            id="createEstimateTitle">
+
+                Create Estimate
+
+            </h2>
+
+            <p
+            class="modal-subtitle"
+            id="createEstimateSubtitle">
+
+                Create a professional estimate for your client.
+
+            </p>
+
+        </div>
+
+        <button
+        class="modal-close-button"
+        id="closeCreateEstimateButton">
+
+            <i class="ri-close-line"></i>
+
+        </button>
+
+    </div>
+
+    <div
+    class="modal-body"
+    id="createEstimateBody">
+                    <input
+type="hidden"
+id="estimateIdInput">
+        
+        <section class="modal-section" id="estimateDetailsSection">
+
+    <h3>Estimate Details</h3>
+
+    <div class="form-grid">
+
+        <div class="form-group">
+            <label>Estimate Title</label>
+            <input
+                type="text"
+                id="estimateTitleInput"
+                class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>Project Name</label>
+            <input
+                type="text"
+                id="projectNameInput"
+                class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>Reference Number</label>
+            <input
+                type="text"
+                id="referenceNumberInput"
+                class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>Purchase Order</label>
+            <input
+                type="text"
+                id="purchaseOrderInput"
+                class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>Estimate Number</label>
+            <input
+                type="text"
+                id="estimateNumberInput"
+                class="form-control"
+                readonly>
+        </div>
+        
+        <div class="form-group">
+
+    <label>
+        Estimate Currency
+    </label>
+
+    <select
+    id="estimateCurrencyInput"
+    class="form-control">
+
+        <option value="">
+            Select currency
+        </option>
+
+    </select>
+
+</div>
+
+    </div>
+
+</section>
+
+        <section
+        class="modal-section"
+        id="estimateClientSection">
+
+            <h3>
+
+                Client Information
+
+            </h3>
+
+            <div
+            class="form-grid">
+
+                <div
+                class="form-group">
+
+                    <label>
+
+                        Client
+
+                    </label>
+
+<div
+    class="client-picker"
+    id="estimateClientPicker">
+
+    <input
+        type="hidden"
+        id="estimateClientInput"
+        value="">
+
+    <button
+        type="button"
+        class="client-picker-trigger"
+        id="estimateClientPickerTrigger">
+
+        <span
+            class="client-picker-selected"
+            id="estimateClientPickerSelected">
+
+            Select Client
+
+        </span>
+
+        <i
+            class="ri-arrow-down-s-line"
+            id="estimateClientPickerArrow">
+        </i>
+
+    </button>
+
+    <div
+        class="client-picker-dropdown"
+        id="estimateClientPickerDropdown">
+
+        <div
+            class="client-picker-search-wrapper">
+
+            <i class="ri-search-line"></i>
+
+            <input
+                type="search"
+                class="client-picker-search"
+                id="estimateClientPickerSearch"
+                placeholder="Search clients..."
+                autocomplete="off">
+
+        </div>
+
+        <div
+            class="client-picker-options"
+            id="estimateClientPickerOptions">
+
+        </div>
+
+    </div>
+
+</div>
+
+                </div>
+
+               
+
+                <div
+                class="form-group">
+
+                    <label>
+
+                        Issue Date
+
+                    </label>
+
+                    <input
+                    type="date"
+                    id="estimateIssueDateInput"
+                    class="form-control">
+
+                </div>
+
+                <div
+                class="form-group">
+
+                    <label>
+
+                        Expiry Date
+
+                    </label>
+
+                    <input
+                    type="date"
+                    id="estimateExpiryDateInput"
+                    class="form-control">
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section
+        class="modal-section"
+        id="estimateItemsSection">
+
+            <div
+            class="section-header">
+
+                <h3>
+
+                    Estimate Items
+
+                </h3>
+
+                <button
+                id="addEstimateItemButton"
+                class="add-item-button">
+
+                    Add Item
+
+                </button>
+
+            </div>
+
+            <div
+            id="estimateItemsContainer">
+
+            </div>
+
+        </section>
+
+        <section
+        class="modal-section"
+        id="estimateTotalsSection">
+
+            <h3>
+
+                Totals
+
+            </h3>
+
+            <div
+            class="form-grid">
+
+                <div
+                class="form-group">
+
+                    <label>
+
+                        Tax %
+
+                    </label>
+
+                    <input
+                    type="number"
+                    id="estimateTaxInput"
+                    class="form-control">
+
+                </div>
+
+                <div
+                class="form-group">
+
+                    <label>
+
+                        Discount
+
+                    </label>
+
+                    <input
+                    type="number"
+                    id="estimateDiscountInput"
+                    class="form-control">
+
+                </div>
+
+                <div
+                class="form-group">
+
+                    <label>
+
+                        Shipping
+
+                    </label>
+
+                    <input
+                    type="number"
+                    id="estimateShippingInput"
+                    class="form-control">
+
+                </div>
+
+            </div>
+
+            <div
+            class="estimate-total-card">
+
+                <div class="total-row">
+
+                    <span>
+
+                        Subtotal
+
+                    </span>
+
+                    <strong id="estimateSubtotal">
+
+                        $0.00
+
+                    </strong>
+
+                </div>
+
+                <div class="total-row">
+
+                    <span>
+
+                        Grand Total
+
+                    </span>
+
+                    <strong id="estimateGrandTotal">
+
+                        $0.00
+
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section
+        class="modal-section"
+        id="estimateNotesSection">
+
+            <h3>
+
+                Notes
+
+            </h3>
+
+          <textarea
+id="customerNotesInput"
+            class="form-control"
+            rows="4"></textarea>
+
+        </section>
+
+        <section
+        class="modal-section"
+        id="estimateTermsSection">
+
+            <h3>
+
+                Terms & Conditions
+
+            </h3>
+
+            <textarea
+            id="estimateTermsInput"
+            class="form-control"
+            rows="4"></textarea>
+
+        </section>
+        
+        <section class="modal-section">
+
+<h3>Validity Message</h3>
+
+<textarea
+id="validityMessageInput"
+class="form-control"
+rows="3"></textarea>
+
+</section>
+<section
+class="modal-section"
+id="estimatePaymentSection">
+
+    <h3>Payment Method</h3>
+
+    <div
+    class="payment-method-status"
+    id="estimatePaymentMethodStatus">
+
+        <span id="estimatePaymentMethodText">
+            Payment method not set.
+        </span>
+
+        <button
+        type="button"
+        class="secondary-button"
+        id="setPaymentMethodButton">
+
+            Set Payment Method
+
+        </button>
+
+    </div>
+
+</section>
+
+<section
+class="modal-section"
+id="estimateSignatureSection">
+
+<h3>Signature</h3>
+
+<div class="form-grid">
+
+<div class="form-group">
+
+<label>Signature Name</label>
+
+<input
+type="text"
+id="signatureNameInput"
+class="form-control">
+
+</div>
+
+<div class="form-group">
+
+<label>Signature Title</label>
+
+<input
+type="text"
+id="signatureTitleInput"
+class="form-control">
+
+</div>
+
+<div class="form-group full-width">
+
+<label>Signature Image</label>
+
+<input
+type="file"
+id="signatureImageInput"
+accept="image/*" 
+class="secondary-button"
+>
+
+<img
+id="signaturePreview"
+style="
+display:none;
+width:180px;
+margin-top:12px;
+border-radius:10px;
+border:1px solid #ddd;">
+
+</div>
+
+</div>
+
+</section>
+
+    </div>
+    
+    <div
+    class="modal-footer"
+    id="createEstimateFooter">
+
+        <button
+        class="secondary-button"
+        id="cancelEstimateButton">
+
+            Cancel
+
+        </button>
+
+        <button
+        class="secondary-button"
+        id="saveEstimateDraftButton">
+
+            Save Draft
+
+        </button>
+
+        <button
+        class="primary-button"
+        id="saveEstimateButton">
+
+            Save Estimate
+
+        </button>
+
+    </div>
+
+</div>
+
+<aside
+    class="estimate-preview-panel"
+    id="estimatePreviewPanel">
+
+    <div
+        class="preview-header"
+        id="previewHeader">
+
+        <div
+            class="preview-header-left">
+
+            <h2
+                class="preview-title"
+                id="previewTitle">
+
+                Estimate Preview
+
+            </h2>
+
+        </div>
+
+        <button
+            class="preview-close-button"
+            id="closeEstimatePreviewButton">
+
+            <i class="ri-close-line"></i>
+
+        </button>
+
+    </div>
+
+    <div
+        class="preview-body"
+        id="previewBody">
+
+        <div
+            class="invoice-preview-wrapper">
+
+<div class="invoice-paper" 
+id="estimatePaper">
+<div
+    class="invoice-selection"
+    id="previewEstimateHeader">
+
+    <div
+        class="invoice-selection-top">
+    </div>
+
+    <div
+        class="invoice-header">
+
+        <div
+            class="invoice-header-company">
+
+            <div
+                class="invoice-company-brand">
+<div class="company-logo-box">
+    
+
+                <div
+                    class="invoice-company-logo">
+
+                    <img
+                        src="logo.png"
+                        alt="Business Logo"
+                        id="previewCompanyLogo">
+
+                </div>
+</div>
+                <div>
+
+                    <h1
+                        class="invoice-company-name"
+                        id="previewCompanyName">
+
+                        InvoicePro
+
+                    </h1>
+
+                </div>
+
+            </div>
+
+            <div
+                class="invoice-company-details">
+                
+                            <h4
+                class="invoice-section-heading">
+
+                Prepared By:
+
+            </h4>
+
+                <p
+                    id="previewCompanyAddress">
+
+                    Company Address
+
+                </p>
+
+                <p
+                    id="previewCompanyPhone">
+
+                    Phone Number
+
+                </p>
+
+                <p
+                    id="previewCompanyEmail">
+
+                    Email Address
+
+                </p>
+
+            <p
+    class="invoice-company-website"
+    id="previewCompanyWebsite">
+
+    www.invoicepro.com
+
+</p>
+
+            </div>
+
+        </div>
+
+        <div
+            class="invoice-header-right">
+
+            <h2
+                class="invoice-title"
+                id="previewEstimateTitle">
+
+                ESTIMATE
+
+            </h2>
+            
+
+            <div
+                class="invoice-date-grid">
+<h4
+                class="invoice-section-heading">
+
+                Estimate Information:
+
+            </h4>
+                <div>
+
+    <label>
+        Estimate Number
+    </label>
+            <strong
+    
+    id="previewHeaderEstimateNumber">
+                # EST-000001
+            </strong>
+                </div>
+                <div>
+
+                    <label>
+                        Issue Date
+                    </label>
+
+                    <strong id="previewHeaderIssueDate">
+
+                        -
+
+                    </strong>
+
+                </div>
+
+                <div>
+
+                    <label>
+                        Expiry Date
+                    </label>
+
+                    <strong id="previewHeaderExpiryDate">
+
+                        -
+
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div
+    class="invoice-watermark">
+
+    Generated by Invoice Pro
+
+</div>
+
+<div
+    class="invoice-selection"
+    id="previewCompanySection" style="display: none;">
+
+    <div
+        class="invoice-company-section">
+
+        <div
+            class="invoice-party" style="display: none;">
+
+            <h4
+                class="invoice-section-heading">
+
+                BILLED TO
+
+            </h4>
+
+            <p
+                class="invoice-party-name"
+                id="previewClientName">
+
+                Client Name
+
+            </p>
+
+            <p
+                id="previewClientCompany">
+
+                Company Name
+
+            </p>
+
+            <p
+                id="previewClientAddress">
+
+                Client Address
+
+            </p>
+
+            <p>
+
+                -
+
+            </p>
+
+            <p
+                id="previewClientEmail">
+
+                Client Email
+
+            </p>
+
+            <p
+                id="previewClientPhone">
+
+                Client Phone
+
+            </p>
+
+        </div>
+
+        <div
+            class="invoice-party" style="display: none;">
+
+            <h4
+                class="invoice-section-heading">
+
+                SHIP TO
+
+            </h4>
+
+            <p
+                class="invoice-party-name"
+                id="previewClientShipName">
+
+                Client Name
+
+            </p>
+
+            <p
+                id="previewClientShipAddress">
+
+                Client Address
+
+            </p>
+
+            <p>
+
+                -
+
+            </p>
+
+            <p>
+
+                -
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div
+    class="invoice-selection"
+    id="previewClientSection">
+
+
+    <div
+        class="invoice-company-section">
+
+        <div
+            class="invoice-party">
+
+            <h4
+                class="invoice-section-heading">
+
+                CUSTOMER INFORMATION
+
+            </h4>
+
+<div class="estimate-client-name-row">
+
+    <img
+        id="estimatePreviewClientImage"
+        class="estimate-client-image"
+        src=""
+        alt="Client">
+
+    <p
+        class="invoice-party-name"
+        id="estimatePreviewClientName">
+
+        Client Name
+
+    </p>
+
+</div>
+
+            <p
+                id="estimatePreviewCompany">
+
+                Company Name
+
+            </p>
+
+            <p
+                id="estimatePreviewClientEmail">
+
+                Client Email
+
+            </p>
+
+            <p
+                id="estimatePreviewClientPhone">
+
+                Client Phone
+
+            </p>
+
+        </div>
+
+<div
+    class="invoice-party">
+
+    <h4
+        class="invoice-section-heading">
+
+        BILLING ADDRESS
+
+    </h4>
+
+    <p
+        id="estimatePreviewBillingAddressLine1">
+
+        -
+
+    </p>
+
+    <p
+        id="estimatePreviewBillingAddressLine2">
+
+        -
+
+    </p>
+
+    <p
+        id="estimatePreviewBillingCityStateZip">
+
+        -
+
+    </p>
+
+    <p
+        id="estimatePreviewBillingCountry">
+
+        -
+
+    </p>
+
+</div>
+
+    </div>
+
+</div>
+
+<div
+    class="invoice-selection"
+    id="previewDatesSection">
+
+
+    <div
+        class="invoice-details-grid">
+
+        <div
+            class="invoice-detail">
+
+            <span
+                class="invoice-detail-label">
+
+                Estimate Number
+
+            </span>
+
+            <strong
+                id="previewEstimateNumber">
+
+                EST-000001
+
+            </strong>
+
+        </div>
+
+        <div
+            class="invoice-detail">
+
+            <span
+                class="invoice-detail-label">
+
+                Issue Date
+
+            </span>
+
+            <strong
+                id="previewIssueDate">
+
+                -
+
+            </strong>
+
+        </div>
+
+        <div
+            class="invoice-detail">
+
+            <span
+                class="invoice-detail-label">
+
+                Expiry Date
+
+            </span>
+
+            <strong
+                id="previewExpiryDate">
+
+                -
+
+            </strong>
+
+        </div>
+
+        <div
+            class="invoice-detail">
+
+            <span
+                class="invoice-detail-label">
+
+                Status
+
+            </span>
+
+            <strong
+                id="previewEstimateStatus">
+
+                Approved
+
+            </strong>
+
+        </div>
+
+        <div
+            class="invoice-detail">
+
+            <span
+                class="invoice-detail-label">
+
+                Purchase Order
+
+            </span>
+
+            <strong
+                id="estimatePreviewPurchaseOrder">
+
+                -
+
+            </strong>
+
+        </div>
+
+        <div
+            class="invoice-detail">
+
+            <span
+                class="invoice-detail-label">
+
+                Reference
+
+            </span>
+
+            <strong
+                id="estimatePreviewReference">
+
+                -
+
+            </strong>
+
+        </div>
+
+        <div
+            class="invoice-detail">
+
+            <span
+                class="invoice-detail-label">
+
+                Project
+
+            </span>
+
+            <strong
+                id="estimatePreviewProjectName">
+
+                -
+
+            </strong>
+
+        </div>
+
+        <div
+            class="invoice-detail">
+
+            <span
+                class="invoice-detail-label">
+
+                Currency
+
+            </span>
+
+            <strong
+                id="previewCurrency">
+
+                USD ($)
+
+            </strong>
+
+        </div>
+        
+        <div
+    class="invoice-detail">
+
+    <span
+        class="invoice-detail-label">
+
+        Sales Representative
+
+    </span>
+
+    <strong
+        id="previewSalesRepresentative">
+
+        -
+
+    </strong>
+
+</div>
+
+    </div>
+
+</div>
+
+<div
+    class="invoice-selection"
+    id="previewItemsSection">
+
+
+    <table
+        class="invoice-items-table"
+        id="previewItemsTable">
+
+        <thead>
+
+            <tr>
+
+                <th
+                    class="item-number">
+
+                    #
+
+                </th>
+
+                <th
+                    class="item-description">
+
+                    ITEM / DESCRIPTION
+
+                </th>
+
+                <th>
+
+                    QTY
+
+                </th>
+
+                <th>
+
+                    UNIT PRICE
+
+                </th>
+
+                <th
+                    class="amount-column">
+
+                    AMOUNT
+
+                </th>
+
+            </tr>
+
+        </thead>
+
+        <tbody
+            id="previewItemsBody">
+
+        </tbody>
+
+    </table>
+
+</div>
+
+<div
+    class="invoice-selection"
+    id="previewSummarySection">
+
+
+    <div
+        class="invoice-totals-wrapper">
+
+        <div
+            class="invoice-total-row">
+
+            <span>
+                Subtotal
+            </span>
+
+            <strong
+                id="previewSubtotal">
+
+                $0.00
+
+            </strong>
+
+        </div>
+
+        <div
+            class="invoice-total-row">
+
+            <span>
+                Discount
+            </span>
+
+            <strong
+                id="previewDiscount">
+
+                $0.00
+
+            </strong>
+
+        </div>
+
+        <div
+            class="invoice-total-row">
+
+            <span>
+                Tax
+            </span>
+
+            <strong
+                id="previewTax">
+
+                $0.00
+
+            </strong>
+
+        </div>
+
+        <div
+            class="invoice-total-row">
+
+            <span>
+                Shipping
+            </span>
+
+            <strong
+                id="previewShipping">
+
+                $0.00
+
+            </strong>
+
+        </div>
+
+        <div
+            class="invoice-total-row" style="display: none;">
+
+            <span>
+                Client
+            </span>
+
+            <strong
+                id="previewClientSummary">
+
+                -
+
+            </strong>
+
+        </div>
+
+        <div
+            class="invoice-grand-total">
+
+            <span>
+                TOTAL DUE
+            </span>
+
+            <strong
+                id="previewGrandTotal">
+
+                $0.00
+
+            </strong>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div
+    class="invoice-company-section"
+    id="previewPaymentSection"
+    
+    >
+
+
+    <div
+        class="invoice-selection" style="display: none;">
+
+        <h4
+            class="invoice-payment-title">
+
+            PAYMENT INFORMATION
+
+        </h4>
+
+      <!--  <div
+            class="invoice-payment-grid"> -->
+<div class="invoice-selection">
+    
+            <div>
+
+                <span><strong>
+                    Payment Provider :</strong>
+                </span>
+
+                <strong
+                    id="previewPaymentProvider">
+
+                    -
+
+                </strong>
+
+            </div><br>
+
+            <div>
+
+                <span><strong>
+                    Payment Method :</strong>
+                </span>
+
+                <strong
+                    id="previewPaymentMethod">
+
+                    -
+
+                </strong>
+
+            </div><br>
+
+            <div class="payment-reference-row">
+
+
+    <strong id="previewPaymentReference">
+        -
+    </strong>
+
+</div><br>
+
+            <div>
+
+                <span><strong>
+                    Payment Status : </strong>
+                </span>
+
+                <strong
+                    id="previewPaymentStatus">
+
+                    Pending
+
+                </strong>
+
+            </div><br>
+
+        </div>
+
+    </div>
+    
+    <div
+    class="invoice-selection"
+    id="previewNotesSection">
+
+    <div
+        class="invoice-edit-badge"
+        id="previewNotesBadge">
+
+        Notes
+
+    </div>
+
+    <div class="invoice-notes">
+
+        <h4 class="invoice-section-heading">
+            NOTES
+        </h4>
+
+        <p id="estimatePreviewNotes">
+            No notes.
+        </p>
+
+    </div>
+
+</div>
+
+
+<div
+    class="invoice-selection"
+    id="previewTermsSection">
+
+    <div
+        class="invoice-edit-badge"
+        id="previewTermsBadge">
+
+        Terms & Conditions
+
+    </div>
+
+    <div class="invoice-notes">
+
+        <h4 class="invoice-section-heading">
+            TERMS & CONDITIONS
+        </h4>
+
+        <p id="estimatePreviewTerms">
+            No terms available.
+        </p>
+
+    </div>
+
+</div>
+
+
+<div
+    class="invoice-selection"
+    id="previewValiditySection">
+
+    <div
+        class="invoice-edit-badge"
+        id="previewValidityBadge">
+
+        Validity
+
+    </div>
+
+    <div class="invoice-notes">
+
+        <h4 class="invoice-section-heading">
+
+            VALIDITY
+
+        </h4>
+
+        <p>
+
+            <strong>
+                Valid Until:
+            </strong>
+
+            <span
+                id="estimatePreviewValidity">
+
+                -
+
+            </span>
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<div
+    class="invoice-selection"
+    id="previewSignatureSection">
+
+    <div
+        class="invoice-edit-badge"
+        id="previewSignatureBadge">
+
+        Signature
+
+    </div>
+
+    <div class="invoice-signature">
+
+        <p>
+
+            <strong>
+                Signed By:
+            </strong>
+
+            <span
+                id="estimatePreviewSignatureName">
+            </span>
+
+            <span
+                id="estimatePreviewSignatureTitle">
+            </span>
+
+        </p>
+
+        <img
+            id="estimatePreviewSignatureImage"
+            alt="Signature">
+
+    </div>
+
+</div>
+
+</div>
+
+<div
+    class="invoice-payment-actions">
+
+    <button
+        type="button"
+        id="approveEstimateButton"
+        class="secondary-button">
+
+        Approve
+
+    </button>
+
+    <button
+        type="button"
+        id="sendEstimateButton"
+        class="primary-button">
+
+        Send Estimate
+
+    </button>
+    
+        <button
+        type="button"
+        id="convertEstimate"
+        class="primary-button">
+
+        Convert
+
+    </button>
+
+    <button
+        type="button"
+        id="printEstimatePdfButton"
+        class="primary-button">
+
+        Print as PDF
+
+    </button>
+
+</div>
+</aside>
+
+<div
+    class="estimate-result-overlay"
+    id="estimateResultOverlay">
+
+    <div
+        class="estimate-result-modal"
+        id="estimateResultModal">
+
+        <h3
+            id="estimateResultTitle">
+
+            Estimate Limit Reached
+
+        </h3>
+
+        <p
+            id="estimateResultMessage">
+
+            You have exceeded your estimates plan.
+
+        </p>
+
+        <button
+            type="button"
+            id="estimateResultButton">
+
+            Upgrade Plan
+
+        </button>
+
+
+    </div>
+
+</div>
+<div id="toastContainer"></div>
+<script
+    src="https://npmcdn.com/parse/dist/parse.min.js"
+    onerror="console.error('PARSE SDK LOAD ERROR:', event)">
+</script>
+          <script src="api.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="navbar.js"></script>
+<script src="currency-map.js"></script>
+<script src="estimates.js"></script>
+<script src="estimates2.js"></script>
+
+</body>
+
+</html>
+

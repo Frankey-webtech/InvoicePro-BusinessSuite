@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icon-192.png">
+
+
+<meta name="description"
+content="InvoicePro pricing plans for freelancers and businesses.">
+
+<title>InvoicePro | Pricing</title>
+
+<script src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+
+<script src="api.js"></script>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
+
+<link rel="stylesheet"
+href="pricing.css">
+<link rel="stylesheet" href="navbar.css">
+</head>
+
+<body>
+
+<div class="pricing-page">
+
+ <header class="header" id="siteHeader">
+
+        <a href="index.html" class="logo" id="siteLogo">
+            <img src="logo.png" alt="InvoicePro" class="logo-icon">
+            <h2>Invoice<span>Pro</span></h2>
+        </a>
+
+        <nav class="main-navigation" id="mainNavigation" aria-label="Main navigation">
+
+            <a href="features.html">Features</a>
+
+            <a href="pricing.html" class="active" aria-current="page">Pricing</a>
+
+            <a href="about.html">About</a>
+
+            <a href="faq.html">FAQ</a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+            
+            <a href="cookies.html">Cookies</a>
+
+            <a href="privacy.html">Privacy Policy</a>
+            
+            <a href="refund.html">Refund Policy</a>
+            
+            <a href="learn.html">Learn more</a>
+            
+            <a href="terms.html">Terms</a>
+            
+            <a href="help.html">Help</a>
+
+        </nav>
+
+        <div class="header-buttons">
+
+            <a href="login.html" class="login-btn" id="headerLoginBtn">
+                Login
+            </a>
+
+            <a href="signup.html" class="primary-btn" id="headerSignupBtn">
+                Get Started
+            </a>
+
+        </div>
+
+    </header>
+<main>
+
+<section class="pricing-hero">
+
+<div class="pricing-eyebrow">
+<i class="ri-price-tag-3-line"></i>
+Simple pricing
+</div>
+
+<h1>
+Plans that grow with your business
+</h1>
+
+<p>
+Start for free and upgrade when you need more invoices,
+clients, templates and business tools.
+</p>
+
+<div class="pricing-location-status"
+id="pricingLocationStatus">
+
+<i class="ri-map-pin-line"></i>
+
+<span id="pricingLocationText">
+Checking your location...
+</span>
+
+</div>
+
+</section>
+
+<section class="pricing-loading-section"
+id="pricingLoadingSection">
+
+<div class="pricing-loader">
+
+<div class="pricing-spinner"></div>
+
+<h2>
+Preparing your pricing
+</h2>
+
+<p>
+We're determining the plans available in your country.
+</p>
+
+</div>
+
+</section>
+
+<section class="pricing-location-section"
+id="pricingLocationSection">
+
+<div class="pricing-location-card">
+
+<div class="pricing-location-icon">
+
+<i class="ri-map-pin-user-line"></i>
+
+</div>
+
+<div class="pricing-location-content">
+
+<div class="pricing-location-badge">
+Location required
+</div>
+
+<h2>
+Turn on your location
+</h2>
+
+<p>
+We use your location only to determine your country
+and display pricing in your country's currency.
+</p>
+
+<button
+type="button"
+class="pricing-location-button"
+id="enableLocationButton">
+
+<i class="ri-map-pin-line"></i>
+
+Turn on location
+
+</button>
+
+<p class="pricing-location-error"
+id="pricingLocationError"></p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="pricing-content"
+id="pricingContent">
+
+<div class="pricing-country-bar">
+
+<div class="pricing-country-information">
+
+<div class="pricing-country-icon">
+<i class="ri-global-line"></i>
+</div>
+
+<div>
+
+<span class="pricing-country-label">
+Pricing for
+</span>
+
+<strong id="pricingCountry">
+—
+</strong>
+
+</div>
+
+</div>
+
+<div class="pricing-currency-information">
+
+<span>
+Currency
+</span>
+
+<strong id="pricingCurrency">
+—
+</strong>
+
+</div>
+
+</div>
+
+<div class="pricing-billing-header">
+
+<div>
+
+<span class="pricing-section-label">
+Choose your plan
+</span>
+
+<h2>
+Simple, transparent pricing
+</h2>
+
+<p>
+Everything you need to manage your invoices professionally.
+</p>
+
+</div>
+
+<div class="pricing-billing-toggle">
+
+<span id="monthlyBillingLabel">
+Monthly
+</span>
+
+<label class="pricing-switch">
+
+<input
+type="checkbox"
+id="billingToggle">
+
+<span class="pricing-switch-slider"></span>
+
+</label>
+
+<span id="yearlyBillingLabel">
+Yearly
+</span>
+
+<span class="pricing-save-badge">
+Save up to 20%
+</span>
+
+</div>
+
+</div>
+
+<div class="pricing-grid"
+id="pricingGrid"></div>
+
+</section>
+
+<section class="pricing-benefits">
+
+<div class="pricing-benefits-header">
+
+<span class="pricing-section-label">
+Why InvoicePro?
+</span>
+
+<h2>
+Everything you need to get started
+</h2>
+
+</div>
+
+<div class="pricing-benefits-grid">
+
+<div class="pricing-benefit-card">
+
+<div class="pricing-benefit-icon">
+<i class="ri-gift-line"></i>
+</div>
+
+<div>
+
+<h3>
+Start free
+</h3>
+
+<p>
+Use the Free plan without a subscription commitment.
+</p>
+
+</div>
+
+</div>
+
+<div class="pricing-benefit-card">
+
+<div class="pricing-benefit-icon">
+<i class="ri-shield-check-line"></i>
+</div>
+
+<div>
+
+<h3>
+Secure platform
+</h3>
+
+<p>
+Your business information is handled with security in mind.
+</p>
+
+</div>
+
+</div>
+
+<div class="pricing-benefit-card">
+
+<div class="pricing-benefit-icon">
+<i class="ri-refresh-line"></i>
+</div>
+
+<div>
+
+<h3>
+Upgrade anytime
+</h3>
+
+<p>
+Move to a higher plan as your business grows.
+</p>
+
+</div>
+
+</div>
+
+<div class="pricing-benefit-card">
+
+<div class="pricing-benefit-icon">
+<i class="ri-customer-service-2-line"></i>
+</div>
+
+<div>
+
+<h3>
+Support when needed
+</h3>
+
+<p>
+Get help when you need assistance with your InvoicePro account.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<footer class="pricing-footer">
+
+<div class="pricing-footer-inner">
+
+<div class="pricing-footer-brand">
+
+<img src="logo.png"
+alt="InvoicePro">
+
+<div>
+Invoice<span>Pro</span>
+</div>
+
+</div>
+
+<p>
+Professional invoicing made simple.
+</p>
+
+</div>
+
+</footer>
+
+</div>
+
+<div class="pricing-toast"
+id="pricingToast">
+
+<div class="pricing-toast-icon">
+<i class="ri-information-line"></i>
+</div>
+
+<div class="pricing-toast-content">
+
+<strong id="pricingToastTitle">
+Notice
+</strong>
+
+<span id="pricingToastMessage"></span>
+
+</div>
+
+<button
+type="button"
+id="pricingToastClose"
+aria-label="Close notification">
+
+<i class="ri-close-line"></i>
+
+</button>
+
+</div>
+
+<script src="pricing.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icon-192.png">
+
+        <link
+rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
+
+    <title>InvoicePro | Profile</title>
+    
+    <script src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+
+<script src="api.js"></script>
+
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="profille.css">
+</head>
+<body>
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay">
+</div>
+<aside
+    class="sidebar"
+    id="sidebar">
+
+    <div class="sidebar-logo">
+
+        <div class="logo-icon">
+
+            <img src="logo.png" alt="">
+
+        </div>
+
+        <div class="logo-text">
+
+            <h2>InvoicePro</h2>
+
+            <span>Business Suite</span>
+
+        </div>
+
+    </div>
+
+    <nav class="sidebar-nav">
+
+        <a href="index.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-home-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Home
+            </span>
+
+        </a>
+
+        <a href="dashboard.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-dashboard-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Dashboard
+            </span>
+
+        </a>
+
+        <a href="invoice.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-file-list-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Invoices
+            </span>
+
+        </a>
+
+        <a href="estimates.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-draft-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Estimates
+            </span>
+
+        </a>
+
+        <a href="clients.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-group-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Clients
+            </span>
+
+        </a>
+
+        <a href="upcoming-payments.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-calendar-check-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Upcoming Payments
+            </span>
+
+        </a>
+
+        <a href="paid-invoices.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-money-dollar-circle-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Paid Invoices
+            </span>
+
+        </a>
+
+        <a href="recurring-invoices.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-repeat-2-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Recurring Invoices
+            </span>
+
+        </a>
+        
+         <a href="expenses.html" class="nav-item">
+
+            <span class="nav-icon">
+               <i class="ri-wallet-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Expenses
+            </span>
+
+        </a>
+
+        <a href="reports.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-bar-chart-box-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Reports
+            </span>
+
+        </a>
+
+        <a href="subscription.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-vip-crown-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Subscription
+            </span>
+
+        </a>
+
+        <a href="subscription-history.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-history-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Subscription History
+            </span>
+
+        </a>
+
+        <div
+            class="nav-dropdown"
+            id="settingsDropdown">
+
+            <button
+                class="nav-dropdown-btn"
+                id="settingsToggle">
+
+                <div class="nav-dropdown-left">
+
+                    <span class="nav-icon">
+                        <i class="ri-layout-4-line"></i>
+                    </span>
+
+                    <span>
+                        Templates
+                    </span>
+
+                </div>
+
+                <i
+                    id="settingsArrow"
+                    class="ri-arrow-down-s-line dropdown-arrow"></i>
+
+            </button>
+
+            <div
+                class="dropdown-menu"
+                id="settingsMenu">
+
+                <a
+                    href="invoices-design.html"
+                    class="dropdown-item">
+
+                    <span class="nav-icon">
+                        <i class="ri-file-text-line"></i>
+                    </span>
+
+                    Invoice Template
+
+                </a>
+
+                <a
+                    href="estimates-design.html"
+                    class="dropdown-item">
+
+                    <span class="nav-icon">
+                        <i class="ri-draft-line"></i>
+                    </span>
+
+                    Estimate Template
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <a href="settings.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-settings-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Settings
+            </span>
+
+        </a>
+
+        <a href="profile.html" class="nav-item active">
+
+            <span class="nav-icon">
+                <i class="ri-user-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Profile
+            </span>
+
+        </a>
+
+        <a href="business-profile.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-building-2-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Business Profile
+            </span>
+
+        </a>
+
+        <a href="live-chat.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-chat-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Live Chat
+            </span>
+
+        </a>
+
+        <a
+            href="account-mgt.html"
+            class="nav-item logout-item"
+            id="logoutBtn">
+
+            <span class="nav-icon">
+                <i class="ri-logout-box-r-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Logout
+            </span>
+
+        </a>
+
+    </nav>
+
+</aside>
+<div class="page-wrapper">
+<header class="page-header">
+
+        <div class="header-left">
+
+            <button
+                class="menu-toggle"
+                id="menuToggle">
+
+               <i class="ri-menu-line"></i>
+
+            </button>
+
+            <div class="page-title">
+
+              
+
+                <h1>
+
+                    Profile
+
+                </h1>
+
+            </div>
+
+        </div>
+
+        <div class="header-right">
+
+            <button
+                class="notification-btn"
+                id="notificationBtn" style="display: none;">
+
+                <i class="ri-notification-3-line"></i>
+
+                <span
+                    class="notification-badge"
+                    id="notificationBadge">
+
+                    3
+
+                </span>
+
+            </button>
+
+            <button
+                class="header-avatar"
+                id="profileMenuBtn">
+
+                <img
+                    src="
+                    profile.png"
+                    alt="Profile"
+                    id="headerProfileImage">
+
+            </button>
+
+        </div>
+
+    </header>
+
+    <main class="profile-content">
+
+
+        <section class="profile-card profile-overview">
+
+            <div class="profile-top">
+
+                <div class="profile-avatar-wrapper">
+
+                    <img
+                        src="profile.png"
+                        alt="Profile Image"
+                        class="profile-avatar"
+                        id="profileImage">
+
+                    <button
+                        class="upload-avatar-btn"
+                        id="uploadProfileImageBtn">
+
+                        Edit Photo
+
+                    </button>
+
+                </div>
+
+                <div class="profile-details">
+
+                    <h2 id="userFullName">
+
+                        ----
+
+                    </h2>
+
+                    <div class="profile-badges">
+
+                        <span
+                            class="plan-badge"
+                            id="userPlan">
+
+                            ----
+
+                        </span>
+
+                        <span
+                            class="status-badge"
+                            id="subscriptionStatus">
+
+                            ----
+
+                        </span>
+
+                    </div>
+
+                    <p id="userEmail">
+
+                        ----
+
+                    </p>
+
+                    <p>
+
+                        Member Since
+
+                        <span id="memberSince">
+
+                            ----
+
+                        </span>
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="profile-stats">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="ri-file-list-3-line"></i>
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span class="stat-label">
+
+                            Invoices
+
+                        </span>
+
+                        <h3 id="invoiceCount">
+
+                            ----
+
+                        </h3>
+
+                    </div>
+
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                    <i class="ri-user-3-line"></i>
+                    </div>
+
+
+                    <div class="stat-content">
+
+                        <span class="stat-label">
+
+                            Clients
+
+                        </span>
+
+                        <h3 id="clientCount">
+
+                            ----
+
+                        </h3>
+
+                    </div>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="ri-money-dollar-circle-line"></i>
+
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span class="stat-label">
+
+                            Total Revenue
+
+                        </span>
+
+                        <h3 id="totalRevenue">
+
+                          ----
+
+                        </h3>
+
+                    </div>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="ri-history-line"></i>
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span class="stat-label">
+
+                            Last Updated
+
+                        </span>
+
+                        <h3 id="lastUpdated">
+
+                            ----
+
+                        </h3>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="profile-card personal-info-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2>
+
+                        Personal Information
+
+                    </h2>
+
+                    <p>
+
+                        Manage your personal account information.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="info-list">
+
+                <div class="info-item">
+
+                    <div class="info-left">
+
+                        <span class="info-label">
+
+                            Full Name
+
+                        </span>
+
+                        <span
+                            class="info-value"
+                            id="fullNameField">
+
+                            ----
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <div class="info-left">
+
+                        <span class="info-label">
+
+                            Email Address
+
+                        </span>
+
+                        <span
+                            class="info-value"
+                            id="emailField">
+                            ----
+                        </span>
+
+                    </div>
+
+                    <button
+                        class="edit-btn"
+                        id="editEmailBtn">
+
+                        Edit
+
+                    </button>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <div class="info-left">
+
+                        <span class="info-label">
+
+                            Phone Number
+
+                        </span>
+
+                        <span
+                            class="info-value"
+                            id="phoneField">
+                            ----
+                        </span>
+
+                    </div>
+
+                    <button
+                        class="edit-btn"
+                        id="editPhoneBtn">
+
+                        Edit
+
+                    </button>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <div class="info-left">
+
+                        <span class="info-label">
+
+                            Country
+
+                        </span>
+
+                        <span
+                            class="info-value"
+                            id="countryField">
+
+                            ----
+
+                        </span>
+
+                    </div>
+
+                    <button
+                        class="edit-btn"
+                        id="editCountryBtn">
+
+                        Edit
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    
+    
+    <section class="profile-card personal-info-card">
+
+    <div class="card-header">
+
+        <div>
+
+            <h2>
+                Payment Details
+            </h2>
+
+            <p>
+                Manage the payment information that will automatically appear on your invoices and estimates.
+            </p>
+
+        </div>
+
+    </div>
+    
+    <div class="payment-status" id="paymentStatus">
+
+    <span
+        class="payment-status-indicator"
+        id="paymentStatusIndicator">
+    </span>
+
+    <span id="paymentStatusText">
+        Payment details not set
+    </span>
+
+</div>
+
+    <div class="payment-form">
+
+        <div class="payment-form-group">
+
+            <label for="paymentMethodInput">
+                Payment Method
+            </label>
+
+            <select id="paymentMethodInput">
+
+                <option value="">
+                    Not Set
+                </option>
+
+                <option value="bank_transfer">
+                    Bank Transfer
+                </option>
+
+                <option value="card">
+                    Card Payment
+                </option>
+
+                <option value="mobile_money">
+                    Mobile Money
+                </option>
+
+                <option value="paypal">
+                    PayPal
+                </option>
+
+                <option value="paystack">
+                    Paystack
+                </option>
+
+                <option value="flutterwave">
+                    Flutterwave
+                </option>
+
+                <option value="cash">
+                    Cash
+                </option>
+
+                <option value="other">
+                    Other
+                </option>
+
+            </select>
+
+        </div>
+        <div class="payment-form-group">
+
+    <label for="paymentProviderInput">
+        Payment Provider
+    </label>
+
+    <select id="paymentProviderInput">
+
+        <option value="">
+            Not Set
+        </option>
+
+        <option value="paystack">
+            Paystack
+        </option>
+
+        <option value="flutterwave">
+            Flutterwave
+        </option>
+
+        <option value="paypal">
+            PayPal
+        </option>
+
+        <option value="stripe">
+            Stripe
+        </option>
+
+        <option value="other">
+            Other
+        </option>
+
+    </select>
+
+</div>
+
+<div class="payment-form-group">
+
+    <label for="bankNameInput">
+        Bank Name
+    </label>
+
+    <input
+        type="text"
+        id="bankNameInput"
+        placeholder="Enter bank name">
+
+</div>
+
+<div class="payment-form-group">
+
+    <label for="accountNameInput">
+        Account Name
+    </label>
+
+    <input
+        type="text"
+        id="accountNameInput"
+        placeholder="Enter account name">
+
+</div>
+
+<div class="payment-form-group">
+
+    <label for="accountNumberInput">
+        Account Number
+    </label>
+
+    <input
+        type="text"
+        id="accountNumberInput"
+        inputmode="numeric"
+        placeholder="Enter account number">
+
+</div>
+
+<div class="payment-form-group">
+
+    <label for="routingNumberInput">
+        Routing / Sort Code
+    </label>
+
+    <input
+        type="text"
+        id="routingNumberInput"
+        placeholder="Enter routing or sort code">
+
+</div>
+
+<div class="payment-form-group">
+
+    <label for="swiftCodeInput">
+        SWIFT / BIC
+    </label>
+
+    <input
+        type="text"
+        id="swiftCodeInput"
+        placeholder="Enter SWIFT or BIC code">
+
+</div>
+
+<div class="payment-form-group">
+
+    <label for="paymentLinkInput">
+        Payment Link
+    </label>
+
+    <input
+        type="url"
+        id="paymentLinkInput"
+        placeholder="https://example.com/payment">
+
+</div>
+
+<div class="payment-form-group">
+
+    <label for="paymentAccountInput">
+        Payment Account
+    </label>
+
+    <input
+        type="text"
+        id="paymentAccountInput"
+        placeholder="Enter payment account or email">
+
+</div>
+
+<div class="payment-form-group">
+
+    <label for="paymentTermsInput">
+        Payment Terms
+    </label>
+
+    <select id="paymentTermsInput">
+
+        <option value="">
+            Not Set
+        </option>
+
+        <option value="due_on_receipt">
+            Due on Receipt
+        </option>
+
+        <option value="7_days">
+            Due in 7 Days
+        </option>
+
+        <option value="15_days">
+            Due in 15 Days
+        </option>
+
+        <option value="30_days">
+            Due in 30 Days
+        </option>
+
+        <option value="60_days">
+            Due in 60 Days
+        </option>
+
+        <option value="90_days">
+            Due in 90 Days
+        </option>
+
+        <option value="custom">
+            Custom
+        </option>
+
+    </select>
+
+</div>
+
+<div class="payment-form-group">
+
+    <label for="paymentDueDaysInput">
+        Custom Payment Period
+    </label>
+
+    <input
+        type="number"
+        id="paymentDueDaysInput"
+        min="1"
+        placeholder="Number of days">
+
+</div>
+
+<div class="payment-form-group payment-instructions-group">
+
+    <label for="paymentInstructionsInput">
+        Payment Instructions
+    </label>
+
+    <textarea
+        id="paymentInstructionsInput"
+        rows="5"
+        placeholder="Enter any additional payment instructions for your customers"></textarea>
+
+</div>
+    </div>
+    <div class="payment-actions">
+
+    <button
+        type="button"
+        class="btn-primary payment-save-btn"
+        id="savePaymentBtn"
+       disabled >
+
+        Save Changes
+
+    </button>
+    </div>
+
+
+</section>
+
+    </main>
+
+
+
+<input
+    type="file"
+    id="profileImageInput"
+    accept="image/png,image/jpeg,image/jpg,image/webp"
+    hidden>
+    
+<div class="modal" id="editEmailModal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h2>Edit Email</h2>
+
+            <button
+                class="modal-close"
+                id="closeEmailModal">
+
+                &times;
+
+            </button>
+
+        </div>
+
+        <div class="modal-body">
+
+            <label for="emailInput">
+
+                New Email
+
+            </label>
+
+            <input
+                type="email"
+                id="emailInput"
+                placeholder="Enter your email">
+
+        </div>
+
+        <div class="modal-footer">
+
+            <button
+                class="btn-secondary"
+                id="cancelEmailBtn">
+
+                Cancel
+
+            </button>
+
+            <button
+                class="btn-primary"
+                id="saveEmailBtn">
+
+                Save Changes
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="modal" id="editPhoneModal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h2>Edit Phone Number</h2>
+
+            <button
+                class="modal-close"
+                id="closePhoneModal">
+
+                &times;
+
+            </button>
+
+        </div>
+
+        <div class="modal-body">
+
+            <label for="phoneInput">
+
+                Phone Number
+
+            </label>
+
+            <input
+                type="tel"
+                id="phoneInput"
+                placeholder="+234XXXXXXXXXX">
+
+        </div>
+
+        <div class="modal-footer">
+
+            <button
+                class="btn-secondary"
+                id="cancelPhoneBtn">
+
+                Cancel
+
+            </button>
+
+            <button
+                class="btn-primary"
+                id="savePhoneBtn">
+
+                Save Changes
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="modal" id="editCountryModal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h2>Edit Country</h2>
+
+            <button
+                class="modal-close"
+                id="closeCountryModal">
+
+                &times;
+
+            </button>
+
+        </div>
+
+        <div class="modal-body">
+
+            <label for="countryInput">
+
+                Country
+
+            </label>
+
+            <select id="countryInput">
+
+                <option value="">Select Country</option>
+                <option value="">Loading Countries...</option>
+            </select>
+
+        </div>
+
+        <div class="modal-footer">
+
+            <button
+                class="btn-secondary"
+                id="cancelCountryBtn">
+
+                Cancel
+
+            </button>
+
+            <button
+                class="btn-primary"
+                id="saveCountryBtn">
+
+                Save Changes
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+<div id="toastContainer"></div>
+<script src="navbar.js"></script>
+<script src="profile.js"></script>
+</body>
+</html>

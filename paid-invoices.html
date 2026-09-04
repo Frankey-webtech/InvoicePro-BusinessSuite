@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icon-192.png">
+
+    <title>InvoicePro | Paid Invoices</title>
+        <script src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+
+    <script src="api.js"></script>
+
+    <link
+        rel="stylesheet"
+        href="paid-invoices.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+    >
+    <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay">
+</div>
+<aside
+    class="sidebar"
+    id="sidebar">
+
+    <div class="sidebar-logo">
+
+        <div class="logo-icon">
+
+            <img src="logo.png" alt="">
+
+        </div>
+
+        <div class="logo-text">
+
+            <h2>InvoicePro</h2>
+
+            <span>Business Suite</span>
+
+        </div>
+
+    </div>
+
+    <nav class="sidebar-nav">
+
+        <a href="index.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-home-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Home
+            </span>
+
+        </a>
+
+        <a href="dashboard.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-dashboard-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Dashboard
+            </span>
+
+        </a>
+
+        <a href="invoice.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-file-list-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Invoices
+            </span>
+
+        </a>
+
+        <a href="estimates.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-draft-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Estimates
+            </span>
+
+        </a>
+
+        <a href="clients.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-group-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Clients
+            </span>
+
+        </a>
+
+        <a href="upcoming-payments.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-calendar-check-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Upcoming Payments
+            </span>
+
+        </a>
+
+        <a href="paid-invoices.html" class="nav-item active">
+
+            <span class="nav-icon">
+                <i class="ri-money-dollar-circle-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Paid Invoices
+            </span>
+
+        </a>
+
+        <a href="recurring-invoices.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-repeat-2-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Recurring Invoices
+            </span>
+
+        </a>
+        
+         <a href="expenses.html" class="nav-item">
+
+            <span class="nav-icon">
+               <i class="ri-wallet-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Expenses
+            </span>
+
+        </a>
+
+        <a href="reports.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-bar-chart-box-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Reports
+            </span>
+
+        </a>
+
+        <a href="subscription.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-vip-crown-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Subscription
+            </span>
+
+        </a>
+
+        <a href="subscription-history.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-history-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Subscription History
+            </span>
+
+        </a>
+
+        <div
+            class="nav-dropdown"
+            id="settingsDropdown">
+
+            <button
+                class="nav-dropdown-btn"
+                id="settingsToggle">
+
+                <div class="nav-dropdown-left">
+
+                    <span class="nav-icon">
+                        <i class="ri-layout-4-line"></i>
+                    </span>
+
+                    <span>
+                        Templates
+                    </span>
+
+                </div>
+
+                <i
+                    id="settingsArrow"
+                    class="ri-arrow-down-s-line dropdown-arrow"></i>
+
+            </button>
+
+            <div
+                class="dropdown-menu"
+                id="settingsMenu">
+
+                <a
+                    href="invoices-design.html"
+                    class="dropdown-item">
+
+                    <span class="nav-icon">
+                        <i class="ri-file-text-line"></i>
+                    </span>
+
+                    Invoice Template
+
+                </a>
+
+                <a
+                    href="estimates-design.html"
+                    class="dropdown-item">
+
+                    <span class="nav-icon">
+                        <i class="ri-draft-line"></i>
+                    </span>
+
+                    Estimate Template
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <a href="settings.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-settings-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Settings
+            </span>
+
+        </a>
+
+        <a href="profile.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-user-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Profile
+            </span>
+
+        </a>
+
+        <a href="business-profile.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-building-2-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Business Profile
+            </span>
+
+        </a>
+
+        <a href="live-chat.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-chat-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Live Chat
+            </span>
+
+        </a>
+
+        <a
+            href="account-mgt.html"
+            class="nav-item logout-item"
+            id="logoutBtn">
+
+            <span class="nav-icon">
+                <i class="ri-logout-box-r-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Logout
+            </span>
+
+        </a>
+
+    </nav>
+
+</aside>
+<div class="page-wrapper">
+<header class="page-header">
+
+        <div class="header-left">
+
+            <button
+                class="menu-toggle"
+                id="menuToggle">
+
+               <i class="ri-menu-line"></i>
+
+            </button>
+
+            <div class="page-title">
+
+              
+
+                <h1>
+
+                    Paid Invoices
+
+                </h1>
+<p>View all invoices that have been paid.</p>
+
+            </div>
+
+        </div>
+
+        <div class="header-right">
+
+            <button
+                class="notification-btn"
+                id="notificationBtn" style="display: none;">
+
+                <i class="ri-notification-3-line"></i>
+
+                <span
+                    class="notification-badge"
+                    id="notificationBadge">
+
+                    3
+
+                </span>
+
+            </button>
+
+            <button
+                class="header-avatar"
+                id="profileMenuBtn">
+
+                <img
+                    src="
+                    profile.png"
+                    alt="Profile"
+                    id="headerProfileImage">
+
+            </button>
+
+        </div>
+
+    </header>
+
+<main class="paid-invoices-page">
+
+        <section
+            class="paid-summary"
+            aria-label="Paid invoice summary"
+        >
+
+            <article class="summary-card">
+                <div class="summary-card-content">
+                    <span class="summary-label">Total Earned</span>
+
+                    <h2
+                        id="total-paid-amount"
+                        class="summary-value"
+                    >
+                        $0.00
+                    </h2>
+                </div>
+            </article>
+
+            <article class="summary-card">
+                <div class="summary-card-content">
+                    <span class="summary-label">Paid Invoices</span>
+
+                    <h2
+                        id="paid-invoice-count"
+                        class="summary-value"
+                    >
+                        0
+                    </h2>
+                </div>
+            </article>
+
+        </section>
+
+        <section class="invoices-section">
+
+            <div class="section-header">
+                <div>
+                    <h2>All Paid Invoices</h2>
+                    <p>Your completed invoice payments.</p>
+                </div>
+            </div>
+
+            <div
+                id="paid-invoices-loading"
+                class="state-message loading-state"
+                hidden
+            >
+                <span class="loading-spinner">
+                    <i class="ri-loader-4-line"></i>
+                </span>
+
+                <p>Loading paid invoices...</p>
+            </div>
+
+            <div
+                id="paid-invoices-error"
+                class="state-message error-state"
+                hidden
+            >
+                <i class="ri-error-warning-line"></i>
+
+                <p id="paid-invoices-error-message">
+                    Unable to load paid invoices.
+                </p>
+
+                <button
+                    type="button"
+                    id="retry-paid-invoices"
+                    class="retry-button"
+                >
+                    <i class="ri-refresh-line"></i>
+                    <span>Try Again</span>
+                </button>
+            </div>
+
+            <div
+                id="paid-invoices-empty"
+                class="state-message empty-state"
+                hidden
+            >
+                <div class="empty-icon">
+                    <i class="ri-file-list-3-line"></i>
+                </div>
+
+                <h3>No paid invoices yet</h3>
+
+                <p>
+                    Paid invoices will appear here once an invoice has been marked as paid.
+                </p>
+            </div>
+
+            <div
+                id="paid-invoices-container"
+                class="invoice-table-container"
+                hidden
+            >
+                <table class="invoice-table">
+
+                    <thead>
+                        <tr>
+                            <th>Invoice</th>
+                            <th>Client</th>
+                            <th>Amount</th>
+                            <th>Due Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="paid-invoices-list"></tbody>
+
+                </table>
+            </div>
+
+        </section>
+
+    </main>
+
+    <template id="paid-invoice-template">
+
+        <tr class="invoice-row">
+
+            <td class="invoice-info">
+                <div class="invoice-number">—</div>
+                <div class="invoice-title">—</div>
+            </td>
+
+            <td class="invoice-client">
+                <div class="company-name">—</div>
+                <div class="contact-person">—</div>
+            </td>
+
+            <td class="invoice-amount">—</td>
+
+            <td class="invoice-due-date">—</td>
+
+            <td>
+                <span class="paid-status">
+                    <i class="ri-checkbox-circle-line"></i>
+                    <span>Paid</span>
+                </span>
+            </td>
+
+        </tr>
+
+    </template>
+
+    <script src="paid-invoices.js"></script>
+
+</body>
+</html>

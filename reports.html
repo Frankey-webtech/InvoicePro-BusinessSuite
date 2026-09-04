@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icon-192.png">
+
+    <title>InvoicePro | Reports</title>
+
+    <script src="https://unpkg.com/parse@3.5.0/dist/parse.min.js"></script>
+<script src="api.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="reports.css">
+    <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay">
+</div>
+<aside
+    class="sidebar"
+    id="sidebar">
+
+    <div class="sidebar-logo">
+
+        <div class="logo-icon">
+
+            <img src="logo.png" alt="">
+
+        </div>
+
+        <div class="logo-text">
+
+            <h2>InvoicePro</h2>
+
+            <span>Business Suite</span>
+
+        </div>
+
+    </div>
+
+    <nav class="sidebar-nav">
+
+        <a href="index.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-home-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Home
+            </span>
+
+        </a>
+
+        <a href="dashboard.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-dashboard-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Dashboard
+            </span>
+
+        </a>
+
+        <a href="invoice.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-file-list-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Invoices
+            </span>
+
+        </a>
+
+        <a href="estimates.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-draft-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Estimates
+            </span>
+
+        </a>
+
+        <a href="clients.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-group-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Clients
+            </span>
+
+        </a>
+
+        <a href="upcoming-payments.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-calendar-check-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Upcoming Payments
+            </span>
+
+        </a>
+
+        <a href="paid-invoices.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-money-dollar-circle-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Paid Invoices
+            </span>
+
+        </a>
+
+        <a href="recurring-invoices.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-repeat-2-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Recurring Invoices
+            </span>
+
+        </a>
+        
+         <a href="expenses.html" class="nav-item">
+
+            <span class="nav-icon">
+               <i class="ri-wallet-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Expenses
+            </span>
+
+        </a>
+
+        <a href="reports.html" class="nav-item active">
+
+            <span class="nav-icon">
+                <i class="ri-bar-chart-box-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Reports
+            </span>
+
+        </a>
+
+        <a href="subscription.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-vip-crown-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Subscription
+            </span>
+
+        </a>
+
+        <a href="subscription-history.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-history-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Subscription History
+            </span>
+
+        </a>
+
+        <div
+            class="nav-dropdown"
+            id="settingsDropdown">
+
+            <button
+                class="nav-dropdown-btn"
+                id="settingsToggle">
+
+                <div class="nav-dropdown-left">
+
+                    <span class="nav-icon">
+                        <i class="ri-layout-4-line"></i>
+                    </span>
+
+                    <span>
+                        Templates
+                    </span>
+
+                </div>
+
+                <i
+                    id="settingsArrow"
+                    class="ri-arrow-down-s-line dropdown-arrow"></i>
+
+            </button>
+
+            <div
+                class="dropdown-menu"
+                id="settingsMenu">
+
+                <a
+                    href="invoices-design.html"
+                    class="dropdown-item">
+
+                    <span class="nav-icon">
+                        <i class="ri-file-text-line"></i>
+                    </span>
+
+                    Invoice Template
+
+                </a>
+
+                <a
+                    href="estimates-design.html"
+                    class="dropdown-item">
+
+                    <span class="nav-icon">
+                        <i class="ri-draft-line"></i>
+                    </span>
+
+                    Estimate Template
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <a href="settings.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-settings-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Settings
+            </span>
+
+        </a>
+
+        <a href="profile.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-user-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Profile
+            </span>
+
+        </a>
+
+        <a href="business-profile.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-building-2-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Business Profile
+            </span>
+
+        </a>
+
+        <a href="live-chat.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-chat-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Live Chat
+            </span>
+
+        </a>
+
+        <a
+            href="account-mgt.html"
+            class="nav-item logout-item"
+            id="logoutBtn">
+
+            <span class="nav-icon">
+                <i class="ri-logout-box-r-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Logout
+            </span>
+
+        </a>
+
+    </nav>
+
+</aside>
+<div class="page-wrapper">
+<header class="page-header">
+
+        <div class="header-left">
+
+            <button
+                class="menu-toggle"
+                id="menuToggle">
+
+               <i class="ri-menu-line"></i>
+
+            </button>
+
+            <div class="page-title">
+
+              
+
+                <h1>
+
+                    Reports
+
+                </h1>
+
+            </div>
+
+        </div>
+
+        <div class="header-right">
+
+            <button
+                class="notification-btn"
+                id="notificationBtn" style="display: none;">
+
+                <i class="ri-notification-3-line"></i>
+
+                <span
+                    class="notification-badge"
+                    id="notificationBadge">
+
+                    3
+
+                </span>
+
+            </button>
+
+            <button
+                class="header-avatar"
+                id="profileMenuBtn">
+
+                <img
+                    src="
+                    profile.png"
+                    alt="Profile"
+                    id="headerProfileImage">
+
+            </button>
+
+        </div>
+
+    </header>
+
+<div class="reports-page">
+
+    <header class="reports-header">
+
+        <div class="reports-header-left">
+
+            <button
+                type="button"
+                id="reportsMobileMenuBtn"
+                class="reports-mobile-menu"
+            >
+                <i class="ri-menu-line"></i>
+            </button>
+
+            <div>
+                <h1>Reports</h1>
+                <p>Track your business performance and financial activity.</p>
+            </div>
+
+        </div>
+
+        <div class="reports-header-actions">
+
+            <button
+                type="button"
+                id="reportsRefreshBtn"
+                class="reports-icon-button"
+                title="Refresh reports"
+            >
+                <i class="ri-refresh-line"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <section class="reports-toolbar">
+
+        <div class="reports-filter-group">
+
+            <label for="reportsDateFilter">
+                Date range
+            </label>
+
+            <select id="reportsDateFilter">
+                <option value="30days">Last 30 days</option>
+                <option value="90days">Last 90 days</option>
+                <option value="6months" selected>Last 6 months</option>
+                <option value="12months">Last 12 months</option>
+                <option value="thisYear">This year</option>
+                <option value="all">All time</option>
+                <option value="custom">Custom range</option>
+            </select>
+
+        </div>
+
+
+        <div
+            id="reportsCustomDateWrapper"
+            class="reports-custom-date-wrapper"
+        >
+
+            <div class="reports-filter-group">
+
+                <label for="reportsStartDate">
+                    From
+                </label>
+
+                <input
+                    type="date"
+                    id="reportsStartDate"
+                >
+
+            </div>
+
+            <div class="reports-filter-group">
+
+                <label for="reportsEndDate">
+                    To
+                </label>
+
+                <input
+                    type="date"
+                    id="reportsEndDate"
+                >
+
+            </div>
+
+            <button
+                type="button"
+                id="reportsApplyDateBtn"
+                class="reports-apply-button"
+            >
+                Apply
+            </button>
+
+        </div>
+
+
+        <div class="reports-filter-status" id="reportsFilterStatus">
+            Last 6 months
+        </div>
+
+    </section>
+
+
+    <main class="reports-content">
+
+
+        <!-- SUMMARY CARDS -->
+
+        <section class="reports-summary-grid">
+
+            <article class="report-summary-card revenue-card">
+
+                <div class="report-summary-top">
+
+                    <div class="report-summary-icon">
+                        <i class="ri-money-dollar-circle-line"></i>
+                    </div>
+
+                    <span
+                        id="reportsRevenueGrowth"
+                        class="report-growth positive"
+                    >
+                        --
+                    </span>
+
+                </div>
+
+                <div class="report-summary-label">
+                    Total Revenue
+                </div>
+
+                <div
+                    id="reportsTotalRevenue"
+                    class="report-summary-value"
+                >
+                    $0.00
+                </div>
+
+                <div class="report-summary-description">
+                    Revenue from paid invoices
+                </div>
+
+            </article>
+
+
+            <article class="report-summary-card">
+
+                <div class="report-summary-top">
+
+                    <div class="report-summary-icon">
+                        <i class="ri-checkbox-circle-line"></i>
+                    </div>
+
+                    <span class="report-summary-badge paid">
+                        Paid
+                    </span>
+
+                </div>
+
+                <div class="report-summary-label">
+                    Paid Invoices
+                </div>
+
+                <div
+                    id="reportsPaidInvoices"
+                    class="report-summary-value"
+                >
+                    0
+                </div>
+
+                <div
+                    id="reportsPaidInvoiceAmount"
+                    class="report-summary-description"
+                >
+                    $0.00
+                </div>
+
+            </article>
+
+
+            <article class="report-summary-card">
+
+                <div class="report-summary-top">
+
+                    <div class="report-summary-icon">
+                        <i class="ri-time-line"></i>
+                    </div>
+
+                    <span class="report-summary-badge pending">
+                        Pending
+                    </span>
+
+                </div>
+
+                <div class="report-summary-label">
+                    Unpaid Invoices
+                </div>
+
+                <div
+                    id="reportsUnpaidInvoices"
+                    class="report-summary-value"
+                >
+                    0
+                </div>
+
+                <div
+                    id="reportsUnpaidAmount"
+                    class="report-summary-description"
+                >
+                    $0.00 outstanding
+                </div>
+
+            </article>
+
+
+            <article class="report-summary-card">
+
+                <div class="report-summary-top">
+
+                    <div class="report-summary-icon overdue-icon">
+                        <i class="ri-error-warning-line"></i>
+                    </div>
+
+                    <span class="report-summary-badge overdue">
+                        Overdue
+                    </span>
+
+                </div>
+
+                <div class="report-summary-label">
+                    Overdue Invoices
+                </div>
+
+                <div
+                    id="reportsOverdueInvoices"
+                    class="report-summary-value"
+                >
+                    0
+                </div>
+
+                <div
+                    id="reportsOverdueAmount"
+                    class="report-summary-description"
+                >
+                    $0.00 overdue
+                </div>
+
+            </article>
+
+
+            <article class="report-summary-card">
+
+                <div class="report-summary-top">
+
+                    <div class="report-summary-icon">
+                        <i class="ri-wallet-3-line"></i>
+                    </div>
+
+                </div>
+
+                <div class="report-summary-label">
+                    Outstanding Amount
+                </div>
+
+                <div
+                    id="reportsOutstandingAmount"
+                    class="report-summary-value"
+                >
+                    $0.00
+                </div>
+
+                <div class="report-summary-description">
+                    Pending + overdue invoices
+                </div>
+
+            </article>
+
+
+            <article class="report-summary-card">
+
+                <div class="report-summary-top">
+
+                    <div class="report-summary-icon">
+                        <i class="ri-file-list-3-line"></i>
+                    </div>
+
+                </div>
+
+                <div class="report-summary-label">
+                    Total Invoices
+                </div>
+
+                <div
+                    id="reportsTotalInvoices"
+                    class="report-summary-value"
+                >
+                    0
+                </div>
+
+                <div
+                    id="reportsInvoiceGrowth"
+                    class="report-summary-description"
+                >
+                    --
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- REVENUE + INVOICE STATUS -->
+
+        <section class="reports-main-grid">
+
+            <article class="reports-panel reports-revenue-panel">
+
+                <div class="reports-panel-header">
+
+                    <div>
+
+                        <h2>Revenue Overview</h2>
+
+                        <p>
+                            Revenue generated from paid invoices.
+                        </p>
+
+                    </div>
+
+                    <select id="reportsRevenuePeriod">
+
+                        <option value="30days">
+                            30 days
+                        </option>
+
+                        <option value="6months" selected>
+                            6 months
+                        </option>
+
+                        <option value="12months">
+                            12 months
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="revenue-chart-wrapper">
+
+                    <div
+                        id="reportsRevenueChart"
+                        class="revenue-chart"
+                    ></div>
+
+                </div>
+
+            </article>
+
+
+            <article class="reports-panel">
+
+                <div class="reports-panel-header">
+
+                    <div>
+
+                        <h2>Invoice Statistics</h2>
+
+                        <p>
+                            Current invoice status distribution.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="invoice-statistics">
+
+                    <div class="invoice-stat-row">
+
+                        <div class="invoice-stat-label">
+                            <span class="invoice-status-dot draft"></span>
+                            Draft
+                        </div>
+
+                        <strong id="reportsDraftCount">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="invoice-stat-row">
+
+                        <div class="invoice-stat-label">
+                            <span class="invoice-status-dot pending"></span>
+                            Pending
+                        </div>
+
+                        <strong id="reportsPendingCount">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="invoice-stat-row">
+
+                        <div class="invoice-stat-label">
+                            <span class="invoice-status-dot paid"></span>
+                            Paid
+                        </div>
+
+                        <strong id="reportsPaidCount">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="invoice-stat-row">
+
+                        <div class="invoice-stat-label">
+                            <span class="invoice-status-dot overdue"></span>
+                            Overdue
+                        </div>
+
+                        <strong id="reportsOverdueCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+<div class="invoice-status-progress">
+
+    <div
+        id="reportsDraftProgress"
+        class="invoice-progress-segment draft"
+    ></div>
+
+    <div
+        id="reportsPendingProgress"
+        class="invoice-progress-segment pending"
+    ></div>
+
+    <div
+        id="reportsPaidProgress"
+        class="invoice-progress-segment paid"
+    ></div>
+
+    <div
+        id="reportsOverdueProgress"
+        class="invoice-progress-segment overdue"
+    ></div>
+
+</div>
+
+<div class="invoice-status-percentages">
+    
+    <div>
+        <strong id="reportsDraftPercentage">
+            0%
+        </strong>
+    </div>
+    
+    <div>
+        <strong id="reportsPendingPercentage">
+            0%
+        </strong>
+    </div>
+    
+    <div>
+        <strong id="reportsPaidPercentage">
+            0%
+        </strong>
+    </div>
+    
+    <div>
+        <strong id="reportsOverduePercentage">
+            0%
+        </strong>
+    </div>
+    
+</div>
+
+            </article>
+
+        </section>
+
+
+        <!-- REVENUE BY CLIENT + TAX -->
+
+        <section class="reports-main-grid">
+
+            <article class="reports-panel">
+
+                <div class="reports-panel-header">
+
+                    <div>
+
+                        <h2>Revenue by Client</h2>
+
+                        <p>
+                            Top clients by paid invoice revenue.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div
+                    id="reportsClientRevenueList"
+                    class="client-revenue-list"
+                >
+
+                    <div class="reports-empty-state">
+                        <i class="ri-bar-chart-2-line"></i>
+                        <p>No revenue data available.</p>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="reports-panel">
+
+                <div class="reports-panel-header">
+
+                    <div>
+
+                        <h2>Tax Summary</h2>
+
+                        <p>
+                            Tax collected from invoices.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="tax-summary">
+
+                    <div class="tax-summary-item">
+
+                        <span>
+                            Taxable Revenue
+                        </span>
+
+                        <strong id="reportsTaxableRevenue">
+                            $0.00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="tax-summary-item">
+
+                        <span>
+                            Total Tax
+                        </span>
+
+                        <strong id="reportsTotalTax">
+                            $0.00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="tax-summary-item">
+
+                        <span>
+                            Average Tax Rate
+                        </span>
+
+                        <strong id="reportsAverageTax">
+                            0%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="tax-summary-item">
+
+                        <span>
+                            Taxable Invoices
+                        </span>
+
+                        <strong id="reportsTaxableInvoices">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- ESTIMATE STATISTICS + PAYMENT METHODS -->
+
+        <section class="reports-main-grid">
+
+            <article class="reports-panel">
+
+                <div class="reports-panel-header">
+
+                    <div>
+
+                        <h2>Estimate Statistics</h2>
+
+                        <p>
+                            Overview of your estimates.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="estimate-stat-grid">
+
+                    <div class="estimate-stat-item">
+
+                        <span>
+                            Total Estimates
+                        </span>
+
+                        <strong id="reportsTotalEstimates">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="estimate-stat-item">
+
+                        <span>
+                            Draft Estimates
+                        </span>
+
+                        <strong id="reportsDraftEstimates">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="estimate-stat-item">
+
+                        <span>
+                            Approved Estimates
+                        </span>
+
+                        <strong id="reportsApprovedEstimates">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="estimate-stat-item">
+
+                        <span>
+                            Estimated Value
+                        </span>
+
+                        <strong id="reportsEstimatedValue">
+                            $0.00
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="reports-panel">
+
+                <div class="reports-panel-header">
+
+                    <div>
+
+                        <h2>Payment Methods</h2>
+
+                        <p>
+                            How invoices are being paid.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div
+                    id="reportsPaymentMethods"
+                    class="payment-method-list"
+                >
+
+                    <div class="reports-empty-state">
+                        <i class="ri-bank-card-line"></i>
+                        <p>No payment method data available.</p>
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+<section class="reports-panel reports-table-panel">
+
+    <div class="reports-panel-header reports-table-header">
+
+        <div>
+
+            <h2>Estimate Report</h2>
+
+            <p>
+                Detailed estimate activity for the selected period.
+            </p>
+
+        </div>
+
+        <div class="reports-table-actions">
+
+            <button
+                type="button"
+                id="reportsExportEstimatePdfBtn"
+                class="reports-secondary-button"
+            >
+                <i class="ri-file-pdf-2-line"></i>
+                PDF
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="reports-table-wrapper">
+
+        <table class="reports-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>Estimate</th>
+
+                    <th>Client</th>
+
+                    <th>Issue Date</th>
+
+                    <th>Expiry Date</th>
+
+                    <th>Status</th>
+
+                    <th>Tax</th>
+
+                    <th>Total</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="reportsEstimateTableBody">
+
+                <tr>
+
+                    <td
+                        colspan="7"
+                        class="reports-table-loading"
+                    >
+                        Loading estimates...
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+        <section class="reports-panel reports-table-panel">
+
+            <div class="reports-panel-header reports-table-header">
+
+                <div>
+
+                    <h2>Invoice Report</h2>
+
+                    <p>
+                        Detailed invoice activity for the selected period.
+                    </p>
+
+                </div>
+
+                <div class="reports-table-actions">
+
+                    <button
+                        type="button"
+                        id="reportsExportPdfBtn"
+                        class="reports-secondary-button"
+                    >
+                        <i class="ri-file-pdf-2-line"></i>
+                        PDF
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="reports-table-wrapper">
+
+                <table class="reports-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Invoice</th>
+
+                            <th>Client</th>
+
+                            <th>Issue Date</th>
+
+                            <th>Due Date</th>
+
+                            <th>Status</th>
+
+                            <th>Tax</th>
+
+                            <th>Total</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="reportsInvoiceTableBody">
+
+                        <tr>
+
+                            <td
+                                colspan="7"
+                                class="reports-table-loading"
+                            >
+                                Loading reports...
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+<div
+    id="reportsLoadingOverlay"
+    class="reports-loading-overlay"
+>
+
+    <div class="reports-loading-card">
+
+        <div class="reports-spinner"></div>
+
+        <span>
+            Loading reports...
+        </span>
+
+    </div>
+
+</div>
+
+
+<div
+    id="reportsToast"
+    class="reports-toast"
+></div>
+
+<div
+    id="reportsUpgradeOverlay"
+    class="reports-upgrade-overlay"
+    aria-hidden="true"
+>
+
+    <div
+        class="reports-upgrade-card"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="reportsUpgradeTitle"
+    >
+
+        <div class="reports-upgrade-icon">
+            <i class="ri-lock-line"></i>
+        </div>
+
+        <h2 id="reportsUpgradeTitle">
+            Reports Unavailable
+        </h2>
+
+        <p>
+            Invoice Reports are not available on your current plan.
+            Upgrade your plan to access detailed invoice reports,
+            revenue insights, tax summaries, and more.
+        </p>
+
+        <button
+            type="button"
+            id="reportsUpgradeButton"
+            class="reports-upgrade-button"
+            onclick="window.location='subscription.html'"
+        >
+            <i class="ri-vip-crown-line"></i>
+            <span>Upgrade Now</span>
+        </button>
+
+    </div>
+
+</div>
+
+<script src="reports.js"></script>
+
+</body>
+</html>

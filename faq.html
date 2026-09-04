@@ -1,0 +1,1892 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icon-192.png">
+
+
+    <title>InvoicePro | Frequently Asked Questions</title>
+
+    <script src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+    <script src="api.js"></script>
+
+    <link rel="stylesheet" href="faq.css">
+        <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
+</head>
+
+<body>
+
+  <header class="header" id="siteHeader">
+
+        <a href="index.html" class="logo" id="siteLogo">
+            <img src="logo.png" alt="InvoicePro" class="logo-icon">
+            <h2>Invoice<span>Pro</span></h2>
+        </a>
+
+        <nav class="main-navigation" id="mainNavigation" aria-label="Main navigation">
+
+            <a href="features.html">Features</a>
+
+            <a href="pricing.html">Pricing</a>
+
+            <a href="about.html">About</a>
+
+            <a href="faq.html" class="active" aria-current="page">FAQ</a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+            
+            <a href="cookies.html">Cookies</a>
+
+            <a href="privacy.html">Privacy Policy</a>
+            
+            <a href="refund.html">Refund Policy</a>
+            
+            <a href="learn.html">Learn more</a>
+            
+            <a href="terms.html">Terms</a>
+            
+            <a href="help.html">Help</a>
+
+        </nav>
+
+        <div class="header-buttons">
+
+            <a href="login.html" class="login-btn" id="headerLoginBtn">
+                Login
+            </a>
+
+            <a href="signup.html" class="primary-btn" id="headerSignupBtn">
+                Get Started
+            </a>
+
+        </div>
+
+    </header>
+<main>
+
+<section class="faq-hero">
+
+    <div class="faq-hero-content">
+
+        <div class="faq-badge">
+
+            <i class="ri-question-line"></i>
+
+            <span>Help Center</span>
+
+        </div>
+
+        <h1>
+            Frequently Asked
+            <br>
+            Questions
+        </h1>
+
+        <p>
+            Find answers to common questions about InvoicePro,
+            invoicing, payments, plans, security, and managing
+            your business.
+        </p>
+
+        <div class="faq-search" id="faqSearchBox">
+
+            <i class="ri-search-line"></i>
+
+            <input
+                type="search"
+                id="faqSearchInput"
+                placeholder="Search for questions..."
+                autocomplete="off"
+            >
+
+            <button
+                type="button"
+                id="clearFaqSearch"
+                aria-label="Clear search"
+            >
+                <i class="ri-close-line"></i>
+            </button>
+
+        </div>
+
+        <div class="faq-search-status" id="faqSearchStatus"></div>
+
+    </div>
+
+    <div class="faq-hero-decoration faq-decoration-one"></div>
+    <div class="faq-hero-decoration faq-decoration-two"></div>
+    <div class="faq-hero-decoration faq-decoration-three"></div>
+
+</section>
+
+
+<section class="faq-section" id="faqSection">
+
+    <div class="faq-container">
+
+        <aside class="faq-sidebar" id="faqSidebar">
+
+            <div class="faq-sidebar-inner">
+
+                <div class="faq-sidebar-heading">
+
+                    <span>Browse Topics</span>
+
+                </div>
+
+                <nav class="faq-menu" id="faqCategoryMenu">
+
+                    <button
+                        type="button"
+                        class="active"
+                        data-category="all"
+                        id="faqCategoryAll"
+                    >
+                        <i class="ri-chat-3-line"></i>
+                        <span>All Questions</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        data-category="general"
+                        id="faqCategoryGeneral"
+                    >
+                        <i class="ri-information-line"></i>
+                        <span>General</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        data-category="account"
+                        id="faqCategoryAccount"
+                    >
+                        <i class="ri-user-line"></i>
+                        <span>Account & Security</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        data-category="invoices"
+                        id="faqCategoryInvoices"
+                    >
+                        <i class="ri-file-list-3-line"></i>
+                        <span>Invoices</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        data-category="clients"
+                        id="faqCategoryClients"
+                    >
+                        <i class="ri-group-line"></i>
+                        <span>Clients</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        data-category="payments"
+                        id="faqCategoryPayments"
+                    >
+                        <i class="ri-bank-card-line"></i>
+                        <span>Payments</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        data-category="expenses"
+                        id="faqCategoryExpenses"
+                    >
+                        <i class="ri-wallet-3-line"></i>
+                        <span>Expenses</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        data-category="features"
+                        id="faqCategoryFeatures"
+                    >
+                        <i class="ri-star-line"></i>
+                        <span>Features</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        data-category="billing"
+                        id="faqCategoryBilling"
+                    >
+                        <i class="ri-price-tag-3-line"></i>
+                        <span>Billing & Plans</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        data-category="integrations"
+                        id="faqCategoryIntegrations"
+                    >
+                        <i class="ri-puzzle-line"></i>
+                        <span>Integrations</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        data-category="security"
+                        id="faqCategorySecurity"
+                    >
+                        <i class="ri-shield-check-line"></i>
+                        <span>Security & Privacy</span>
+                    </button>
+
+                </nav>
+
+                <div class="support-box">
+
+                    <div class="support-icon">
+
+                        <i class="ri-customer-service-2-line"></i>
+
+                    </div>
+
+                    <h3>
+                        Still have questions?
+                    </h3>
+
+                    <p>
+                        Our support team is ready to help
+                        you with anything you need.
+                    </p>
+
+                    <a
+                        href="contact.html"
+                        id="sidebarContactSupport"
+                    >
+                        Contact Support
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <div class="faq-content" id="faqContent">
+
+            <div class="faq-content-header">
+
+                <div>
+
+                    <span class="faq-section-label">
+                        Knowledge Base
+                    </span>
+
+                    <h2>
+                        Everything you need to know
+                    </h2>
+
+                </div>
+
+                <span
+                    class="faq-count"
+                    id="faqCount"
+                >
+                    0 Questions
+                </span>
+
+            </div>
+
+
+            <div class="faq-group" data-category-group="general">
+
+                <div class="faq-group-heading">
+
+                    <div class="faq-group-icon">
+                        <i class="ri-information-line"></i>
+                    </div>
+
+                    <div>
+                        <span>General</span>
+                        <h3>About InvoicePro</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="faq-list">
+
+
+                    <article
+                        class="faq-item active"
+                        data-category="general"
+                        data-faq-item
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-title"
+                            aria-expanded="true"
+                            id="faqQuestion1"
+                        >
+
+                            <span>
+                                What is InvoicePro?
+                            </span>
+
+                            <i class="ri-subtract-line"></i>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                InvoicePro is an all-in-one invoicing and
+                                business management platform that helps
+                                businesses create professional invoices,
+                                manage clients, track payments, monitor
+                                expenses, generate estimates, and keep
+                                important financial information organized
+                                in one place.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="faq-item"
+                        data-category="general"
+                        data-faq-item
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-title"
+                            aria-expanded="false"
+                            id="faqQuestion2"
+                        >
+
+                            <span>
+                                Who can use InvoicePro?
+                            </span>
+
+                            <i class="ri-add-line"></i>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                InvoicePro is designed for freelancers,
+                                entrepreneurs, small businesses, service
+                                providers, agencies, consultants, and
+                                growing businesses that need a simple way
+                                to manage invoices, clients, payments,
+                                expenses, and business records.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="faq-item"
+                        data-category="general"
+                        data-faq-item
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-title"
+                            aria-expanded="false"
+                            id="faqQuestion3"
+                        >
+
+                            <span>
+                                Do I need technical knowledge to use InvoicePro?
+                            </span>
+
+                            <i class="ri-add-line"></i>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                No. InvoicePro is designed to be simple
+                                and easy to use. You can create invoices,
+                                add clients, manage expenses, track
+                                payments, and use other features without
+                                needing programming or accounting
+                                experience.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="faq-item"
+                        data-category="general"
+                        data-faq-item
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-title"
+                            aria-expanded="false"
+                            id="faqQuestion4"
+                        >
+
+                            <span>
+                                Can I use InvoicePro from my phone?
+                            </span>
+
+                            <i class="ri-add-line"></i>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Yes. InvoicePro is designed to work across
+                                modern desktop, tablet, and mobile
+                                browsers, allowing you to manage your
+                                business wherever you are.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-group" data-category-group="account">
+
+                <div class="faq-group-heading">
+
+                    <div class="faq-group-icon">
+                        <i class="ri-user-line"></i>
+                    </div>
+
+                    <div>
+                        <span>Account</span>
+                        <h3>Account & Security</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="faq-list">
+
+                    <article
+                        class="faq-item"
+                        data-category="account"
+                        data-faq-item
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-title"
+                            aria-expanded="false"
+                            id="faqQuestion5"
+                        >
+
+                            <span>
+                                Do I need an account to create invoices?
+                            </span>
+
+                            <i class="ri-add-line"></i>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Yes. You need an InvoicePro account to
+                                access invoice creation and the business
+                                management features available on the
+                                platform.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="faq-item"
+                        data-category="account"
+                        data-faq-item
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-title"
+                            aria-expanded="false"
+                            id="faqQuestion6"
+                        >
+
+                            <span>
+                                How do I reset my password?
+                            </span>
+
+                            <i class="ri-add-line"></i>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                If you forget your password, use the
+                                password reset option on the login page
+                                and follow the instructions provided to
+                                regain access to your account.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="faq-item"
+                        data-category="account"
+                        data-faq-item
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-title"
+                            aria-expanded="false"
+                            id="faqQuestion7"
+                        >
+
+                            <span>
+                                Can I update my business information?
+                            </span>
+
+                            <i class="ri-add-line"></i>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Yes. Your business information can be
+                                managed through your account settings.
+                                This information can be used across your
+                                invoices and business documents.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-group" data-category-group="invoices">
+
+                <div class="faq-group-heading">
+
+                    <div class="faq-group-icon">
+                        <i class="ri-file-list-3-line"></i>
+                    </div>
+
+                    <div>
+                        <span>Invoicing</span>
+                        <h3>Invoices & Estimates</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="faq-list">
+
+                    <article
+                        class="faq-item"
+                        data-category="invoices"
+                        data-faq-item
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-title"
+                            aria-expanded="false"
+                            id="faqQuestion8"
+                        >
+
+                            <span>
+                                How do I create an invoice?
+                            </span>
+
+                            <i class="ri-add-line"></i>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                After signing in, open the Invoices
+                                section and select the option to create
+                                an invoice. Add your client, products or
+                                services, invoice details, payment
+                                information, notes, and other required
+                                information before saving the invoice.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="faq-item"
+                        data-category="invoices"
+                        data-faq-item
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-title"
+                            aria-expanded="false"
+                            id="faqQuestion9"
+                        >
+
+                            <span>
+                                Can I customize my invoices?
+                            </span>
+
+                            <i class="ri-add-line"></i>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Yes. InvoicePro provides invoice templates
+                                and customization options that allow you
+                                to create professional invoices that match
+                                your business identity.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="faq-item"
+                        data-category="invoices"
+                        data-faq-item
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-title"
+                            aria-expanded="false"
+                            id="faqQuestion10"
+                        >
+
+                            <span>
+                                Can I create estimates?
+                            </span>
+
+                            <i class="ri-add-line"></i>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Yes. InvoicePro allows you to create and
+                                manage estimates for clients. Estimates
+                                can contain products or services,
+                                quantities, pricing, notes, and other
+                                relevant business information.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="faq-item"
+                        data-category="invoices"
+                        data-faq-item
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-title"
+                            aria-expanded="false"
+                            id="faqQuestion11"
+                        >
+
+                            <span>
+                                Can an estimate be converted into an invoice?
+                            </span>
+
+                            <i class="ri-add-line"></i>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Yes. An estimate can be converted into an
+                                invoice when you are ready to bill the
+                                client. The relevant estimate information
+                                can be carried into the invoice so you do
+                                not have to recreate everything manually.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="faq-item"
+                        data-category="invoices"
+                        data-faq-item
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-title"
+                            aria-expanded="false"
+                            id="faqQuestion12"
+                        >
+
+                            <span>
+                                Can I edit an invoice after creating it?
+                            </span>
+
+                            <i class="ri-add-line"></i>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Yes. InvoicePro allows you to edit invoice
+                                information when changes are required.
+                                Depending on the invoice status and action
+                                being performed, some information may be
+                                subject to platform rules.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="faq-item"
+                        data-category="invoices"
+                        data-faq-item
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-title"
+                            aria-expanded="false"
+                            id="faqQuestion13"
+                        >
+
+                            <span>
+                                What invoice statuses are available?
+                            </span>
+
+                            <i class="ri-add-line"></i>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                InvoicePro supports invoice statuses such
+                                as Draft, Pending, Paid, and Overdue so
+                                you can keep track of where each invoice
+                                stands.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-group" data-category-group="clients">
+
+                <div class="faq-group-heading">
+
+                    <div class="faq-group-icon">
+                        <i class="ri-group-line"></i>
+                    </div>
+
+                    <div>
+                        <span>Clients</span>
+                        <h3>Managing Your Clients</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="faq-list">
+
+                    <article
+                        class="faq-item"
+                        data-category="clients"
+                        data-faq-item
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-title"
+                            aria-expanded="false"
+                            id="faqQuestion14"
+                        >
+
+                            <span>
+                                Can I store my clients in InvoicePro?
+                            </span>
+
+                            <i class="ri-add-line"></i>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Yes. InvoicePro includes client management
+                                so you can keep client information
+                                organized and use your saved clients when
+                                creating invoices and other documents.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="faq-item"
+                        data-category="clients"
+                        data-faq-item
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-title"
+                            aria-expanded="false"
+                            id="faqQuestion15"
+                        >
+
+                            <span>
+                                Can I update or remove a client?
+                            </span>
+
+                            <i class="ri-add-line"></i>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Yes. Client records can be managed from
+                                the Clients section, where available
+                                actions allow you to keep your client
+                                information up to date.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-group" data-category-group="payments">
+
+                <div class="faq-group-heading">
+
+                    <div class="faq-group-icon">
+                        <i class="ri-bank-card-line"></i>
+                    </div>
+
+                    <div>
+                        <span>Payments</span>
+                        <h3>Tracking Payments</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="faq-list">
+
+                    <article
+                        class="faq-item"
+                        data-category="payments"
+                        data-faq-item
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-title"
+                            aria-expanded="false"
+                            id="faqQuestion16"
+                        >
+
+                            <span>
+                                Can I track invoice payments?
+                            </span>
+
+                            <i class="ri-add-line"></i>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Yes. InvoicePro helps you track payment
+                                activity and invoice statuses so you can
+                                see which invoices have been paid and
+                                which still require attention.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="faq-item"
+                        data-category="payments"
+                        data-faq-item
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-title"
+                            aria-expanded="false"
+                            id="faqQuestion17"
+                        >
+
+                            <span>
+                                How can I identify overdue invoices?
+                            </span>
+
+                            <i class="ri-add-line"></i>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                InvoicePro provides invoice statuses and
+                                reporting tools that help you identify
+                                invoices that have passed their due dates
+                                and require follow-up.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-group" data-category-group="expenses">
+
+                <div class="faq-group-heading">
+
+                    <div class="faq-group-icon">
+                        <i class="ri-wallet-3-line"></i>
+                    </div>
+
+                    <div>
+                        <span>Expenses</span>
+                        <h3>Managing Business Expenses</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="faq-list">
+
+                    <article
+                        class="faq-item"
+                        data-category="expenses"
+                        data-faq-item
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-title"
+                            aria-expanded="false"
+                            id="faqQuestion18"
+                        >
+
+                            <span>
+                                Can I track business expenses?
+                            </span>
+
+                            <i class="ri-add-line"></i>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Yes. InvoicePro includes an Expenses
+                                section where you can record and organize
+                                business expenses, making it easier to
+                                understand where your money is going.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="faq-item"
+                        data-category="expenses"
+                        data-faq-item
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-title"
+                            aria-expanded="false"
+                            id="faqQuestion19"
+                        >
+
+                            <span>
+                                Can I categorize my expenses?
+                            </span>
+
+                            <i class="ri-add-line"></i>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Yes. Expenses can be organized using
+                                categories and other available information
+                                so you can better understand your spending
+                                and business costs.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="faq-item"
+                        data-category="expenses"
+                        data-faq-item
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-title"
+                            aria-expanded="false"
+                            id="faqQuestion20"
+                        >
+
+                            <span>
+                                Can expenses be included in reports?
+                            </span>
+
+                            <i class="ri-add-line"></i>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Yes. Expense information can be used in
+                                reporting and profit-related calculations
+                                to help give you a clearer view of your
+                                business finances.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-group" data-category-group="features">
+
+                <div class="faq-group-heading">
+
+                    <div class="faq-group-icon">
+                        <i class="ri-star-line"></i>
+                    </div>
+
+                    <div>
+                        <span>Platform</span>
+                        <h3>InvoicePro Features</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="faq-list">
+
+                    <article
+                        class="faq-item"
+                        data-category="features"
+                        data-faq-item
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-title"
+                            aria-expanded="false"
+                            id="faqQuestion21"
+                        >
+
+                            <span>
+                                What can I manage with InvoicePro?
+                            </span>
+
+                            <i class="ri-add-line"></i>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                InvoicePro brings several business
+                                activities together, including invoices,
+                                estimates, clients, payments, expenses,
+                                products and services, reports, and
+                                account settings.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="faq-item"
+                        data-category="features"
+                        data-faq-item
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-title"
+                            aria-expanded="false"
+                            id="faqQuestion22"
+                        >
+
+                            <span>
+                                Does InvoicePro provide business reports?
+                            </span>
+
+                            <i class="ri-add-line"></i>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Yes. InvoicePro provides reporting and
+                                statistics designed to help you understand
+                                invoices, revenue, expenses, payments, and
+                                overall business performance.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="faq-item"
+                        data-category="features"
+                        data-faq-item
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-title"
+                            aria-expanded="false"
+                            id="faqQuestion23"
+                        >
+
+                            <span>
+                                Can I manage products and services?
+                            </span>
+
+                            <i class="ri-add-line"></i>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Yes. The Products & Services section helps
+                                you keep commonly used products and
+                                services organized so they can be reused
+                                when preparing invoices and other business
+                                documents.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-group" data-category-group="billing">
+
+                <div class="faq-group-heading">
+
+                    <div class="faq-group-icon">
+                        <i class="ri-price-tag-3-line"></i>
+                    </div>
+
+                    <div>
+                        <span>Plans</span>
+                        <h3>Billing & Plans</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="faq-list">
+
+                    <article
+                        class="faq-item"
+                        data-category="billing"
+                        data-faq-item
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-title"
+                            aria-expanded="false"
+                            id="faqQuestion24"
+                        >
+
+                            <span>
+                                Is InvoicePro free to use?
+                            </span>
+
+                            <i class="ri-add-line"></i>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                InvoicePro offers a Free Plan that gives
+                                users access to core invoicing capabilities
+                                while operating within the limits of the
+                                plan.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="faq-item"
+                        data-category="billing"
+                        data-faq-item
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-title"
+                            aria-expanded="false"
+                            id="faqQuestion25"
+                        >
+
+                            <span>
+                                What plans are available?
+                            </span>
+
+                            <i class="ri-add-line"></i>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                InvoicePro provides different plans
+                                designed for different business needs,
+                                including Free, Basic, Pro, and Business
+                                options. Each plan provides different
+                                limits and capabilities.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="faq-item"
+                        data-category="billing"
+                        data-faq-item
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-title"
+                            aria-expanded="false"
+                            id="faqQuestion26"
+                        >
+
+                            <span>
+                                Can I upgrade my plan?
+                            </span>
+
+                            <i class="ri-add-line"></i>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Yes. You can choose a plan that better
+                                matches the needs of your business as your
+                                invoicing and management requirements grow.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="faq-item"
+                        data-category="billing"
+                        data-faq-item
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-title"
+                            aria-expanded="false"
+                            id="faqQuestion27"
+                        >
+
+                            <span>
+                                What happens when I reach my plan limit?
+                            </span>
+
+                            <i class="ri-add-line"></i>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                When you reach a limit associated with
+                                your current plan, InvoicePro will prevent
+                                additional items from being created where
+                                that limit applies. You can manage existing
+                                records or upgrade your plan when more
+                                capacity is needed.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-group" data-category-group="integrations">
+
+                <div class="faq-group-heading">
+
+                    <div class="faq-group-icon">
+                        <i class="ri-puzzle-line"></i>
+                    </div>
+
+                    <div>
+                        <span>Connections</span>
+                        <h3>Integrations</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="faq-list">
+
+                    <article
+                        class="faq-item"
+                        data-category="integrations"
+                        data-faq-item
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-title"
+                            aria-expanded="false"
+                            id="faqQuestion28"
+                        >
+
+                            <span>
+                                Does InvoicePro support integrations?
+                            </span>
+
+                            <i class="ri-add-line"></i>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                InvoicePro is designed with integrations
+                                in mind so businesses can connect their
+                                invoicing workflow with other tools and
+                                services where supported.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="faq-item"
+                        data-category="integrations"
+                        data-faq-item
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-title"
+                            aria-expanded="false"
+                            id="faqQuestion29"
+                        >
+
+                            <span>
+                                Where can I learn about available integrations?
+                            </span>
+
+                            <i class="ri-add-line"></i>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Visit the Integrations section of the
+                                InvoicePro website to learn more about
+                                supported integrations and available
+                                connection options.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-group" data-category-group="security">
+
+                <div class="faq-group-heading">
+
+                    <div class="faq-group-icon">
+                        <i class="ri-shield-check-line"></i>
+                    </div>
+
+                    <div>
+                        <span>Protection</span>
+                        <h3>Security & Privacy</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="faq-list">
+
+                    <article
+                        class="faq-item"
+                        data-category="security"
+                        data-faq-item
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-title"
+                            aria-expanded="false"
+                            id="faqQuestion30"
+                        >
+
+                            <span>
+                                Is my business information secure?
+                            </span>
+
+                            <i class="ri-add-line"></i>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                InvoicePro is designed with security and
+                                privacy in mind. Access to account data is
+                                controlled through authenticated accounts
+                                and appropriate platform security measures.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="faq-item"
+                        data-category="security"
+                        data-faq-item
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-title"
+                            aria-expanded="false"
+                            id="faqQuestion31"
+                        >
+
+                            <span>
+                                How does InvoicePro handle my personal information?
+                            </span>
+
+                            <i class="ri-add-line"></i>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                InvoicePro handles personal and business
+                                information according to its Privacy
+                                Policy. You can review the Privacy Policy
+                                to learn what information is collected,
+                                how it is used, and how it is protected.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="faq-item"
+                        data-category="security"
+                        data-faq-item
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-title"
+                            aria-expanded="false"
+                            id="faqQuestion32"
+                        >
+
+                            <span>
+                                Where can I read the InvoicePro Privacy Policy?
+                            </span>
+
+                            <i class="ri-add-line"></i>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                You can read the complete
+                                <a href="privacy.html">
+                                    InvoicePro Privacy Policy
+                                </a>
+                                to learn more about privacy, data
+                                collection, usage, storage, and your
+                                rights.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="faq-empty-state"
+                id="faqEmptyState"
+                hidden
+            >
+
+                <div class="faq-empty-icon">
+                    <i class="ri-search-eye-line"></i>
+                </div>
+
+                <h3>
+                    No questions found
+                </h3>
+
+                <p>
+                    We couldn't find any questions matching your search.
+                    Try another keyword or browse a different category.
+                </p>
+
+                <button
+                    type="button"
+                    id="resetFaqSearch"
+                >
+                    View All Questions
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="faq-cta">
+
+    <div class="faq-cta-inner">
+
+        <div class="cta-image" id="faqCtaIcon">
+    <i class="ri-customer-service-2-line"></i>
+</div>
+
+        <div class="cta-content">
+
+            <span class="cta-label">
+                Need More Help?
+            </span>
+
+            <h2>
+                Can't find what you're looking for?
+            </h2>
+
+            <p>
+                Our support team is always ready to help you with
+                questions about InvoicePro, your account, invoices,
+                payments, and more.
+            </p>
+
+        </div>
+
+        <div class="cta-btn">
+
+            <a
+                href="contact.html"
+                id="faqContactBtn"
+            >
+                Contact Us
+                <i class="ri-arrow-right-line"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div class="footer-brand">
+
+            <a
+                href="index.html"
+                class="footer-logo"
+                id="footerLogo"
+            >
+
+                <img
+                    src="logo.png"
+                    alt="InvoicePro"
+                >
+
+                <span>
+                    Invoice<span>Pro</span>
+                </span>
+
+            </a>
+
+            <p>
+                The all-in-one invoice generator that helps
+                businesses create, send and get paid faster.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Product</h3>
+
+            <a href="features.html">Features</a>
+
+            <a href="pricing.html">Pricing</a>
+
+            <a href="invoices-design.html">Invoice Templates</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Resources</h3>
+
+            <a href="help.html">Help Center</a>
+
+            <a href="learn.html">Guides</a>
+
+            <a href="faq.html">FAQ</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Company</h3>
+
+            <a href="about.html">About Us</a>
+
+            <a href="contact.html">Contact</a>
+
+            <a href="privacy.html">Privacy Policy</a>
+
+            <a href="terms.html">Terms</a>
+
+        </div>
+
+
+        <div class="footer-newsletter">
+
+            <h3>
+                Newsletter
+            </h3>
+
+            <p>
+                Subscribe for updates, product news,
+                and useful business tips.
+            </p>
+
+            <form
+                class="newsletter"
+                id="newsletterForm"
+            >
+
+                <input
+                    type="email"
+                    id="newsletterEmail"
+                    placeholder="Enter your email"
+                    autocomplete="email"
+                    required
+                >
+
+                <button
+                    type="submit"
+                    id="newsletterSubmit"
+                >
+                    Subscribe
+                </button>
+
+            </form>
+
+            <div
+                class="newsletter-message"
+                id="newsletterMessage"
+            ></div>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 InvoicePro. All rights reserved.
+        </p>
+
+        <div class="footer-bottom-links">
+
+            <a href="privacy.html">
+                Privacy
+            </a>
+
+            <a href="terms.html">
+                Terms
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script src="faq.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icon-192.png">
+
+    <title>InvoicePro | Expenses</title>
+    
+    <script src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+    <script src="api.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link
+rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
+
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="expenses.css">
+</head>
+<body>
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay">
+</div>
+<aside
+    class="sidebar"
+    id="sidebar">
+
+    <div class="sidebar-logo">
+
+        <div class="logo-icon">
+
+            <img src="logo.png" alt="">
+
+        </div>
+
+        <div class="logo-text">
+
+            <h2>InvoicePro</h2>
+
+            <span>Business Suite</span>
+
+        </div>
+
+    </div>
+
+    <nav class="sidebar-nav">
+
+        <a href="index.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-home-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Home
+            </span>
+
+        </a>
+
+        <a href="dashboard.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-dashboard-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Dashboard
+            </span>
+
+        </a>
+
+        <a href="invoice.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-file-list-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Invoices
+            </span>
+
+        </a>
+
+        <a href="estimates.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-draft-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Estimates
+            </span>
+
+        </a>
+
+        <a href="clients.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-group-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Clients
+            </span>
+
+        </a>
+
+        <a href="upcoming-payments.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-calendar-check-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Upcoming Payments
+            </span>
+
+        </a>
+
+        <a href="paid-invoices.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-money-dollar-circle-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Paid Invoices
+            </span>
+
+        </a>
+
+        <a href="recurring-invoices.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-repeat-2-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Recurring Invoices
+            </span>
+
+        </a>
+        
+         <a href="expenses.html" class="nav-item active">
+
+            <span class="nav-icon">
+               <i class="ri-wallet-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Expenses
+            </span>
+
+        </a>
+
+        <a href="reports.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-bar-chart-box-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Reports
+            </span>
+
+        </a>
+
+        <a href="subscription.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-vip-crown-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Subscription
+            </span>
+
+        </a>
+
+        <a href="subscription-history.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-history-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Subscription History
+            </span>
+
+        </a>
+
+        <div
+            class="nav-dropdown"
+            id="settingsDropdown">
+
+            <button
+                class="nav-dropdown-btn"
+                id="settingsToggle">
+
+                <div class="nav-dropdown-left">
+
+                    <span class="nav-icon">
+                        <i class="ri-layout-4-line"></i>
+                    </span>
+
+                    <span>
+                        Templates
+                    </span>
+
+                </div>
+
+                <i
+                    id="settingsArrow"
+                    class="ri-arrow-down-s-line dropdown-arrow"></i>
+
+            </button>
+
+            <div
+                class="dropdown-menu"
+                id="settingsMenu">
+
+                <a
+                    href="invoices-design.html"
+                    class="dropdown-item">
+
+                    <span class="nav-icon">
+                        <i class="ri-file-text-line"></i>
+                    </span>
+
+                    Invoice Template
+
+                </a>
+
+                <a
+                    href="estimates-design.html"
+                    class="dropdown-item">
+
+                    <span class="nav-icon">
+                        <i class="ri-draft-line"></i>
+                    </span>
+
+                    Estimate Template
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <a href="settings.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-settings-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Settings
+            </span>
+
+        </a>
+
+        <a href="profile.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-user-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Profile
+            </span>
+
+        </a>
+
+        <a href="business-profile.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-building-2-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Business Profile
+            </span>
+
+        </a>
+
+        <a href="live-chat.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-chat-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Live Chat
+            </span>
+
+        </a>
+
+        <a
+            href="account-mgt.html"
+            class="nav-item logout-item"
+            id="logoutBtn">
+
+            <span class="nav-icon">
+                <i class="ri-logout-box-r-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Logout
+            </span>
+
+        </a>
+
+    </nav>
+
+</aside>
+<div class="page-wrapper">
+<header class="page-header">
+
+        <div class="header-left">
+
+            <button
+                class="menu-toggle"
+                id="menuToggle">
+
+               <i class="ri-menu-line"></i>
+
+            </button>
+
+            <div class="page-title">
+
+              
+
+                <h1>
+
+                    Expenses
+
+                </h1>
+
+            </div>
+
+        </div>
+
+        <div class="header-right">
+
+            <button
+                class="notification-btn"
+                id="notificationBtn" style="display: none;">
+
+                <i class="ri-notification-3-line"></i>
+
+                <span
+                    class="notification-badge"
+                    id="notificationBadge">
+
+                    
+
+                </span>
+
+            </button>
+
+            <button
+                class="header-avatar"
+                id="profileMenuBtn">
+
+                <img
+                    src="
+                    profile.png"
+                    alt="Profile"
+                    id="headerProfileImage">
+
+            </button>
+
+        </div>
+
+    </header>
+
+<div class="expenses-page">
+
+    <main class="main-content">
+<div id="expensePlanLock" class="expense-plan-lock">
+    <div class="expense-plan-lock-card">
+        <div class="expense-plan-lock-icon">
+            <i class="ri-lock-2-line"></i>
+        </div>
+
+        <h2>Expenses is a Business Feature</h2>
+
+        <p>
+            Expense tracking is available on the Business and Enterprise plans.
+            Upgrade your subscription to access this page.
+        </p>
+
+        <button
+            type="button"
+            id="expensePlanUpgradeBtn"
+            class="expense-plan-upgrade-btn"
+        >
+            <i class="ri-vip-crown-2-line"></i>
+            <span>View Subscription Plans</span>
+        </button>
+    </div>
+</div>
+
+
+        <div class="page-container">
+
+            <section class="page-toolbar">
+
+                <div class="toolbar-text">
+                    <h2>Expense Overview</h2>
+                    <p>Monitor where your money is going.</p>
+                </div>
+
+                <button class="primary-btn" id="addExpenseBtn" type="button">
+                    <i class="ri-add-line"></i>
+                    <span>Add Expense</span>
+                </button>
+
+            </section>
+
+            <section class="summary-grid">
+
+                <div class="summary-card">
+
+                    <div class="summary-card-top">
+                        <div class="summary-icon">
+                            <i class="ri-wallet-3-line"></i>
+                        </div>
+
+                        <span class="summary-label">Total Expenses</span>
+                    </div>
+
+                    <div class="summary-value" id="totalExpenses">
+                        $0.00
+                    </div>
+
+                    <div class="summary-footer">
+                        <span class="summary-meta" id="totalExpenseCount">
+                            0 expenses
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="summary-card">
+
+                    <div class="summary-card-top">
+                        <div class="summary-icon">
+                            <i class="ri-calendar-line"></i>
+                        </div>
+
+                        <span class="summary-label">This Month</span>
+                    </div>
+
+                    <div class="summary-value" id="monthlyExpenses">
+                        $0.00
+                    </div>
+
+                    <div class="summary-footer">
+                        <span class="summary-change" id="monthlyExpenseChange">
+                            0%
+                        </span>
+
+                        <span class="summary-meta">
+                            vs last month
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="summary-card">
+
+                    <div class="summary-card-top">
+                        <div class="summary-icon">
+                            <i class="ri-calendar-check-line"></i>
+                        </div>
+
+                        <span class="summary-label">This Week</span>
+                    </div>
+
+                    <div class="summary-value" id="weeklyExpenses">
+                        $0.00
+                    </div>
+
+                    <div class="summary-footer">
+                        <span class="summary-meta" id="weeklyExpenseCount">
+                            0 expenses
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="summary-card">
+
+                    <div class="summary-card-top">
+                        <div class="summary-icon">
+                            <i class="ri-pie-chart-line"></i>
+                        </div>
+
+                        <span class="summary-label">Profit</span>
+                    </div>
+
+                    <div class="summary-value" id="profitValue">
+                        $0.00
+                    </div>
+
+                    <div class="summary-footer">
+                        <span class="summary-meta">
+                            Revenue − Expenses
+                        </span>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="expenses-panel">
+
+                <div class="panel-header">
+
+                    <div class="panel-title">
+                        <h2>Expense List</h2>
+                        <span class="record-count" id="expenseRecordCount">0</span>
+                    </div>
+
+                    <div class="panel-actions">
+
+                        <button class="secondary-btn" id="expenseFilterBtn" type="button">
+                            <i class="ri-filter-3-line"></i>
+                            <span>Filter</span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="expense-controls">
+
+                    <div class="search-box">
+
+                        <i class="ri-search-line"></i>
+
+                        <input
+                            type="text"
+                            id="expenseSearchInput"
+                            placeholder="Search expenses..."
+                            autocomplete="off"
+                        >
+
+                        <button
+                            type="button"
+                            id="clearExpenseSearch"
+                            class="clear-search-btn"
+                            aria-label="Clear search"
+                        >
+                            <i class="ri-close-line"></i>
+                        </button>
+
+                    </div>
+
+                    <div class="control-select">
+
+                        <i class="ri-price-tag-3-line"></i>
+
+                        <select id="expenseCategoryFilter">
+                            <option value="">All Categories</option>
+                        </select>
+
+                    </div>
+
+                    <div class="control-select">
+
+                        <i class="ri-sort-desc"></i>
+
+                        <select id="expenseSortSelect">
+                            <option value="date_desc">Newest First</option>
+                            <option value="date_asc">Oldest First</option>
+                            <option value="amount_desc">Highest Amount</option>
+                            <option value="amount_asc">Lowest Amount</option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <div class="filter-panel" id="expenseFilterPanel">
+
+                    <div class="filter-group">
+
+                        <label for="expensePeriodFilter">
+                            Time Period
+                        </label>
+
+                        <select id="expensePeriodFilter">
+                            <option value="this_month">This Month</option>
+                            <option value="last_month">Last Month</option>
+                            <option value="last_2_months">Last 2 Months</option>
+                            <option value="last_3_months">Last 3 Months</option>
+                            <option value="last_6_months">Last 6 Months</option>
+                            <option value="this_year">This Year</option>
+                            <option value="all_time">All Time</option>
+                            <option value="custom">Custom Date Range</option>
+                        </select>
+
+                    </div>
+
+                    <div class="filter-group custom-date-filter" id="expenseCustomDateFromGroup">
+
+                        <label for="expenseDateFrom">
+                            Date From
+                        </label>
+
+                        <input
+                            type="date"
+                            id="expenseDateFrom"
+                        >
+
+                    </div>
+
+                    <div class="filter-group custom-date-filter" id="expenseCustomDateToGroup">
+
+                        <label for="expenseDateTo">
+                            Date To
+                        </label>
+
+                        <input
+                            type="date"
+                            id="expenseDateTo"
+                        >
+
+                    </div>
+
+                    <div class="filter-group">
+
+                        <label for="expenseVendorFilter">
+                            Vendor
+                        </label>
+
+                        <input
+                            type="text"
+                            id="expenseVendorFilter"
+                            placeholder="Search vendor"
+                        >
+
+                    </div>
+
+                    <div class="filter-actions">
+
+                        <button
+                            type="button"
+                            class="secondary-btn"
+                            id="clearExpenseFilters"
+                        >
+                            Clear
+                        </button>
+
+                        <button
+                            type="button"
+                            class="primary-btn small"
+                            id="applyExpenseFilters"
+                        >
+                            Apply Filters
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="table-wrapper">
+
+                    <table class="expenses-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Expense</th>
+                                <th>Category</th>
+                                <th>Vendor</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th>Receipt</th>
+                                <th></th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="expensesTableBody">
+
+                        </tbody>
+
+                    </table>
+
+                    <div class="empty-state" id="expensesEmptyState">
+
+                        <div class="empty-icon">
+                            <i class="ri-wallet-3-line"></i>
+                        </div>
+
+                        <h3>No expenses found</h3>
+
+                        <p>
+                            You haven't added any expenses yet.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="primary-btn"
+                            id="emptyAddExpenseBtn"
+                        >
+                            <i class="ri-add-line"></i>
+                            Add Your First Expense
+                        </button>
+
+                    </div>
+
+                    <div class="table-loading" id="expensesLoadingState">
+
+                        <div class="loading-spinner"></div>
+
+                        <span>Loading expenses...</span>
+
+                    </div>
+
+                </div>
+
+                <div class="pagination">
+
+                    <div class="pagination-info" id="expensePaginationInfo">
+                        Showing 0 of 0 expenses
+                    </div>
+
+                    <div class="pagination-controls">
+
+                        <button
+                            type="button"
+                            class="pagination-btn"
+                            id="expensePrevPage"
+                            disabled
+                        >
+                            <i class="ri-arrow-left-s-line"></i>
+                        </button>
+
+                        <div id="expensePageNumbers" class="page-numbers"></div>
+
+                        <button
+                            type="button"
+                            class="pagination-btn"
+                            id="expenseNextPage"
+                            disabled
+                        >
+                            <i class="ri-arrow-right-s-line"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="reports-section">
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2>Expense Reports</h2>
+                        <p>Understand your spending patterns.</p>
+                    </div>
+
+                    <div class="report-date-controls">
+
+                        <input
+                            type="date"
+                            id="reportDateFrom"
+                        >
+
+                        <span>to</span>
+
+                        <input
+                            type="date"
+                            id="reportDateTo"
+                        >
+
+                        <button
+                            type="button"
+                            class="secondary-btn"
+                            id="generateExpenseReportBtn"
+                        >
+                            <i class="ri-refresh-line"></i>
+                            Generate
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="report-grid">
+
+                    <div class="report-card category-report-card">
+
+                        <div class="report-card-header">
+                            <div>
+                                <h3>By Category</h3>
+                                <p>Expense distribution</p>
+                            </div>
+
+                            <i class="ri-pie-chart-2-line"></i>
+                        </div>
+
+                        <div
+                            class="category-report-list"
+                            id="expenseCategoryReport"
+                        >
+                        </div>
+
+                    </div>
+
+                    <div class="report-card monthly-report-card">
+
+                        <div class="report-card-header">
+                            <div>
+                                <h3>Monthly Spending</h3>
+                                <p>Expense trend over time</p>
+                            </div>
+
+                            <i class="ri-bar-chart-line"></i>
+                        </div>
+
+                        <div
+                            class="monthly-report-list"
+                            id="expenseMonthlyReport"
+                        >
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="profit-section">
+
+                <div class="profit-card">
+
+                    <div class="profit-card-content">
+
+                        <div class="profit-icon">
+                            <i class="ri-line-chart-line"></i>
+                        </div>
+
+                        <div>
+                            <span class="profit-label">
+                                Profit Calculation
+                            </span>
+
+                            <h2 id="reportProfitValue">
+                                $0.00
+                            </h2>
+
+                            <p>
+                                Paid invoice revenue minus business expenses.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="profit-breakdown">
+
+                        <div class="profit-item">
+                            <span>Revenue</span>
+                            <strong id="reportRevenueValue">
+                                $0.00
+                            </strong>
+                        </div>
+
+                        <div class="profit-divider"></div>
+
+                        <div class="profit-item">
+                            <span>Expenses</span>
+                            <strong id="reportExpensesValue">
+                                $0.00
+                            </strong>
+                        </div>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="secondary-btn"
+                        id="viewProfitReportBtn"
+                        style="display: none;"
+                    >
+                        View Report
+                        <i class="ri-arrow-right-line"></i>
+                    </button>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<div class="modal-overlay" id="expenseModalOverlay">
+
+    <div class="expense-modal" id="expenseModal">
+
+        <div class="modal-header">
+
+            <div>
+                <h2 id="expenseModalTitle">Add Expense</h2>
+                <p id="expenseModalSubtitle">
+                    Record a new business expense.
+                </p>
+            </div>
+
+            <button
+                type="button"
+                class="modal-close"
+                id="closeExpenseModal"
+            >
+                <i class="ri-close-line"></i>
+            </button>
+
+        </div>
+
+        <form id="expenseForm">
+
+            <input
+                type="hidden"
+                id="expenseId"
+            >
+
+            <div class="form-grid">
+
+                <div class="form-group full-width">
+
+                    <label for="expenseAmount">
+                        Amount
+                        <span>*</span>
+                    </label>
+
+                    <div class="amount-input">
+
+                        <span id="expenseCurrencySymbol">
+                            $
+                        </span>
+
+                        <input
+                            type="number"
+                            id="expenseAmount"
+                            min="0"
+                            step="0.01"
+                            placeholder="0.00"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="expenseDate">
+                        Expense Date
+                        <span>*</span>
+                    </label>
+
+                    <div class="input-with-icon">
+
+                        <i class="ri-calendar-line"></i>
+
+                        <input
+                            type="date"
+                            id="expenseDate"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="expenseCategory">
+                        Category
+                        <span>*</span>
+                    </label>
+
+                    <div class="input-with-icon">
+
+                        <i class="ri-price-tag-3-line"></i>
+
+                        <select id="expenseCategory" required>
+
+                            <option value="">
+                                Select category
+                            </option>
+
+                            <option value="Office Supplies">
+                                Office Supplies
+                            </option>
+
+                            <option value="Transportation">
+                                Transportation
+                            </option>
+
+                            <option value="Rent">
+                                Rent
+                            </option>
+
+                            <option value="Utilities">
+                                Utilities
+                            </option>
+
+                            <option value="Marketing">
+                                Marketing
+                            </option>
+
+                            <option value="Salaries">
+                                Salaries
+                            </option>
+
+                            <option value="Equipment">
+                                Equipment
+                            </option>
+
+                            <option value="Software">
+                                Software
+                            </option>
+
+                            <option value="Meals">
+                                Meals
+                            </option>
+
+                            <option value="Travel">
+                                Travel
+                            </option>
+
+                            <option value="Professional Services">
+                                Professional Services
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <div class="form-group full-width">
+
+                    <label for="expenseVendor">
+                        Vendor
+                    </label>
+
+                    <div class="input-with-icon">
+
+                        <i class="ri-store-2-line"></i>
+
+                        <input
+                            type="text"
+                            id="expenseVendor"
+                            placeholder="Enter vendor or supplier"
+                        >
+
+                    </div>
+
+                </div>
+
+                <div class="form-group full-width">
+
+                    <label for="expenseDescription">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="expenseDescription"
+                        rows="4"
+                        placeholder="What was this expense for?"
+                    ></textarea>
+
+                </div>
+
+                <div class="form-group full-width">
+
+                    <label>
+                        Receipt Attachment
+                    </label>
+
+                    <div
+                        class="receipt-upload"
+                        id="receiptUploadArea"
+                    >
+
+                        <input
+                            type="file"
+                            id="expenseReceipt"
+                            accept="image/*,.pdf"
+                            hidden
+                        >
+
+                        <div class="receipt-upload-icon">
+                            <i class="ri-upload-cloud-2-line"></i>
+                        </div>
+
+                        <div class="receipt-upload-text">
+                            <strong>Upload receipt</strong>
+                            <span>
+                                PNG, JPG or PDF
+                            </span>
+                        </div>
+
+                        <button
+                            type="button"
+                            class="receipt-browse-btn"
+                            id="receiptBrowseBtn"
+                        >
+                            Browse
+                        </button>
+
+                    </div>
+
+                    <div
+                        class="receipt-preview"
+                        id="receiptPreview"
+                    >
+
+                        <div class="receipt-file-icon">
+                            <i class="ri-file-text-line"></i>
+                        </div>
+
+                        <div class="receipt-file-info">
+
+                            <strong id="receiptFileName">
+                                receipt.pdf
+                            </strong>
+
+                            <span id="receiptFileSize">
+                                0 KB
+                            </span>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            id="removeReceiptBtn"
+                            class="remove-receipt-btn"
+                        >
+                            <i class="ri-delete-bin-line"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div
+                class="form-error"
+                id="expenseFormError"
+            ></div>
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    id="cancelExpenseBtn"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                    id="saveExpenseBtn"
+                >
+                    <i class="ri-save-line"></i>
+                    <span>Save Expense</span>
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<div class="modal-overlay" id="expenseDetailsOverlay">
+
+    <div class="expense-details-modal">
+
+        <div class="modal-header">
+
+            <div>
+                <h2>Expense Details</h2>
+                <p>View expense information.</p>
+            </div>
+
+            <button
+                type="button"
+                class="modal-close"
+                id="closeExpenseDetails"
+            >
+                <i class="ri-close-line"></i>
+            </button>
+
+        </div>
+
+        <div class="expense-details-content">
+
+            <div class="details-amount">
+                <span>Expense Amount</span>
+                <strong id="detailsExpenseAmount">
+                    $0.00
+                </strong>
+            </div>
+
+            <div class="details-grid">
+
+                <div class="detail-item">
+                    <span>Category</span>
+                    <strong id="detailsExpenseCategory">-</strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Date</span>
+                    <strong id="detailsExpenseDate">-</strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Vendor</span>
+                    <strong id="detailsExpenseVendor">-</strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Receipt</span>
+                    <strong id="detailsExpenseReceipt">-</strong>
+                </div>
+
+            </div>
+
+            <div class="details-description">
+
+                <span>Description</span>
+
+                <p id="detailsExpenseDescription">
+                    No description provided.
+                </p>
+
+            </div>
+
+            <div
+                class="details-receipt"
+                id="detailsReceiptPreview"
+            >
+
+                <div class="details-receipt-icon">
+                    <i class="ri-file-text-line"></i>
+                </div>
+
+                <div>
+                    <strong id="detailsReceiptName">
+                        Receipt
+                    </strong>
+
+                    <span>
+                        Attached receipt
+                    </span>
+                </div>
+
+                <button
+                    type="button"
+                    class="secondary-btn small"
+                    id="openExpenseReceiptBtn"
+                >
+                    Open
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="modal-footer">
+
+            <button
+                type="button"
+                class="danger-outline-btn"
+                id="deleteExpenseFromDetails"
+            >
+                <i class="ri-delete-bin-line"></i>
+                Delete
+            </button>
+
+            <button
+                type="button"
+                class="primary-btn"
+                id="editExpenseFromDetails"
+            >
+                <i class="ri-edit-line"></i>
+                Edit Expense
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="expenses.js"></script>
+
+</body>
+</html>

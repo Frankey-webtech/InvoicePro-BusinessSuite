@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="manifest" href="manifest.json">
+            <script src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+<script src="api.js"></script>
+         
+    <title>InvoicePro | Companies</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+    >
+
+    <link rel="stylesheet" href="companies.css">
+</head>
+
+<body>
+
+    <div class="companies-page">
+
+        <header class="companies-header">
+            <div class="header-brand">
+                <div class="brand-icon">
+                    <i class="ri-building-4-line"></i>
+                </div>
+
+                <div>
+                    <h1>Companies</h1>
+                    <p>Manage your InvoicePro companies</p>
+                </div>
+            </div>
+
+            <button class="create-company-btn" id="createCompanyBtn">
+                <i class="ri-add-line"></i>
+                <span>Create New Company</span>
+            </button>
+        </header>
+
+
+        <main class="companies-content">
+
+            <div class="companies-toolbar">
+
+                <div class="search-box">
+                    <i class="ri-search-line"></i>
+                    <input
+                        type="search"
+                        id="companySearch"
+                        placeholder="Search companies..."
+                        autocomplete="off"
+                    >
+                </div>
+
+                <div class="company-count" id="companyCount">
+                    1 Company
+                </div>
+
+            </div>
+
+
+            <section class="companies-grid" id="companiesGrid">
+
+                <article class="company-card" data-company-id="placeholder-company">
+
+                    <div class="company-card-top">
+
+                        <div class="company-logo">
+                         <img src="" alt="">
+                        </div>
+
+                        <div class="company-card-heading">
+
+                            <div class="company-name-row">
+                                <h2 class="company-name">InvoicePro Company</h2>
+
+                                <span class="current-badge">
+                                    <i class="ri-check-line"></i>
+                                    Current
+                                </span>
+                            </div>
+
+                            <p class="company-id">
+                                Company ID: INV-000001
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="company-card-details">
+
+                        <div class="company-detail">
+                            <span class="detail-label">
+                                <i class="ri-vip-crown-line"></i>
+                                Plan
+                            </span>
+
+                            <strong class="company-plan">
+                                Enterprise
+                            </strong>
+                        </div>
+
+
+                        <div class="company-detail">
+                            <span class="detail-label">
+                                <i class="ri-checkbox-circle-line"></i>
+                                Status
+                            </span>
+
+                            <strong class="company-status">
+                                Active
+                            </strong>
+                        </div>
+
+
+                        <div class="company-detail">
+                            <span class="detail-label">
+                                <i class="ri-calendar-line"></i>
+                                Created
+                            </span>
+
+                            <strong class="company-created">
+                                September 1, 2026
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="company-card-footer">
+
+                        <div class="company-plan-note">
+                            <i class="ri-shield-check-line"></i>
+
+                            <span>
+                                Uses your current InvoicePro subscription
+                            </span>
+                        </div>
+
+                        <button class="open-company-btn" type="button">
+                            <span>Open Company</span>
+                            <i class="ri-arrow-right-line"></i>
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <div class="modal-overlay" id="createCompanyModal">
+
+        <div class="company-modal">
+
+            <div class="modal-header">
+
+                <div class="modal-title-area">
+
+                    <div class="modal-icon">
+                        <i class="ri-building-4-line"></i>
+                    </div>
+
+                    <div>
+                        <h2>Create New Company</h2>
+                        <p>Start a fresh InvoicePro workspace</p>
+                    </div>
+
+                </div>
+
+                <button
+                    class="modal-close-btn"
+                    id="closeCompanyModal"
+                    type="button"
+                    aria-label="Close"
+                >
+                    <i class="ri-close-line"></i>
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <div class="form-group">
+
+                    <label for="businessName">
+                        Business Name
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="ri-building-line"></i>
+
+                        <input
+                            type="text"
+                            id="businessName"
+                            placeholder="Enter business name"
+                            autocomplete="organization"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="modal-info">
+
+                    <i class="ri-information-line"></i>
+
+                    <p>
+                        Your new company will start with a clean workspace.
+                        Your current InvoicePro subscription will automatically
+                        apply to this company.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    class="cancel-btn"
+                    id="cancelCompanyBtn"
+                    type="button"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    class="modal-create-btn"
+                    id="confirmCreateCompanyBtn"
+                    type="button"
+                >
+                    <i class="ri-add-line"></i>
+                    Create Company
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+<script src="companies.js"></script>
+</body>
+</html>

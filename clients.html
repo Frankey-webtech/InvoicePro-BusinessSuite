@@ -1,0 +1,2198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+        <link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icon-192.png">
+
+
+    <title>InvoicePro | Clients</title>
+    
+    <script src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+
+<script src="api.js"></script>
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+        
+        <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+        
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
+
+<link rel="stylesheet" href="clients.css">
+<link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay">
+</div>
+<aside
+    class="sidebar"
+    id="sidebar">
+
+    <div class="sidebar-logo">
+
+        <div class="logo-icon">
+
+            <img src="logo.png" alt="">
+
+        </div>
+
+        <div class="logo-text">
+
+            <h2>InvoicePro</h2>
+
+            <span>Business Suite</span>
+
+        </div>
+
+    </div>
+
+    <nav class="sidebar-nav">
+
+        <a href="index.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-home-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Home
+            </span>
+
+        </a>
+
+        <a href="dashboard.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-dashboard-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Dashboard
+            </span>
+
+        </a>
+
+        <a href="invoice.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-file-list-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Invoices
+            </span>
+
+        </a>
+
+        <a href="estimates.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-draft-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Estimates
+            </span>
+
+        </a>
+
+        <a href="clients.html" class="nav-item active">
+
+            <span class="nav-icon">
+                <i class="ri-group-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Clients
+            </span>
+
+        </a>
+
+        <a href="upcoming-payments.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-calendar-check-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Upcoming Payments
+            </span>
+
+        </a>
+
+        <a href="paid-invoices.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-money-dollar-circle-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Paid Invoices
+            </span>
+
+        </a>
+
+        <a href="recurring-invoices.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-repeat-2-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Recurring Invoices
+            </span>
+
+        </a>
+        
+         <a href="expenses.html" class="nav-item">
+
+            <span class="nav-icon">
+               <i class="ri-wallet-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Expenses
+            </span>
+
+        </a>
+
+        <a href="reports.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-bar-chart-box-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Reports
+            </span>
+
+        </a>
+
+        <a href="subscription.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-vip-crown-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Subscription
+            </span>
+
+        </a>
+
+        <a href="subscription-history.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-history-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Subscription History
+            </span>
+
+        </a>
+
+        <div
+            class="nav-dropdown"
+            id="settingsDropdown">
+
+            <button
+                class="nav-dropdown-btn"
+                id="settingsToggle">
+
+                <div class="nav-dropdown-left">
+
+                    <span class="nav-icon">
+                        <i class="ri-layout-4-line"></i>
+                    </span>
+
+                    <span>
+                        Templates
+                    </span>
+
+                </div>
+
+                <i
+                    id="settingsArrow"
+                    class="ri-arrow-down-s-line dropdown-arrow"></i>
+
+            </button>
+
+            <div
+                class="dropdown-menu"
+                id="settingsMenu">
+
+                <a
+                    href="invoices-design.html"
+                    class="dropdown-item">
+
+                    <span class="nav-icon">
+                        <i class="ri-file-text-line"></i>
+                    </span>
+
+                    Invoice Template
+
+                </a>
+
+                <a
+                    href="estimates-design.html"
+                    class="dropdown-item">
+
+                    <span class="nav-icon">
+                        <i class="ri-draft-line"></i>
+                    </span>
+
+                    Estimate Template
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <a href="settings.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-settings-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Settings
+            </span>
+
+        </a>
+
+        <a href="profile.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-user-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Profile
+            </span>
+
+        </a>
+
+        <a href="business-profile.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-building-2-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Business Profile
+            </span>
+
+        </a>
+
+        <a href="live-chat.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-chat-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Live Chat
+            </span>
+
+        </a>
+
+        <a
+            href="account-mgt.html"
+            class="nav-item logout-item"
+            id="logoutBtn">
+
+            <span class="nav-icon">
+                <i class="ri-logout-box-r-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Logout
+            </span>
+
+        </a>
+
+    </nav>
+
+</aside>
+<div class="page-wrapper">
+<header class="page-header">
+
+        <div class="header-left">
+
+            <button
+                class="menu-toggle"
+                id="menuToggle">
+
+               <i class="ri-menu-line"></i>
+
+            </button>
+
+            <div class="page-title">
+
+              
+
+                <h1>
+
+                    Clients
+
+                </h1>
+
+            </div>
+
+        </div>
+
+        <div class="header-right">
+
+            <button
+                class="notification-btn"
+                id="notificationBtn" style="display: none;">
+
+                <i class="ri-notification-3-line"></i>
+
+                <span
+                    class="notification-badge"
+                    id="notificationBadge">
+
+                    3
+
+                </span>
+
+            </button>
+
+            <button
+                class="header-avatar"
+                id="profileMenuBtn">
+
+                <img
+                    src="
+                    profile.png"
+                    alt="Profile"
+                    id="headerProfileImage">
+
+            </button>
+
+        </div>
+
+    </header>
+
+<section
+            class="page-title-section"
+            id="pageTitleSection">
+                
+<div class="page-header" id="pageHeader">
+        <p
+        class="page-description"
+        id="pageDescription">
+
+            Manage your clients, monitor balances and invoice activity.
+
+        </p>
+        
+            <button
+    class="add-client-btn"
+    id="addClientButton">
+
+       <i class="ri-add-line"></i>
+
+        <span
+        id="addClientText">
+
+            Add Client
+
+        </span>
+
+    </button>
+
+
+    </div>
+
+<div
+class="stats-grid"
+id="statsGrid">
+
+    
+
+    <div
+    class="stat-card"
+    id="totalClients">
+
+    <div
+    class="stat-icon"
+    id="totalClientsIcon">
+
+    <i class="ri-group-line"></i>
+
+</div>
+
+        <div
+        class="stat-content">
+
+            <p
+            class="stat-label"
+            id="totalClientsLabel">
+
+                Total Clients
+
+            </p>
+
+            <h2
+            class="stat-value"
+            id="totalClientsValue">
+
+                0
+
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div
+    class="stat-card"
+    id="activeClients">
+
+       <div
+    class="stat-icon"
+    id="activeClientsIcon">
+
+    <i class="ri-user-follow-line"></i>
+
+</div>
+
+        <div
+        class="stat-content">
+
+            <p
+            class="stat-label"
+            id="activeClientsLabel">
+
+                Active Clients
+
+            </p>
+
+            <h2
+            class="stat-value"
+            id="activeClientsValue">
+
+                0
+
+            </h2>
+
+        </div>
+
+    </div>
+
+    <div
+    class="stat-card"
+    id="inactiveClients">
+
+      <div
+    class="stat-icon"
+    id="inactiveClientsIcon">
+
+    <i class="ri-user-unfollow-line"></i>
+
+</div>
+
+        <div
+        class="stat-content">
+
+            <p
+            class="stat-label"
+            id="inactiveClientsLabel">
+
+                Inactive Clients
+
+            </p>
+
+            <h2
+            class="stat-value"
+            id="inactiveClientsValue">
+
+                0
+
+            </h2>
+
+        </div>
+
+    </div>
+
+    <div
+    class="stat-card"
+    id="outstandingBalance">
+
+        <div
+        class="stat-icon"
+        id="outstandingBalanceIcon">
+
+           <i class="ri-wallet-3-line" ></i>
+
+        </div>
+
+        <div
+        class="stat-content">
+
+            <p
+            class="stat-label"
+            id="outstandingBalanceLabel">
+
+                Outstanding Balance
+
+            </p>
+
+            <h2
+            class="stat-value"
+            id="outstandingBalanceValue">
+
+                $0
+
+            </h2>
+
+        </div>
+
+    </div>
+
+</div>
+
+            <section
+            class="stats-section"
+            id="statsSection">
+
+            </section>
+            
+          <section
+class="clients-table-section"
+id="clientsTableSection">
+
+
+    <div
+    class="table-toolbar"
+    id="tableToolbar">
+
+        <div
+        class="toolbar-left"
+        id="toolbarLeft">
+
+            <div
+            class="table-search"
+            id="tableSearch">
+
+               <i class="ri-search-line"></i>
+
+                <input
+                type="text"
+                class="table-search-input"
+                id="clientSearchInput"
+                placeholder="Search clients...">
+
+            </div>
+
+        </div>
+
+        <div
+        class="toolbar-right"
+        id="toolbarRight">
+
+            <select
+            class="table-select"
+            id="statusFilter">
+
+                <option value="all">All Status</option>
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+
+            </select>
+
+            <select
+            class="table-select"
+            id="sortClients">
+
+                <option value="newest">Newest</option>
+                <option value="name">Client Name</option>
+                <option value="balance">Outstanding</option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+    <div
+    class="table-wrapper"
+    id="tableWrapper">
+
+   <table
+class="clients-table"
+id="clientsTable">
+
+    <thead>
+
+        <tr>
+
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Estimates</th>
+            <th>Invoices</th>
+            <th>Outstanding</th>
+            <th>Status</th>
+            <th>Actions</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody id="clientsTableBody"></tbody>
+
+</table>
+
+    </div>
+
+</section>
+
+<footer
+class="page-footer"
+id="pageFooter">
+
+    <div
+    class="table-footer"
+    id="tableFooter">
+
+        <div
+        class="table-info"
+        id="tableInfo">
+
+            Showing
+
+            <span id="startRecord">
+
+                1
+
+            </span>
+
+            -
+
+            <span id="endRecord">
+
+                0
+
+            </span>
+
+            of
+
+            <span id="totalRecords">
+
+                0
+
+            </span>
+
+            clients
+
+        </div>
+
+        <div
+        class="pagination"
+        id="pagination">
+
+            <button
+            class="page-btn"
+            id="previousPageButton">
+
+                Previous
+
+            </button>
+
+            <button
+            class="page-btn active"
+            id="pageOneButton">
+
+                1
+
+            </button>
+
+            <button
+            class="page-btn"
+            id="pageTwoButton">
+
+                2
+
+            </button>
+
+            <button
+            class="page-btn"
+            id="pageThreeButton">
+
+                3
+
+            </button>
+
+            <button
+            class="page-btn"
+            id="nextPageButton">
+
+                Next
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <div
+    class="footer-content"
+    id="footerContent">
+
+        <p
+        id="copyrightText">
+
+            © 2026 InvoicePro. All rights reserved.
+
+        </p>
+
+    </div>
+
+</footer>
+
+</section>
+
+<div id="createClientOverlay"></div>
+
+<div id="createClientModal">
+
+    <div
+    class="client-modal-header"
+    id="clientModalHeader">
+
+        <h2
+        id="clientModalTitle">
+
+            Add Client
+
+        </h2>
+
+        <button
+        id="closeClientModalButton">
+
+            ✕
+
+        </button>
+
+    </div>
+
+    <div
+class="client-modal-body"
+id="clientModalBody">
+
+    
+    <div
+    class="client-form-section"
+    id="clientInformationSection">
+
+        <h3
+        id="clientInformationTitle">
+
+            Client Information
+
+        </h3>
+
+        <div
+        class="client-form-grid"
+        id="clientInformationGrid">
+
+            
+
+            <div
+            class="client-form-group"
+            id="contactPersonGroup">
+                
+                <div
+class="client-form-group full-width"
+id="clientImageGroup">
+
+    <label
+    for="clientImageInput">
+
+        Client Image
+
+        <span class="optional-label">
+            Optional
+        </span>
+
+    </label>
+
+    <div
+    class="client-image-upload"
+    id="clientImageUpload">
+
+        <input
+        type="file"
+        id="clientImageInput"
+        accept="image/*">
+
+        <div
+        class="client-image-preview"
+        id="clientImagePreview">
+
+            <i class="ri-user-line"></i>
+
+        </div>
+
+        <div class="client-image-upload-content">
+
+            <strong>
+                Add Client Image
+            </strong>
+
+            <span>
+                JPG, PNG, WEBP or GIF
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+                <label
+                for="contactPersonInput">
+
+                    Client Name *
+
+                </label>
+
+                <input
+                type="text"
+                id="contactPersonInput"
+                placeholder="Enter Client Name">
+
+            </div>
+
+
+
+            <div
+            class="client-form-group"
+            id="companyNameGroup">
+
+                <label
+                for="companyNameInput">
+
+                    Company Name
+
+                </label>
+
+                <input
+                type="text"
+                id="companyNameInput"
+                placeholder="Enter company name">
+
+            </div>
+
+
+
+            <div
+            class="client-form-group"
+            id="clientEmailGroup">
+
+                <label
+                for="clientEmailInput">
+
+                    Email Address
+
+                </label>
+
+                <input
+                type="email"
+                id="clientEmailInput"
+                placeholder="Enter email address">
+
+            </div>
+
+
+
+            <div
+            class="client-form-group"
+            id="clientPhoneGroup">
+
+                <label
+                for="clientPhoneInput">
+
+                    Phone Number
+
+                </label>
+
+                <input
+                type="tel"
+                id="clientPhoneInput"
+                placeholder="Enter phone number">
+
+            </div>
+
+        </div>
+
+    </div>
+    
+
+<div
+class="client-form-section"
+id="businessInformationSection">
+
+    <h3
+    id="businessInformationTitle">
+
+        Business Information
+
+    </h3>
+
+    <div
+    class="client-form-grid"
+    id="businessInformationGrid">
+
+        
+
+        <div
+        class="client-form-group"
+        id="clientTaxIdGroup">
+
+            <label
+            for="clientTaxIdInput">
+
+                Tax ID
+
+            </label>
+
+            <input
+            type="text"
+            id="clientTaxIdInput"
+            placeholder="Enter tax ID (if any)">
+
+        </div>
+
+
+
+        <div
+        class="client-form-group"
+        id="clientStatusGroup">
+
+            <label
+            for="clientStatusInput">
+
+                Status
+
+            </label>
+
+            <select
+            id="clientStatusInput">
+
+                <option value="Active">
+
+                    Active
+
+                </option>
+
+                <option value="Inactive">
+
+                    Inactive
+
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+<div
+class="client-form-group full-width"
+id="billingAddressGroup">
+
+    <label
+    for="billingAddressInput">
+
+        Address Line 1
+
+    </label>
+
+    <input
+    type="text"
+    id="billingAddressInput"
+    placeholder="Enter street address">
+
+</div>
+
+<div
+class="client-form-group full-width"
+id="billingAddressLine2Group">
+
+    <label
+    for="billingAddressLine2Input">
+
+        Address Line 2
+
+    </label>
+
+    <input
+    type="text"
+    id="billingAddressLine2Input"
+    placeholder="Enter suite, apartment, unit, etc.">
+
+</div>
+
+<div
+class="client-form-group"
+id="billingCityStateZipGroup">
+
+    <label
+    for="billingCityStateZipInput">
+
+        City, State / ZIP
+
+    </label>
+
+    <input
+    type="text"
+    id="billingCityStateZipInput"
+    placeholder="e.g. New York, NY 10001">
+
+</div>
+
+<div
+class="client-form-group"
+id="billingCountryGroup">
+
+    <label
+    for="billingCountryInput">
+
+        Country
+
+    </label>
+
+    <input
+    type="text"
+    id="billingCountryInput"
+    placeholder="Enter country">
+
+</div>
+
+    </div>
+
+</div>
+
+</div>
+
+    <div
+    class="client-modal-footer"
+    id="clientModalFooter">
+
+        <button
+        id="cancelClientButton">
+
+            Cancel
+
+        </button>
+
+        <button
+        id="saveClientButton">
+
+            Save Client
+
+        </button>
+
+    </div>
+
+</div>
+
+<div id="viewClientOverlay"></div>
+
+<div id="viewClientModal">
+
+    <div class="client-modal-header">
+
+        <h2>Client Details</h2>
+
+        <button id="closeViewClientButton">✕</button>
+
+    </div>
+
+    <div class="client-modal-body">
+
+        <div class="client-form-section">
+
+            <h3>Client Information</h3>
+
+            <div class="client-form-grid">
+                
+                <div class="client-form-group">
+    <label>Total Estimates</label>
+    <p id="viewTotalEstimatesCount">-</p>
+</div>
+                
+                 <div class="client-form-group">
+                    <label>Total Invoices</label>
+                    <p id="viewTotalInvoices">-</p>
+                </div>
+                
+                 <div class="client-form-group">
+    <label>Outstanding Balance</label>
+    <p id="viewOutstandingBalance">-</p>
+</div>
+<div class="client-form-group">
+    <label>Client Image</label>
+
+    <div
+    class="view-client-image-wrapper"
+    id="viewClientImageWrapper">
+
+        <img
+        id="viewClientImage"
+        alt="Client Image">
+
+        <div
+        class="view-client-image-fallback"
+        id="viewClientImageFallback">
+
+            <i class="ri-user-line"></i>
+
+        </div>
+
+    </div>
+
+</div>
+
+                <div class="client-form-group">
+                    <label>Client Name</label>
+                    <p id="viewContactPerson">-</p>
+                </div>
+
+                <div class="client-form-group">
+                    <label>Company Name</label>
+                    <p id="viewCompanyName">-</p>
+                </div>
+
+                <div class="client-form-group">
+                    <label>Email</label>
+                    <p id="viewClientEmail">-</p>
+                </div>
+
+                <div class="client-form-group">
+                    <label>Phone</label>
+                    <p id="viewClientPhone">-</p>
+                </div>
+
+                <div class="client-form-group">
+                    <label>Tax ID</label>
+                    <p id="viewClientTaxId">-</p>
+                </div>
+
+              <div class="client-form-group full-width">
+    <label>Address Line 1</label>
+    <p id="viewBillingAddressLine1">-</p>
+</div>
+
+<div class="client-form-group full-width">
+    <label>Address Line 2</label>
+    <p id="viewBillingAddressLine2">-</p>
+</div>
+
+<div class="client-form-group">
+    <label>City / State / ZIP</label>
+    <p id="viewBillingCityStateZip">-</p>
+</div>
+
+<div class="client-form-group">
+    <label>Country</label>
+    <p id="viewBillingCountry">-</p>
+</div>
+
+                <div class="client-form-group">
+                    <label>Status</label>
+                    <p id="viewClientStatus">-</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="client-form-section">
+
+            <h3>Business Summary</h3>
+
+            <div class="client-form-grid">
+
+                <div class="client-form-group">
+
+    <label>
+
+        Paid Invoices
+
+    </label>
+
+    <p id="viewPaidInvoices">
+
+        0
+
+    </p>
+
+</div>
+
+<div class="client-form-group">
+
+    <label>
+
+        Pending Invoices
+
+    </label>
+
+    <p id="viewPendingInvoices">
+
+        0
+
+    </p>
+
+</div>
+
+<div class="client-form-group">
+
+    <label>
+
+        Overdue Invoices
+
+    </label>
+
+    <p id="viewOverdueInvoices">
+
+        0
+
+    </p>
+
+</div>
+
+<div class="client-form-group">
+
+    <label>
+
+        Total Revenue
+
+    </label>
+
+    <p id="viewTotalRevenue">
+
+        0
+
+    </p>
+
+</div>
+
+<div class="client-form-group">
+
+    <label>
+
+        Last Invoice
+
+    </label>
+
+    <p id="viewLastInvoiceDate">
+
+        -
+
+    </p>
+
+</div>
+
+            </div>
+
+        </div>
+
+    </div>
+    
+<div class="client-form-section">
+
+<div class="client-section-heading">
+
+    <div>
+        <h3>Estimates</h3>
+
+        <span id="viewTotalEstimates">
+            0
+        </span>
+    </div>
+
+</div>
+
+<div
+    class="client-estimates-list"
+    id="viewClientEstimatesList">
+
+    <div class="client-empty-estimates">
+
+        <i class="ri-file-list-3-line"></i>
+
+        <p>
+            No estimates for this client.
+        </p>
+
+    </div>
+
+</div>
+
+<button
+    type="button"
+    class="view-all-client-history-button"
+    id="viewAllClientEstimatesButton">
+
+    View All
+
+    <i class="ri-arrow-right-line"></i>
+
+</button>
+
+</div>
+
+
+<div class="client-form-section">
+
+<div class="client-section-heading">
+
+    <div>
+        <h3>Invoices</h3>
+
+        <span id="viewClientInvoicesCount">
+            0
+        </span>
+    </div>
+
+</div>
+
+<div
+    class="client-invoices-list"
+    id="viewClientInvoicesList">
+
+    <div class="client-empty-invoices">
+
+        <i class="ri-file-text-line"></i>
+
+        <p>
+            No invoices for this client.
+        </p>
+
+    </div>
+
+</div>
+
+<button
+    type="button"
+    class="view-all-client-history-button"
+    id="viewAllClientInvoicesButton">
+
+    View All
+
+    <i class="ri-arrow-right-line"></i>
+
+</button>
+
+</div>
+
+    <div class="client-modal-footer">
+
+        <button id="closeViewClientFooterButton">
+            Close
+        </button>
+
+        <button id="editViewedClientButton">
+            Edit Client
+        </button>
+
+    </div>
+
+</div>
+
+<div id="toastContainer"></div>
+
+<div id="pageLoader">
+
+    <div class="loader-spinner"></div>
+
+    <p>Loading...</p>
+
+</div>
+
+<div id="deleteClientOverlay"></div>
+
+<div id="deleteClientModal">
+
+    <div class="delete-icon">
+
+        🗑️
+
+    </div>
+
+    <h2>
+
+        Delete Client?
+
+    </h2>
+
+    <p>
+
+        This action cannot be undone.
+
+    </p>
+
+    <div class="delete-actions">
+
+        <button id="cancelDeleteClient">
+
+            Cancel
+
+        </button>
+
+        <button id="confirmDeleteClient">
+
+            Delete
+
+        </button>
+
+    </div>
+
+</div>
+
+<div
+    class="send-estimate-overlay"
+    id="sendEstimateOverlay">
+</div>
+
+<div
+    class="send-estimate-modal"
+    id="sendEstimateModal">
+    
+<div class="send-estimate-modal-header">
+
+    <div>
+
+        <h2>
+            Send Estimate
+        </h2>
+
+        <p>
+            Send an estimate directly to this client's email.
+        </p>
+
+    </div>
+
+    <button
+        type="button"
+        id="closeSendEstimateButton"
+        class="send-estimate-close-button">
+
+        <i class="ri-close-line"></i>
+
+    </button>
+
+</div>
+
+
+<div class="send-estimate-modal-body">
+
+    
+
+    <div class="send-estimate-client-box">
+
+     <div class="send-estimate-client-icon">
+
+    <img
+        id="sendEstimateClientImage"
+        src=""
+        alt="Client">
+
+    <i
+        id="sendEstimateClientImageFallback"
+        class="ri-user-3-line">
+    </i>
+
+</div>
+
+        <div>
+
+            <span>
+                Sending to
+            </span>
+
+            <strong
+                id="sendEstimateClientName">
+                -
+            </strong>
+
+            <p
+                id="sendEstimateClientEmail">
+                -
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="send-estimate-section">
+
+        <label
+            for="sendEstimateSelect">
+
+            Select Estimate
+
+        </label>
+
+        <select
+            id="sendEstimateSelect"
+            class="form-control">
+
+            <option value="">
+                Select an estimate
+            </option>
+
+        </select>
+
+    </div>
+
+
+
+    <div
+        class="send-estimate-summary"
+        id="sendEstimateSummary">
+
+        <div class="send-estimate-summary-row">
+
+            <span>
+                Estimate Number
+            </span>
+
+            <strong
+                id="sendEstimateNumber">
+                -
+            </strong>
+
+        </div>
+
+
+        <div class="send-estimate-summary-row">
+
+            <span>
+                Title
+            </span>
+
+            <strong
+                id="sendEstimateTitle">
+                -
+            </strong>
+
+        </div>
+
+
+        <div class="send-estimate-summary-row">
+
+            <span>
+                Amount
+            </span>
+
+            <strong
+                id="sendEstimateAmount">
+                -
+            </strong>
+
+        </div>
+
+
+        <div class="send-estimate-summary-row">
+
+            <span>
+                Status
+            </span>
+
+            <strong
+                id="sendEstimateStatus">
+                -
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <div class="send-estimate-section">
+
+        <label
+            for="sendEstimateMessage">
+
+            Message
+
+        </label>
+
+        <textarea
+            id="sendEstimateMessage"
+            class="form-control"
+            rows="5"
+            placeholder="Enter a message for your client..."></textarea>
+
+    </div>
+
+</div>
+
+
+<div class="send-estimate-modal-footer">
+
+    <button
+        type="button"
+        id="cancelSendEstimateButton"
+        class="secondary-button">
+
+        Cancel
+
+    </button>
+
+    <button
+        type="button"
+        id="confirmSendEstimateButton"
+        class="primary-button">
+
+        <i class="ri-send-plane-line"></i>
+
+        Send Estimate
+
+    </button>
+
+</div>
+
+</div>
+
+<div
+    class="send-invoice-overlay"
+    id="sendInvoiceOverlay">
+</div>
+
+<div
+    class="send-invoice-modal"
+    id="sendInvoiceModal">
+
+    <div class="send-invoice-modal-header">
+
+        <div>
+
+            <h2>
+                Send Invoice
+            </h2>
+
+            <p>
+                Review the invoice before sending it to your client.
+            </p>
+
+        </div>
+
+        <button
+            type="button"
+            id="closeSendInvoiceButton"
+            class="send-invoice-close-button">
+
+            <i class="ri-close-line"></i>
+
+        </button>
+
+    </div>
+
+    <div class="send-invoice-modal-body">
+
+        <div class="send-invoice-client-box">
+
+           <div class="send-invoice-client-icon">
+
+    <img
+        id="sendInvoiceClientImage"
+        src=""
+        alt="Client">
+
+    <i
+        id="sendInvoiceClientImageFallback"
+        class="ri-user-3-line">
+    </i>
+
+</div>
+
+            <div>
+
+                <span>
+                    Sending to
+                </span>
+
+                <strong
+                    id="sendInvoiceClientName">
+                    -
+                </strong>
+
+                <p
+                    id="sendInvoiceClientEmail">
+                    -
+                </p>
+
+            </div>
+
+        </div>
+
+        <div
+            class="send-invoice-summary"
+            id="sendInvoiceSummary">
+
+            <div class="send-invoice-summary-row">
+
+                <span>
+                    Invoice Number
+                </span>
+
+                <strong
+                    id="sendInvoiceNumber">
+                    -
+                </strong>
+
+            </div>
+
+            <div class="send-invoice-summary-row">
+
+                <span>
+                    Invoice Title
+                </span>
+
+                <strong
+                    id="sendInvoiceTitle">
+                    -
+                </strong>
+
+            </div>
+
+            <div class="send-invoice-summary-row">
+
+                <span>
+                    Issue Date
+                </span>
+
+                <strong
+                    id="sendInvoiceIssueDate">
+                    -
+                </strong>
+
+            </div>
+
+            <div class="send-invoice-summary-row">
+
+                <span>
+                    Due Date
+                </span>
+
+                <strong
+                    id="sendInvoiceDueDate">
+                    -
+                </strong>
+
+            </div>
+
+            <div class="send-invoice-summary-row">
+
+                <span>
+                    Payment Terms
+                </span>
+
+                <strong
+                    id="sendInvoicePaymentTerms">
+                    -
+                </strong>
+
+            </div>
+
+            <div class="send-invoice-summary-row">
+
+                <span>
+                    Currency
+                </span>
+
+                <strong
+                    id="sendInvoiceCurrency">
+                    -
+                </strong>
+
+            </div>
+
+            <div class="send-invoice-summary-row">
+
+                <span>
+                    Payment Status
+                </span>
+
+                <strong
+                    id="sendInvoicePaymentStatus">
+                    -
+                </strong>
+
+            </div>
+
+            <div class="send-invoice-summary-row">
+
+                <span>
+                    Total Amount
+                </span>
+
+                <strong
+                    id="sendInvoiceAmount">
+                    -
+                </strong>
+
+            </div>
+
+        </div>
+
+        <div class="send-invoice-section">
+
+            <div class="send-invoice-section-header">
+
+                <h3>
+                    Invoice Items
+                </h3>
+
+            </div>
+
+            <div
+                class="send-invoice-items"
+                id="sendInvoiceItems">
+
+            </div>
+
+        </div>
+
+        <div
+            class="send-invoice-totals"
+            id="sendInvoiceTotals">
+
+            <div class="send-invoice-total-row">
+
+                <span>
+                    Subtotal
+                </span>
+
+                <strong
+                    id="sendInvoiceSubtotal">
+                    -
+                </strong>
+
+            </div>
+
+            <div class="send-invoice-total-row">
+
+                <span>
+                    Tax
+                </span>
+
+                <strong
+                    id="sendInvoiceTax">
+                    -
+                </strong>
+
+            </div>
+
+            <div class="send-invoice-total-row">
+
+                <span>
+                    Discount
+                </span>
+
+                <strong
+                    id="sendInvoiceDiscount">
+                    -
+                </strong>
+
+            </div>
+
+            <div class="send-invoice-total-row">
+
+                <span>
+                    Shipping
+                </span>
+
+                <strong
+                    id="sendInvoiceShipping">
+                    -
+                </strong>
+
+            </div>
+
+            <div class="send-invoice-total-row grand-total">
+
+                <span>
+                    Grand Total
+                </span>
+
+                <strong
+                    id="sendInvoiceGrandTotal">
+                    -
+                </strong>
+
+            </div>
+
+        </div>
+
+        <div
+            class="send-invoice-section"
+            id="sendInvoicePaymentSection">
+
+            <div class="send-invoice-section-header">
+
+                <h3>
+                    Payment Information
+                </h3>
+
+            </div>
+
+            <div
+                class="send-invoice-payment-details"
+                id="sendInvoicePaymentDetails">
+
+                <div class="send-invoice-payment-item">
+
+                    <span>
+                        Account Name
+                    </span>
+
+                    <strong
+                        id="sendInvoicePaymentAccountName">
+                        -
+                    </strong>
+
+                </div>
+
+                <div class="send-invoice-payment-item">
+
+                    <span>
+                        Bank Name
+                    </span>
+
+                    <strong
+                        id="sendInvoicePaymentBankName">
+                        -
+                    </strong>
+
+                </div>
+
+                <div class="send-invoice-payment-item">
+
+                    <span>
+                        Payment Provider
+                    </span>
+
+                    <strong
+                        id="sendInvoicePaymentProvider">
+                        -
+                    </strong>
+
+                </div>
+
+                <div class="send-invoice-payment-item">
+
+                    <span>
+                        Payment Method
+                    </span>
+
+                    <strong
+                        id="sendInvoicePaymentMethod">
+                        -
+                    </strong>
+
+                </div>
+
+                <div class="send-invoice-payment-item">
+
+                    <span>
+                        Account Number
+                    </span>
+
+                    <strong
+                        id="sendInvoicePaymentAccountNumber">
+                        -
+                    </strong>
+
+                </div>
+
+                <div class="send-invoice-payment-item">
+
+                    <span>
+                        Payment Reference
+                    </span>
+
+                    <strong
+                        id="sendInvoicePaymentReference">
+                        -
+                    </strong>
+
+                </div>
+
+                <div class="send-invoice-payment-item">
+
+                    <span>
+                        Payment Due
+                    </span>
+
+                    <strong
+                        id="sendInvoicePaymentDueDays">
+                        -
+                    </strong>
+
+                </div>
+
+                <div class="send-invoice-payment-item">
+
+                    <span>
+                        Payment Instructions
+                    </span>
+
+                    <strong
+                        id="sendInvoicePaymentInstructions">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div
+            class="send-invoice-section"
+            id="sendInvoiceNotesSection">
+
+            <label>
+                Notes
+            </label>
+
+            <div
+                class="send-invoice-text-display"
+                id="sendInvoiceNotes">
+                -
+            </div>
+
+        </div>
+
+        <div
+            class="send-invoice-section"
+            id="sendInvoiceTermsSection">
+
+            <label>
+                Terms & Conditions
+            </label>
+
+            <div
+                class="send-invoice-text-display"
+                id="sendInvoiceTerms">
+                -
+            </div>
+
+        </div>
+
+        <div
+            class="send-invoice-section"
+            id="sendInvoiceSignatureSection">
+
+            <div class="send-invoice-section-header">
+
+                <h3>
+                    Signature
+                </h3>
+
+            </div>
+
+            <div class="send-invoice-signature">
+
+                <strong
+                    id="sendInvoiceSignatureName">
+                    -
+                </strong>
+
+                <span
+                    id="sendInvoiceSignatureTitle">
+                    -
+                </span>
+
+                <img
+                    id="sendInvoiceSignatureImage"
+                    alt="Signature">
+
+            </div>
+
+        </div>
+
+        <div class="send-invoice-section">
+
+            <label
+                for="sendInvoiceMessage">
+
+                Message
+
+            </label>
+
+            <textarea
+                id="sendInvoiceMessage"
+                class="form-control"
+                rows="5"
+                placeholder="Enter a message for your client..."></textarea>
+
+        </div>
+
+    </div>
+
+    <div class="send-invoice-modal-footer">
+
+        <button
+            type="button"
+            id="cancelSendInvoiceButton"
+            class="secondary-button">
+
+            Cancel
+
+        </button>
+
+        <button
+            type="button"
+            id="confirmSendInvoiceButton"
+            class="primary-button">
+
+            <i class="ri-send-plane-line"></i>
+
+            Send Invoice
+
+        </button>
+
+    </div>
+
+</div>
+
+<script src="clients.js"></script>
+</body>
+
+</html>

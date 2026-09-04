@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icon-192.png">
+
+    <meta name="theme-color" content="#0B1F3A">
+
+    <title>You're Offline | InvoicePro</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            font-family: Arial, sans-serif;
+            background:
+                radial-gradient(
+                    circle at 15% 20%,
+                    rgba(37, 99, 235, 0.25),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at 85% 80%,
+                    rgba(30, 64, 175, 0.3),
+                    transparent 40%
+                ),
+                linear-gradient(
+                    135deg,
+                    #06152d,
+                    #0b1f3a,
+                    #102d55
+                );
+            color: #ffffff;
+        }
+
+        .offline-container {
+            width: 100%;
+            max-width: 430px;
+            padding: 42px 30px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            box-shadow:
+                0 25px 60px rgba(0, 0, 0, 0.35);
+        }
+
+        .icon-wrapper {
+            width: 86px;
+            height: 86px;
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 24px;
+            background:
+                linear-gradient(
+                    145deg,
+                    #173e73,
+                    #0b1f3a
+                );
+            box-shadow:
+                0 12px 30px rgba(0, 0, 0, 0.3),
+                inset 0 1px 1px rgba(255, 255, 255, 0.12);
+        }
+
+        .icon-wrapper i {
+            font-size: 42px;
+            color: #ffffff;
+        }
+
+        h1 {
+            margin-bottom: 12px;
+            font-size: 29px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        p {
+            margin: 0 auto 28px;
+            max-width: 340px;
+            font-size: 15px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .retry-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            min-width: 145px;
+            padding: 13px 22px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 10px;
+            background:
+                linear-gradient(
+                    135deg,
+                    #174a8c,
+                    #0d2b52
+                );
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow:
+                0 8px 20px rgba(0, 0, 0, 0.25);
+            transition: transform 0.2s ease;
+        }
+
+        .retry-btn i {
+            font-size: 18px;
+        }
+
+        .retry-btn:active {
+            transform: scale(0.97);
+        }
+
+        .brand {
+            margin-top: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.45);
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="offline-container">
+
+        <div class="icon-wrapper">
+<img src="wifi-off.svg" alt="Offline">
+        </div>
+
+        <h1>You're Offline</h1>
+
+        <p>
+            It looks like your internet connection is unavailable.
+            Please reconnect to the internet and try again to continue using InvoicePro.
+        </p>
+
+        <button class="retry-btn" onclick="location.reload()">
+            <i class="ri-refresh-line"></i>
+            Try Again
+        </button>
+
+        <div class="brand">
+            InvoicePro
+        </div>
+
+    </div>
+
+</body>
+
+</html>

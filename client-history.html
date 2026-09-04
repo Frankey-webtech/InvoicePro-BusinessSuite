@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Client History</title>
+
+    <script src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+    <script src="api.js"></script>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
+
+    <link
+        rel="stylesheet"
+        href="client-history.css">
+
+</head>
+
+<body>
+
+    <main class="client-history-page">
+
+        <header class="client-history-header">
+
+            <button
+                type="button"
+                class="back-button"
+                id="backButton">
+
+                <i class="ri-arrow-left-line"></i>
+
+                Back to Clients
+
+            </button>
+
+            <div class="client-history-title">
+
+                <span>
+                    Client History
+                </span>
+
+                <h1 id="clientName">
+                    Loading...
+                </h1>
+
+            </div>
+
+        </header>
+
+
+        <section
+            class="client-profile"
+            id="clientProfile">
+
+            <div class="client-profile-image">
+
+                <img
+                    id="clientImage"
+                    alt="Client">
+
+                <div
+                    class="client-image-fallback"
+                    id="clientImageFallback">
+
+                    <span id="clientInitials">
+                        CL
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="client-profile-details">
+
+                <h2 id="profileClientName">
+                    Loading...
+                </h2>
+
+                <div class="client-address">
+
+                    <span id="addressLine1">
+                        -
+                    </span>
+
+                    <span id="addressLine2">
+                        -
+                    </span>
+
+                    <span id="addressCityStateZip">
+                        -
+                    </span>
+
+                    <span id="addressCountry">
+                        -
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="history-controls">
+
+            <div class="history-current-type">
+
+                <span>
+                    Showing
+                </span>
+
+                <strong id="currentHistoryType">
+                    Estimates
+                </strong>
+
+            </div>
+
+            <button
+                type="button"
+                class="history-switch-button"
+                id="historySwitchButton">
+
+                <i class="ri-file-list-3-line"></i>
+
+                <span id="historySwitchText">
+                    View All Invoices
+                </span>
+
+            </button>
+
+        </section>
+
+
+        <section
+            class="history-section"
+            id="estimatesSection">
+
+            <div class="history-section-header">
+
+                <div>
+
+                    <h2>
+                        Estimates
+                    </h2>
+
+                    <p>
+                        Estimates connected to this client.
+                    </p>
+
+                </div>
+
+                <span id="estimateCount">
+                    0
+                </span>
+
+            </div>
+
+            <div class="table-wrapper">
+
+                <table class="history-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Estimate
+                            </th>
+
+                            <th>
+                                Title
+                            </th>
+
+                            <th>
+                                Amount
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="estimatesTableBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <div
+                class="history-empty"
+                id="estimatesEmpty">
+
+                <i class="ri-draft-line"></i>
+
+                <p>
+                    No estimates found for this client.
+                </p>
+
+            </div>
+
+            <div
+                class="pagination"
+                id="estimatesPagination">
+
+                <button
+                    type="button"
+                    class="pagination-arrow"
+                    id="estimatesPreviousButton">
+
+                    <i class="ri-arrow-left-line"></i>
+
+                    Previous
+
+                </button>
+
+                <div
+                    class="pagination-pages"
+                    id="estimatesPageNumbers">
+                </div>
+
+                <button
+                    type="button"
+                    class="pagination-arrow"
+                    id="estimatesNextButton">
+
+                    Next
+
+                    <i class="ri-arrow-right-line"></i>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <section
+            class="history-section"
+            id="invoicesSection">
+
+            <div class="history-section-header">
+
+                <div>
+
+                    <h2>
+                        Invoices
+                    </h2>
+
+                    <p>
+                        Invoices connected to this client.
+                    </p>
+
+                </div>
+
+                <span id="invoiceCount">
+                    0
+                </span>
+
+            </div>
+
+            <div class="table-wrapper">
+
+                <table class="history-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Invoice
+                            </th>
+
+                            <th>
+                                Title
+                            </th>
+
+                            <th>
+                                Amount
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="invoicesTableBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <div
+                class="history-empty"
+                id="invoicesEmpty">
+
+                <i class="ri-file-list-3-line"></i>
+
+                <p>
+                    No invoices found for this client.
+                </p>
+
+            </div>
+
+            <div
+                class="pagination"
+                id="invoicesPagination">
+
+                <button
+                    type="button"
+                    class="pagination-arrow"
+                    id="invoicesPreviousButton">
+
+                    <i class="ri-arrow-left-line"></i>
+
+                    Previous
+
+                </button>
+
+                <div
+                    class="pagination-pages"
+                    id="invoicesPageNumbers">
+                </div>
+
+                <button
+                    type="button"
+                    class="pagination-arrow"
+                    id="invoicesNextButton">
+
+                    Next
+
+                    <i class="ri-arrow-right-line"></i>
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <div
+        id="pageLoader"
+        class="page-loader">
+
+        <div class="loader-spinner"></div>
+
+        <p>
+            Loading client history...
+        </p>
+
+    </div>
+
+
+    <script src="client-history.js"></script>
+
+</body>
+
+</html>

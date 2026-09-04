@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icon-192.png">
+
+    <meta
+        name="description"
+        content="Create your InvoicePro account and start creating professional invoices, managing clients, estimates, payments, expenses, and business records."
+    >
+
+    <meta
+        property="og:title"
+        content="InvoicePro | Create Your Account"
+    >
+
+    <meta
+        property="og:description"
+        content="Create your InvoicePro account and start managing your business from one simple workspace."
+    >
+
+    <meta
+        property="og:type"
+        content="website"
+    >
+
+    <meta
+        property="og:url"
+        content="https://invoicepro-businesssuite.onrender.com/signup.html"
+    >
+
+    <meta
+        property="og:image"
+        content="https://invoicepro-businesssuite.onrender.com/logo.png"
+    >
+
+    <meta
+        property="og:image:alt"
+        content="InvoicePro"
+    >
+
+    <meta
+        property="og:site_name"
+        content="InvoicePro"
+    >
+
+    <meta
+        property="og:locale"
+        content="en_US"
+    >
+
+    <meta
+        name="twitter:card"
+        content="summary_large_image"
+    >
+
+    <meta
+        name="twitter:title"
+        content="InvoicePro | Create Your Account"
+    >
+
+    <meta
+        name="twitter:description"
+        content="Create your InvoicePro account and start managing your business from one simple workspace."
+    >
+
+    <meta
+        name="twitter:image"
+        content="https://invoicepro-businesssuite.onrender.com/logo.png"
+    >
+
+    <title>InvoicePro | Create Your Account</title>
+    
+    <script src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+
+<script src="https://cdn.auth0.com/js/auth0-spa-js/2.18/auth0-spa-js.production.js"></script>
+
+<script src="api.js"></script>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="signup.css"
+    >
+    <link rel="stylesheet" href="navbar.css">
+
+</head>
+
+<body>
+
+    <div class="page">
+
+        <header class="header" id="siteHeader">
+
+            <a
+                href="index.html"
+                class="logo"
+                id="siteLogo"
+            >
+
+                <img
+                    src="logo.png"
+                    alt="InvoicePro"
+                    class="logo-icon"
+                >
+
+                <h2>
+                    Invoice<span>Pro</span>
+                </h2>
+
+            </a>
+
+            <nav
+                class="main-navigation"
+                id="mainNavigation"
+                aria-label="Main navigation"
+            >
+
+                <a href="features.html">
+                    Features
+                </a>
+
+                <a href="pricing.html">
+                    Pricing
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="faq.html">
+                    FAQ
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a href="cookies.html">
+                    Cookies
+                </a>
+
+                <a href="privacy.html">
+                    Privacy Policy
+                </a>
+
+                <a href="refund.html">
+                    Refund Policy
+                </a>
+
+                <a href="learn.html">
+                    Learn more
+                </a>
+
+                <a href="terms.html">
+                    Terms
+                </a>
+
+                <a href="help.html">
+                    Help
+                </a>
+
+            </nav>
+
+            <div class="header-buttons">
+
+                <a
+                    href="login.html"
+                    class="login-btn"
+                    id="headerLoginBtn"
+                >
+                    Login
+                </a>
+
+                <a
+                    href="signup.html"
+                    class="primary-btn"
+                    id="headerSignupBtn"
+                    aria-current="page"
+                >
+                    Get Started
+                </a>
+
+            </div>
+
+        </header>
+
+
+        <main>
+
+            <section class="signup-hero">
+
+                <div class="hero-badge">
+
+                    <i class="ri-rocket-2-line"></i>
+
+                    Get started with InvoicePro
+
+                </div>
+
+                <h1>
+
+                    Create your
+                    <span>InvoicePro account.</span>
+
+                </h1>
+
+                <p>
+
+                    Set up your account and start creating professional
+                    invoices, managing clients, tracking payments, and
+                    organizing your business in one place.
+
+                </p>
+
+            </section>
+
+
+            <section class="signup-section">
+
+                <div class="signup-card">
+
+                    <div class="signup-header">
+
+                        <div class="signup-header-icon">
+
+                            <i class="ri-user-add-line"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Create Account
+                            </h2>
+
+                            <p>
+                                Enter your details to get started.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <form
+                        class="signup-form"
+                        id="signupForm"
+                    >
+
+                        <div class="input-group">
+
+                            <label for="fullName">
+                                Full Name
+                            </label>
+
+                            <div class="input-box">
+
+                                <i class="ri-user-3-line"></i>
+
+                                <input
+                                    type="text"
+                                    id="fullName"
+                                    placeholder="John Doe"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <div class="input-box">
+
+                                <i class="ri-mail-line"></i>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    placeholder="john@example.com"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label for="country">
+                                Country
+                            </label>
+
+                            <div class="input-box select-box">
+
+                                <i class="ri-earth-line"></i>
+
+                                <select
+                                    id="country"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Select Country
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label for="currency">
+                                Currency
+                            </label>
+
+                            <div class="input-box">
+
+                                <i class="ri-money-dollar-circle-line"></i>
+
+                                <input
+                                    type="text"
+                                    id="currency"
+                                    placeholder="Currency"
+                                    readonly
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label for="selectedPlan">
+                                Plan
+                            </label>
+
+                            <div class="input-box">
+
+                                <i class="ri-vip-crown-line"></i>
+
+                                <input
+                                    type="text"
+                                    id="selectedPlan"
+                                    placeholder="Free Plan"
+                                    readonly
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label for="password">
+                                Password
+                            </label>
+
+                            <div class="input-box">
+
+                                <i class="ri-lock-password-line"></i>
+
+                                <input
+                                    type="password"
+                                    id="password"
+                                    placeholder="••••••••"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    class="toggle-password"
+                                    aria-label="Show password"
+                                >
+
+                                    <i class="ri-eye-line"></i>
+
+                                </button>
+
+                            </div>
+
+                            <small class="password-hint">
+
+                                Must contain uppercase, lowercase,
+                                number and special character.
+
+                            </small>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label for="confirmPassword">
+                                Confirm Password
+                            </label>
+
+                            <div class="input-box">
+
+                                <i class="ri-lock-password-line"></i>
+
+                                <input
+                                    type="password"
+                                    id="confirmPassword"
+                                    placeholder="••••••••"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    class="toggle-password"
+                                    aria-label="Show password"
+                                >
+
+                                    <i class="ri-eye-line"></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </form>
+
+
+                    <div class="terms">
+
+                        <label class="checkbox">
+
+                            <input
+                                type="checkbox"
+                                id="terms"
+                                required
+                            >
+
+                            <span class="checkmark"></span>
+
+                            <span class="text">
+
+                                I agree to the
+
+                                <a href="terms.html">
+                                    Terms of Service
+                                </a>
+
+                                and
+
+                                <a href="privacy.html">
+                                    Privacy Policy
+                                </a>
+
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+                    <button
+                        class="create-btn"
+                        id="createAccountBtn"
+                        type="button"
+                    >
+
+                        Create Account
+
+                        <i class="ri-arrow-right-line"></i>
+
+                    </button>
+
+
+                    <div class="signin-link">
+
+                        Already have an account?
+
+                        <a href="login.html">
+                            Sign In
+                        </a>
+
+                    </div>
+
+
+                    <div class="divider">
+
+                        <span>
+                            OR CONTINUE WITH
+                        </span>
+
+                    </div>
+
+
+                    <div class="social-login">
+
+                        <button
+                            type="button"
+                            class="social-btn"
+                            id="googleBtn"
+                        >
+
+                            <img
+                                src="google.svg"
+                                alt="Google"
+                            >
+
+                            Google
+
+                        </button>
+
+
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="signup-trust">
+
+                <div class="trust-item">
+
+                    <div class="trust-icon">
+
+                        <i class="ri-shield-check-line"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Secure account
+                        </strong>
+
+                        <span>
+                            Your business information stays protected.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="trust-item">
+
+                    <div class="trust-icon">
+
+                        <i class="ri-flashlight-line"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Quick setup
+                        </strong>
+
+                        <span>
+                            Create your account in just a few steps.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="trust-item">
+
+                    <div class="trust-icon">
+
+                        <i class="ri-dashboard-3-line"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            One workspace
+                        </strong>
+
+                        <span>
+                            Manage your business from one place.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="signup-cta">
+
+                <span class="section-label">
+                    ALREADY USING INVOICEPRO?
+                </span>
+
+                <h2>
+                    Welcome back to your workspace.
+                </h2>
+
+                <p>
+
+                    Sign in to continue managing your invoices,
+                    clients, payments, expenses, and business records.
+
+                </p>
+
+                <a
+                    href="login.html"
+                    class="secondary-btn large"
+                >
+
+                    Sign In
+
+                    <i class="ri-arrow-right-line"></i>
+
+                </a>
+
+            </section>
+
+        </main>
+
+
+        <footer class="footer">
+
+            <div class="footer-main">
+
+                <div class="footer-brand">
+
+                    <a
+                        href="index.html"
+                        class="footer-logo"
+                    >
+
+                        <img
+                            src="logo.png"
+                            alt="InvoicePro"
+                        >
+
+                        <span>
+                            Invoice<span>Pro</span>
+                        </span>
+
+                    </a>
+
+                    <p>
+
+                        Professional invoicing and business management
+                        for businesses that want to stay organized,
+                        get paid, and grow.
+
+                    </p>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>
+                        Product
+                    </h3>
+
+                    <a href="features.html">
+                        Features
+                    </a>
+
+                    <a href="pricing.html">
+                        Pricing
+                    </a>
+
+                    <a href="login.html">
+                        Login
+                    </a>
+
+                    <a href="signup.html">
+                        Get Started
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>
+                        Company
+                    </h3>
+
+                    <a href="about.html">
+                        About
+                    </a>
+
+                    <a href="contact.html">
+                        Contact
+                    </a>
+
+                    <a href="faq.html">
+                        FAQ
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>
+                        Legal
+                    </h3>
+
+                    <a href="privacy.html">
+                        Privacy Policy
+                    </a>
+
+                    <a href="terms.html">
+                        Terms of Service
+                    </a>
+
+                    <a href="refund.html">
+                        Refund Policy
+                    </a>
+
+                    <a href="cookies.html">
+                        Cookie Policy
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 InvoicePro. All Rights Reserved.
+                </p>
+
+                <span>
+                    Professional invoicing made simple.
+                </span>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+
+    <div id="toastContainer"></div>
+
+    <script src="signup.js"></script>
+
+</body>
+
+</html>

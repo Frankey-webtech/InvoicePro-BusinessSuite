@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>InvoicePro | Support Admin</title>
+
+<script src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+
+<script src="api.js"></script>
+
+<link rel="stylesheet" href="admin-support.css">
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <aside class="sidebar">
+
+        <div class="sidebar-header">
+
+            <div class="sidebar-title">
+
+                <i class="ri-customer-service-2-line"></i>
+
+                <div>
+
+                    <h2>Support</h2><br><br>
+
+                    <span>Customer Conversations</span>
+
+                </div>
+
+            </div>
+
+        </div><br>
+
+        <div class="search-box">
+
+            <i class="ri-search-line"></i>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search conversations...">
+
+        </div>
+
+        <div class="conversation-filter">
+
+            <button
+                type="button"
+                class="filter-btn active"
+                data-filter="all">
+
+                All
+
+            </button>
+
+            <button
+                type="button"
+                class="filter-btn"
+                data-filter="open">
+
+                Open
+
+            </button>
+
+            <button
+                type="button"
+                class="filter-btn"
+                data-filter="closed">
+
+                Closed
+
+            </button>
+
+        </div>
+
+        <div
+            class="conversation-list"
+            id="conversationList">
+
+        </div>
+
+    </aside>
+
+
+    <main class="chat-section">
+
+        <header class="chat-header">
+
+            <div class="chat-user">
+
+                <div
+                    class="chat-avatar"
+                    id="chatUserAvatar">
+
+                    <i class="ri-user-3-line"></i>
+
+                </div>
+
+                <div class="chat-user-info">
+
+                    <h2 id="chatUserName">
+                        Select a conversation
+                    </h2>
+
+                    <p id="chatUserEmail"></p>
+
+                    <span
+                        id="chatUserStatus"
+                        class="chat-status">
+
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="chat-actions">
+
+                <button
+                    type="button"
+                    id="markReadBtn"
+                    title="Mark as read">
+
+                    <i class="ri-check-double-line"></i>
+
+                </button>
+
+                <button
+                    type="button"
+                    id="closeConversationBtn"
+                    title="Close conversation">
+
+                    <i class="ri-close-circle-line"></i>
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <div
+            class="chat-messages"
+            id="chatMessages">
+
+            <div class="empty-chat">
+
+                <i class="ri-chat-3-line"></i>
+
+                <h3>Select a conversation</h3>
+
+                <p>
+                    Select a customer from the left
+                    to view their messages.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="typing-indicator"
+            id="typingIndicator">
+
+            <span></span>
+
+        </div>
+
+
+        <div class="chat-input-area">
+    <div class="attachment-preview" id="attachmentPreview"></div>
+
+    <div class="chat-input">
+        <div class="chat-composer">
+            <div class="attachment-wrapper">
+                <button
+                    type="button"
+                    class="attachment-btn"
+                    id="attachmentBtn"
+                    title="Add attachment"
+                    aria-label="Add attachment">
+                    <i class="ri-add-line"></i>
+                </button>
+
+                <div
+                    class="attachment-menu"
+                    id="attachmentMenu"
+                    hidden>
+
+                    <button
+                        type="button"
+                        class="attachment-menu-item"
+                        id="cameraAttachmentBtn">
+                        <span class="attachment-menu-icon camera-icon">
+                            <i class="ri-camera-line"></i>
+                        </span>
+                        <span class="attachment-menu-text">Camera</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="attachment-menu-item"
+                        id="photosAttachmentBtn">
+                        <span class="attachment-menu-icon photos-icon">
+                            <i class="ri-image-line"></i>
+                        </span>
+                        <span class="attachment-menu-text">Photos</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="attachment-menu-item"
+                        id="filesAttachmentBtn">
+                        <span class="attachment-menu-icon files-icon">
+                            <i class="ri-file-line"></i>
+                        </span>
+                        <span class="attachment-menu-text">Files</span>
+                    </button>
+                </div>
+            </div>
+
+            <textarea
+                id="messageInput"
+                placeholder="Type a message..."
+                rows="1"></textarea>
+
+            <button
+                type="button"
+                class="send-message-btn"
+                id="sendMessageBtn"
+                title="Send message"
+                aria-label="Send message">
+                <i class="ri-send-plane-line"></i>
+            </button>
+        </div>
+
+        <input
+            type="file"
+            id="photosAttachmentInput"
+            accept="image/*"
+            hidden>
+
+        <input
+            type="file"
+            id="cameraAttachmentInput"
+            accept="image/*"
+            capture="environment"
+            hidden>
+
+        <input
+            type="file"
+            id="filesAttachmentInput"
+            hidden>
+    </div>
+</div>
+
+    </main>
+
+</div>
+
+<script src="admin-support.js"></script>
+
+</body>
+
+</html>
