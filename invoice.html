@@ -1,0 +1,3213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icon-192.png">
+
+        
+<script src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+
+<script src="api.js"></script>
+        <link rel="stylesheet" href="invoice.css">
+        <link rel="stylesheet" href="invoices-design.css">
+        <link rel="stylesheet" href="invoice2.css">
+                <link rel="stylesheet" href="profile.css">
+        <link
+rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
+        <title>InvoicePro | Invoice</title>
+</head>
+
+<body>
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay">
+</div>
+<aside
+    class="sidebar"
+    id="sidebar">
+
+    <div class="sidebar-logo">
+
+        <div class="logo-icon">
+
+            <img src="logo.png" alt="">
+
+        </div>
+
+        <div class="logo-text">
+
+            <h2>InvoicePro</h2>
+
+            <span>Business Suite</span>
+
+        </div>
+
+    </div>
+
+    <nav class="sidebar-nav">
+
+        <a href="index.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-home-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Home
+            </span>
+
+        </a>
+
+        <a href="dashboard.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-dashboard-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Dashboard
+            </span>
+
+        </a>
+
+        <a href="invoice.html" class="nav-item active">
+
+            <span class="nav-icon">
+                <i class="ri-file-list-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Invoices
+            </span>
+
+        </a>
+
+        <a href="estimates.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-draft-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Estimates
+            </span>
+
+        </a>
+
+        <a href="clients.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-group-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Clients
+            </span>
+
+        </a>
+
+        <a href="upcoming-payments.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-calendar-check-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Upcoming Payments
+            </span>
+
+        </a>
+
+        <a href="paid-invoices.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-money-dollar-circle-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Paid Invoices
+            </span>
+
+        </a>
+
+        <a href="recurring-invoices.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-repeat-2-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Recurring Invoices
+            </span>
+
+        </a>
+        
+         <a href="expenses.html" class="nav-item">
+
+            <span class="nav-icon">
+               <i class="ri-wallet-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Expenses
+            </span>
+
+        </a>
+
+        <a href="reports.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-bar-chart-box-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Reports
+            </span>
+
+        </a>
+
+        <a href="subscription.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-vip-crown-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Subscription
+            </span>
+
+        </a>
+
+        <a href="subscription-history.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-history-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Subscription History
+            </span>
+
+        </a>
+
+        <div
+            class="nav-dropdown"
+            id="settingsDropdown">
+
+            <button
+                class="nav-dropdown-btn"
+                id="settingsToggle">
+
+                <div class="nav-dropdown-left">
+
+                    <span class="nav-icon">
+                        <i class="ri-layout-4-line"></i>
+                    </span>
+
+                    <span>
+                        Templates
+                    </span>
+
+                </div>
+
+                <i
+                    id="settingsArrow"
+                    class="ri-arrow-down-s-line dropdown-arrow"></i>
+
+            </button>
+
+            <div
+                class="dropdown-menu"
+                id="settingsMenu">
+
+                <a
+                    href="invoices-design.html"
+                    class="dropdown-item">
+
+                    <span class="nav-icon">
+                        <i class="ri-file-text-line"></i>
+                    </span>
+
+                    Invoice Template
+
+                </a>
+
+                <a
+                    href="estimates-design.html"
+                    class="dropdown-item">
+
+                    <span class="nav-icon">
+                        <i class="ri-draft-line"></i>
+                    </span>
+
+                    Estimate Template
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <a href="settings.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-settings-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Settings
+            </span>
+
+        </a>
+
+        <a href="profile.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-user-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Profile
+            </span>
+
+        </a>
+
+        <a href="business-profile.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-building-2-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Business Profile
+            </span>
+
+        </a>
+
+        <a href="live-chat.html" class="nav-item">
+
+            <span class="nav-icon">
+                <i class="ri-chat-3-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Live Chat
+            </span>
+
+        </a>
+
+        <a
+            href="account-mgt.html"
+            class="nav-item logout-item"
+            id="logoutBtn">
+
+            <span class="nav-icon">
+                <i class="ri-logout-box-r-line"></i>
+            </span>
+
+            <span class="nav-text">
+                Logout
+            </span>
+
+        </a>
+
+    </nav>
+
+</aside>
+<div class="page-wrapper">
+<header class="page-header">
+
+        <div class="header-left">
+
+            <button
+                class="menu-toggle"
+                id="menuToggle">
+
+               <i class="ri-menu-line"></i>
+
+            </button>
+
+            <div class="page-title">
+
+              
+
+                <h1>
+
+                    Invoices
+
+                </h1>
+
+            </div>
+
+        </div>
+
+        <div class="header-right">
+
+            <button
+                class="notification-btn"
+                id="notificationBtn" style="display: none;">
+
+                <i class="ri-notification-3-line"></i>
+
+                <span
+                    class="notification-badge"
+                    id="notificationBadge">
+
+                    3
+
+                </span>
+
+            </button>
+
+            <button
+                class="header-avatar"
+                id="profileMenuBtn">
+
+                <img
+                    src="
+                    profile.png"
+                    alt="Profile"
+                    id="headerProfileImage">
+
+            </button>
+
+        </div>
+
+    </header>
+
+<header class="page-header">
+
+        <div class="header-left">
+
+            <div class="page-title">
+                                <p>
+                    Create, manage and track all your invoices in one place.
+                </p>
+            </div>
+            </div>
+    </header>
+
+<main class="invoice-content">
+
+<section class="invoice-stats">
+
+    <div class="stat-card">
+
+        <div class="stat-icon total-icon">
+
+            <i class="ri-file-list-3-line"></i>
+
+        </div>
+
+        <div class="stat-details">
+
+            <span class="stat-title">
+
+                Total Invoices
+
+            </span>
+
+            <div class="stat-row">
+
+                <h2 id="totalInvoicesCount">
+
+                    0
+
+                </h2>
+
+                <div class="stat-chart">
+
+                    <i class="ri-line-chart-line"></i>
+
+                </div>
+
+            </div>
+
+            <p class="stat-change positive">
+
+                <i class="ri-arrow-up-line"></i>
+
+                <span id="totalInvoicesGrowth">
+
+                    0.0%
+
+                </span>
+
+            </p>
+
+        </div>
+
+    </div>
+    
+    <div class="stat-card">
+
+    <div class="stat-icon draft-icon">
+
+        <i class="ri-draft-line"></i>
+
+    </div>
+
+    <div class="stat-details">
+
+        <span class="stat-title">
+
+            Draft Invoices
+
+        </span>
+
+        <div class="stat-row">
+
+            <h2 id="draftInvoicesCount">
+
+                0
+
+            </h2>
+
+            <div class="stat-chart">
+
+                <i class="ri-line-chart-line"></i>
+
+            </div>
+
+        </div>
+
+        <p class="stat-change positive">
+
+            <i class="ri-arrow-up-line"></i>
+
+            <span id="draftInvoicesGrowth">
+
+                0.0%
+
+            </span>
+
+        </p>
+
+    </div>
+
+</div>
+
+    <div class="stat-card">
+
+        <div class="stat-icon paid-icon">
+
+            <i class="ri-money-dollar-circle-line"></i>
+
+        </div>
+
+        <div class="stat-details">
+
+            <span class="stat-title">
+
+                Paid Invoices
+
+            </span>
+
+            <div class="stat-row">
+
+                <h2 id="paidInvoicesCount">
+
+                    0
+
+                </h2>
+
+                <div class="stat-chart">
+
+                    <i class="ri-line-chart-line"></i>
+
+                </div>
+
+            </div>
+
+            <p class="stat-change positive">
+
+                <i class="ri-arrow-up-line"></i>
+
+                <span id="paidInvoicesGrowth">
+
+                    0.0%
+
+                </span>
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="stat-card">
+
+        <div class="stat-icon pending-icon">
+
+            <i class="ri-time-line"></i>
+
+        </div>
+
+        <div class="stat-details">
+
+            <span class="stat-title">
+
+                Pending Invoices
+
+            </span>
+
+            <div class="stat-row">
+
+                <h2 id="pendingInvoicesCount">
+
+                    0
+
+                </h2>
+
+                <div class="stat-chart">
+
+                    <i class="ri-line-chart-line"></i>
+
+                </div>
+
+            </div>
+
+            <p class="stat-change positive">
+
+                <i class="ri-arrow-up-line"></i>
+
+                <span id="pendingInvoicesGrowth">
+
+                    0.0%
+
+                </span>
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="stat-card">
+
+        <div class="stat-icon overdue-icon">
+
+            <i class="ri-error-warning-line"></i>
+
+        </div>
+
+        <div class="stat-details">
+
+            <span class="stat-title">
+
+                Overdue Invoices
+
+            </span>
+
+            <div class="stat-row">
+
+                <h2 id="overdueInvoicesCount">
+
+                    0
+
+                </h2>
+
+                <div class="stat-chart">
+
+                    <i class="ri-line-chart-line"></i>
+
+                </div>
+
+            </div>
+
+            <p class="stat-change negative">
+
+                <i class="ri-arrow-down-line"></i>
+
+                <span id="overdueInvoicesGrowth">
+
+                    0.0%
+
+                </span>
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="invoice-panel">
+
+    <div class="panel-header">
+
+        <div class="panel-title">
+
+            <h2>
+
+                Invoice Management
+
+            </h2>
+
+            <p>
+
+                View, search and manage all invoices.
+
+            </p>
+
+        </div>
+
+<div
+    class="invoice-export-wrapper"
+    id="invoiceExportWrapper">
+
+    <button
+        type="button"
+        class="secondary-btn"
+        id="exportInvoicesBtn">
+
+        <i class="ri-download-2-line"></i>
+
+        <span>Export</span>
+
+        <i class="ri-arrow-down-s-line"></i>
+
+    </button>
+
+    <div
+        class="invoice-export-menu"
+        id="invoiceExportMenu">
+
+        <button
+            type="button"
+            id="exportInvoicesPdfBtn">
+
+            <i class="ri-file-pdf-2-line"></i>
+
+            <span>Export as PDF</span>
+
+        </button>
+</div>
+
+</div>
+        
+
+
+    </div>
+
+
+    <div class="invoice-toolbar">
+
+        <div class="toolbar-search">
+
+            <i class="ri-search-line"></i>
+
+            <input
+                type="text"
+                id="invoiceTableSearch"
+                placeholder="Search by invoice number, client, title or reference">
+
+        </div>
+
+        <select
+            class="toolbar-select"
+            id="statusFilter">
+
+            <option value="all">All Status</option>
+            <option value="paid">Paid</option>
+            <option value="pending">Pending</option>
+            <option value="overdue">Overdue</option>
+            <option value="draft">Draft</option>
+
+        </select>
+
+        <select
+            class="toolbar-select"
+            id="dateFilter">
+
+            <option value="all">All Time</option>
+            <option value="today">Today</option>
+            <option value="week">Last 7 Days</option>
+            <option value="month">This Month</option>
+            <option value="year">This Year</option>
+
+        </select>
+        
+        <select
+    class="toolbar-select"
+    id="sortFilter">
+    <option value="newest">Newest First</option>
+    <option value="oldest">Oldest First</option>
+    <option value="highest">Highest Amount</option>
+    <option value="lowest">Lowest Amount</option>
+
+</select>
+
+    </div>
+<div class="invoice-table-header">
+    <h2>Invoices</h2>
+<div class="invoice-status-hint">
+    <i class="ri-information-line"></i>
+ HINT*   Tap an invoice status badge to change its status.
+</div>
+
+    <button type="button" id="createInvoiceButton" class="primary-btn">
+        <i class="ri-add-line"></i>
+        <span>Create Invoice</span>
+    </button>
+</div>
+
+    <div class="table-wrapper">
+
+        <table class="invoice-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>Invoice</th>
+
+                    <th>Client</th>
+
+                    <th>Amount</th>
+
+                    <th>Status</th>
+
+                    <th>Date</th>
+
+                    <th>Due Date</th>
+
+                    <th>Actions</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="invoiceTableBody">
+
+                <!-- JavaScript Loads Invoices Here -->
+
+            </tbody>
+
+        </table>
+
+    </div>
+    
+    <div class="status-dropdown" id="statusDropdown">
+
+    <button
+        type="button"
+        data-status="Draft">
+        Draft
+    </button>
+
+    <button
+        type="button"
+        data-status="Pending">
+        Pending
+    </button>
+
+    <button
+        type="button"
+        data-status="Paid">
+        Paid
+    </button>
+
+    <button
+        type="button"
+        data-status="Overdue">
+        Overdue
+    </button>
+</div>
+
+    <div
+        class="empty-state"
+        id="emptyInvoiceState"
+        style="display:none;">
+
+        <i class="ri-file-list-3-line"></i>
+
+        <h3>
+
+            No invoices found
+
+        </h3>
+
+        <p>
+
+            Create your first invoice or adjust your search filters.
+
+        </p>
+
+        <button
+            class="primary-btn"
+            id="emptyCreateInvoiceBtn">
+
+            <i class="ri-add-line"></i>
+
+            Create Invoice
+
+        </button>
+
+    </div>
+
+</section>
+
+<section class="pagination-section">
+
+    <div class="pagination-info">
+
+        Showing
+
+        <span id="paginationStart">
+
+            0
+
+        </span>
+
+        -
+
+        <span id="paginationEnd">
+
+            0
+            
+
+        </span>
+
+        of
+
+        <span id="paginationTotal">
+
+            0
+
+        </span>
+
+        invoices
+
+    </div>
+
+    <div class="pagination-controls">
+
+        <button
+            class="pagination-btn"
+            id="previousPageBtn">
+
+            <i class="ri-arrow-left-s-line"></i>
+
+            Previous
+
+        </button>
+
+        <div
+            class="pagination-pages"
+            id="paginationPages">
+
+
+        </div>
+
+        <button
+            class="pagination-btn"
+            id="nextPageBtn">
+
+            Next
+
+            <i class="ri-arrow-right-s-line"></i>
+
+        </button>
+
+    </div>
+
+</section>
+
+<div
+    class="modal-overlay"
+    id="createInvoiceOverlay">
+</div>
+
+<div
+    class="create-estimate-modal"
+    id="createInvoiceModal">
+
+    <div
+        class="modal-header"
+        id="createInvoiceHeader">
+
+        <div
+            class="modal-heading">
+
+            <h2
+                class="modal-title"
+                id="createInvoiceTitle">
+
+                Create Invoice
+
+            </h2>
+
+            <p
+                class="modal-subtitle"
+                id="createInvoiceSubtitle">
+
+                Create a professional invoice for your client.
+
+            </p>
+
+        </div>
+
+        <button
+            type="button"
+            class="modal-close-button"
+            id="closeCreateInvoiceButton">
+
+            <i class="ri-close-line"></i>
+
+        </button>
+
+    </div>
+
+    <div
+        class="modal-body"
+        id="createInvoiceBody">
+
+        <input
+            type="hidden"
+            id="invoiceIdInput">
+
+        <section
+            class="modal-section"
+            id="invoiceDetailsSection">
+
+            <h3>
+                Invoice Details
+            </h3>
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label>
+                        Invoice Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="invoiceTitleInput"
+                        class="form-control">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>
+                        Project Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="invoiceProjectNameInput"
+                        class="form-control">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>
+                        Reference Number
+                    </label>
+
+                    <input
+                        type="text"
+                        id="invoiceReferenceNumberInput"
+                        class="form-control">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>
+                        Purchase Order
+                    </label>
+
+                    <input
+                        type="text"
+                        id="invoicePurchaseOrderInput"
+                        class="form-control">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>
+                        Invoice Number
+                    </label>
+
+                    <input
+                        type="text"
+                        id="invoiceNumberInput"
+                        class="form-control"
+                        readonly>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>
+                        Invoice Currency
+                    </label>
+
+                    <select
+                        id="invoiceCurrencyInput"
+                        class="form-control">
+
+                        <option value="">
+                            Select currency
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section
+            class="modal-section"
+            id="invoiceClientSection">
+
+            <h3>
+                Client Information
+            </h3>
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label>
+                        Client
+                    </label>
+
+<div
+    class="client-picker"
+    id="invoiceClientPicker">
+
+    <input
+        type="hidden"
+        id="invoiceClientInput"
+        value="">
+
+    <button
+        type="button"
+        class="client-picker-trigger"
+        id="invoiceClientPickerTrigger">
+
+        <span
+            class="client-picker-selected"
+            id="invoiceClientPickerSelected">
+
+            Select Client
+
+        </span>
+
+        <i
+            class="ri-arrow-down-s-line"
+            id="invoiceClientPickerArrow">
+        </i>
+
+    </button>
+
+    <div
+        class="client-picker-dropdown"
+        id="invoiceClientPickerDropdown">
+
+        <div
+            class="client-picker-search-wrapper">
+
+            <i class="ri-search-line"></i>
+
+            <input
+                type="search"
+                class="client-picker-search"
+                id="invoiceClientPickerSearch"
+                placeholder="Search clients..."
+                autocomplete="off">
+
+        </div>
+
+        <div
+            class="client-picker-options"
+            id="invoiceClientPickerOptions">
+
+        </div>
+
+    </div>
+
+</div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>
+                        Issue Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="invoiceIssueDateInput"
+                        class="form-control">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>
+                        Due Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="invoiceDueDateInput"
+                        class="form-control">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>
+                        Payment Terms
+                    </label>
+
+                    <select
+                        id="invoicePaymentTermsInput"
+                        class="form-control">
+
+                        <option value="">
+                            Select payment terms
+                        </option>
+
+                        <option value="Due on Receipt">
+                            Due on Receipt
+                        </option>
+
+                        <option value="Net 7">
+                            Net 7
+                        </option>
+
+                        <option value="Net 14">
+                            Net 14
+                        </option>
+
+                        <option value="Net 30">
+                            Net 30
+                        </option>
+
+                        <option value="Net 60">
+                            Net 60
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </section>
+
+     <div class="section-header">
+
+    <div class="section-title-group">
+
+        <h3>
+            Invoice Items
+            <span class="required-mark">*</span>
+        </h3>
+
+        <span class="required-hint">
+            At least one item is required
+        </span>
+
+    </div>
+
+    <button
+        type="button"
+        id="addInvoiceItemButton"
+        class="add-item-button">
+
+        Add Item
+
+    </button>
+
+</div>
+
+            <div
+                id="invoiceItemsContainer">
+
+            </div>
+
+        </section>
+
+        <section
+            class="modal-section"
+            id="invoiceTotalsSection">
+
+            <h3>
+                Totals
+            </h3>
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label>
+                        Tax %
+                    </label>
+
+                    <input
+                        type="number"
+                        id="invoiceTaxInput"
+                        class="form-control"
+                        min="0"
+                        step="0.01">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>
+                        Discount
+                    </label>
+
+                    <input
+                        type="number"
+                        id="invoiceDiscountInput"
+                        class="form-control"
+                        min="0"
+                        step="0.01">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>
+                        Shipping
+                    </label>
+
+                    <input
+                        type="number"
+                        id="invoiceShippingInput"
+                        class="form-control"
+                        min="0"
+                        step="0.01">
+
+                </div>
+
+            </div>
+
+            <div class="estimate-total-card">
+
+                <div class="total-row">
+
+                    <span>
+                        Subtotal
+                    </span>
+
+                    <strong
+                        id="invoiceSubtotal">
+
+                        $0.00
+
+                    </strong>
+
+                </div>
+
+                <div class="total-row">
+
+                    <span>
+                        Grand Total
+                    </span>
+
+                    <strong
+                        id="invoiceGrandTotal">
+
+                        $0.00
+
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section
+            class="modal-section"
+            id="invoicePaymentSection">
+
+            <h3>
+                Payment Status
+            </h3>
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label>
+                        Payment Status
+                    </label>
+
+                    <select
+                        id="invoicePaymentStatusInput"
+                        class="form-control">
+
+                        <option value="Pending">
+                            Pending
+                        </option>
+
+                        <option value="Paid">
+                            Paid
+                        </option>
+
+                        
+
+                        <option value="Overdue">
+                            Overdue
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </section>
+        <section
+    class="invoice-payment-card"
+    id="invoicePaymentCard">
+
+    <div class="form-header">
+
+        <div>
+
+            <h2>
+                Payment Information
+            </h2>
+
+            <p>
+                Payment details are automatically loaded from your business profile.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div
+        class="payment-details-display"
+        id="invoicePaymentDetails">
+
+        <div class="payment-detail-item">
+
+            <span>
+                Account Name
+            </span>
+
+            <strong id="paymentAccountName">
+                Not set
+            </strong>
+
+        </div>
+
+        <div class="payment-detail-item">
+
+            <span>
+                Bank Name
+            </span>
+
+            <strong id="paymentBankName">
+                Not set
+            </strong>
+
+        </div>
+
+        <div class="payment-detail-item">
+
+            <span>
+                Payment Provider
+            </span>
+
+            <strong id="paymentProvider">
+                Not set
+            </strong>
+
+        </div>
+
+        <div class="payment-detail-item">
+
+            <span>
+                Payment Method
+            </span>
+
+            <strong id="paymentMethod">
+                Not set
+            </strong>
+
+        </div>
+
+        <div class="payment-detail-item">
+
+            <span>
+                Account Number
+            </span>
+
+            <strong id="paymentAccountNumber">
+                Not set
+            </strong>
+
+        </div>
+
+        <div class="payment-detail-item">
+
+            <span>
+                Payment Reference
+            </span>
+
+            <strong id="paymentReference">
+                Not set
+            </strong>
+
+        </div>
+
+        <div class="payment-detail-item">
+
+            <span>
+                Payment Due
+            </span>
+
+            <strong id="paymentDueDays">
+                Not set
+            </strong>
+
+        </div>
+
+        <div class="payment-detail-item">
+
+            <span>
+                Payment Instructions
+            </span>
+
+            <strong id="paymentInstructions">
+                Not set
+            </strong>
+
+        </div>
+
+    </div>
+
+    <div class="payment-status-section">
+
+        <div class="form-group">
+
+            <label>
+                Payment Status
+            </label>
+
+            <select id="invoicePaymentStatusSelect">
+
+                <option value="Pending">
+                    Pending
+                </option>
+
+                <option value="Paid">
+                    Paid
+                </option>
+
+
+                <option value="Overdue">
+                    Overdue
+                </option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+</section><br>
+
+        <section
+            class="modal-section"
+            id="invoiceNotesSection">
+
+            <h3>
+                Notes
+            </h3>
+
+            <textarea
+                id="invoiceNotesInput"
+                class="form-control"
+                rows="4"></textarea>
+
+        </section>
+
+        <section
+            class="modal-section"
+            id="invoiceTermsSection">
+
+            <h3>
+                Terms & Conditions
+            </h3>
+
+            <textarea
+                id="invoiceTermsInput"
+                class="form-control"
+                rows="4"></textarea>
+
+        </section>
+
+        <section
+            class="modal-section"
+            id="invoiceSignatureSection">
+
+            <h3>
+                Signature
+            </h3>
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label>
+                        Signature Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="invoiceSignatureNameInput"
+                        class="form-control">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>
+                        Signature Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="invoiceSignatureTitleInput"
+                        class="form-control">
+
+                </div>
+
+                <div class="form-group full-width">
+
+                    <label>
+                        Signature Image
+                    </label>
+
+                    <input
+                        type="file"
+                        id="invoiceSignatureImageInput"
+                        accept="image/*"
+                        class="secondary-button">
+
+                    <img
+                        id="invoiceSignaturePreview"
+                        alt="Signature Preview"
+                        style="
+                        display:none;
+                        width:180px;
+                        margin-top:12px;
+                        border-radius:10px;
+                        border:1px solid #ddd;">
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <div
+        class="modal-footer"
+        id="createInvoiceFooter">
+
+        <button
+            type="button"
+            class="secondary-button"
+            id="cancelInvoiceButton">
+
+            Cancel
+
+        </button>
+
+        <button
+            type="button"
+            class="secondary-button"
+            id="saveInvoiceDraftButton">
+
+            Save Draft
+
+        </button>
+
+        <button
+            type="button"
+            class="primary-button"
+            id="saveInvoiceButton">
+
+            Save Invoice
+
+        </button>
+
+    </div>
+
+</div>
+
+<div
+    class="invoice-preview-overlay"
+    id="invoicePreviewOverlay"
+    aria-hidden="true">
+
+    <div
+        class="invoice-preview-modal"
+        id="invoicePreviewModal">
+
+        <section
+            class="invoice-preview-card"
+            id="invoicePreviewCard">
+
+            <div
+                class="invoice-preview-toolbar"
+                id="invoicePreviewToolbar">
+
+                <div class="preview-toolbar-left">
+
+                    <div class="preview-title">
+
+                        <img src="logo.png" alt="">
+
+                        <div>
+
+                            <h2>Invoice Preview</h2>
+
+                            <span id="previewStatusBadge" style="display: none;">
+                                Auto Updating
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="preview-toolbar-right">
+
+                    <button
+                        type="button"
+                        class="preview-tool-btn"
+                        id="closeInvoicePreviewBtn"
+                        title="Close Preview">
+
+                        <i class="ri-close-line"></i>
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="preview-tool-btn"
+                        id="refreshPreviewBtn"
+                        title="Refresh Preview">
+
+                        <i class="ri-refresh-line"></i>
+
+                    </button>
+
+<button
+    type="button"
+    class="preview-tool-btn"
+    id="printPreviewBtn"
+    title="Download PDF">
+
+    <i class="ri-download-2-line"></i>
+
+</button>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="invoice-preview-controls"
+                id="invoicePreviewControls">
+
+                <div class="preview-control-group">
+
+                    <label for="previewZoomSelect">
+                        Zoom
+                    </label>
+
+                    <select id="previewZoomSelect">
+
+                        <option value="50">50%</option>
+                        <option value="75">75%</option>
+                        <option value="100" selected>100%</option>
+                        <option value="125">125%</option>
+                        <option value="150">150%</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="preview-document-area"
+                id="previewDocumentArea">
+
+                <div class="invoice-preview-wrapper">
+
+                    <div
+                        class="invoice-paper"
+                        id="invoicePaper">
+
+<div
+        class="invoice-selection"
+        id="invoiceHeaderSelection">
+
+        <div class="invoice-selection-top"></div>
+
+        <div class="invoice-header">
+
+            <div class="invoice-header-company">
+
+                <div class="invoice-company-brand">
+
+                    <div class="invoice-company-logo">
+
+                        <img
+                            src="logo.png"
+                            alt="Business Logo"
+                            id="previewCompanyLogo">
+
+                    </div>
+
+                    <div>
+
+                        <h1
+                            class="invoice-company-name"
+                            id="invoiceCompanyName">
+
+                            Invoice Pro
+
+                        </h1>
+
+                    </div>
+
+                </div>
+
+                <div class="invoice-company-details">
+
+    <h4 class="invoice-section-heading">
+        Prepared By:
+    </h4>
+
+    <p id="previewBusinessName"></p>
+
+    <p id="previewBusinessAddress1"></p>
+
+    <p id="previewBusinessAddress2"></p>
+
+    <p id="previewBusinessPhone"></p>
+
+    <p id="previewBusinessEmail"></p>
+
+    <p
+        class="invoice-company-website"
+        id="previewBusinessWebsite">
+    </p>
+
+</div>
+
+            </div>
+
+            <div class="invoice-header-right">
+
+                <h2
+                    class="invoice-title"
+                    id="previewInvoiceTitle">
+
+                    INVOICE
+
+                </h2>
+
+                <div class="invoice-date-grid">
+
+                    <h4 class="invoice-section-heading">
+
+                        Invoice Information:
+
+                    </h4>
+
+                    <div>
+
+                        <label>
+
+                            Invoice Number
+
+                        </label>
+
+                        <strong id="previewInvoiceNumber">
+
+                            # INV-000001
+
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <label>
+
+                            Issue Date
+
+                        </label>
+
+                        <strong id="previewInvoiceDate">
+
+                            -
+
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <label>
+
+                            Due Date
+
+                        </label>
+
+                        <strong id="previewDueDate">
+
+                            -
+
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="invoice-watermark">
+
+        Generated by Invoice Pro
+
+    </div>
+
+    <div
+        class="invoice-selection"
+        id="invoiceCustomerSelection">
+
+        <div class="invoice-company-section">
+
+            <div class="invoice-party">
+
+                <h4 class="invoice-section-heading">
+
+                    CUSTOMER INFORMATION
+
+                </h4>
+
+                <p
+                    class="invoice-party-name"
+                    id="previewCustomerName">
+
+                    Client Name
+
+                </p>
+
+                <p id="previewCustomerCompany">
+
+                    Company Name
+
+                </p>
+
+                <p id="previewCustomerEmail">
+
+                    Client Email
+
+                </p>
+
+                <p id="previewCustomerPhone">
+
+                    Client Phone
+
+                </p>
+
+            </div>
+
+            <div class="invoice-party">
+
+                <h4 class="invoice-section-heading">
+
+                    BILLING ADDRESS
+
+                </h4>
+
+                <p id="previewCustomerAddress1">
+
+                    -
+
+                </p>
+
+                <p id="previewCustomerAddress2">
+
+                    -
+
+                </p>
+
+                <p id="previewCustomerCity">
+
+                    -
+
+                </p>
+
+                <p id="previewCustomerCountry">
+
+                    -
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div
+        class="invoice-selection"
+        id="invoiceDetailsSelection">
+
+
+        <div class="invoice-details-grid">
+
+            <div class="invoice-detail">
+
+                <span class="invoice-detail-label">
+
+                    Invoice Number
+
+                </span>
+
+                <strong id="previewDetailsInvoiceNumber">
+
+                    INV-000001
+
+                </strong>
+
+            </div>
+
+            <div class="invoice-detail">
+
+                <span class="invoice-detail-label">
+
+                    Issue Date
+
+                </span>
+
+                <strong id="previewDetailsIssueDate">
+
+                    -
+
+                </strong>
+
+            </div>
+
+            <div class="invoice-detail">
+
+                <span class="invoice-detail-label">
+
+                    Due Date
+
+                </span>
+
+                <strong id="previewDetailsDueDate">
+
+                    -
+
+                </strong>
+
+            </div>
+
+            <div class="invoice-detail">
+
+                <span class="invoice-detail-label">
+
+                    Status
+
+                </span>
+
+                <strong id="previewInvoiceStatus">
+
+                    Draft
+
+                </strong>
+
+            </div>
+
+            <div class="invoice-detail">
+
+                <span class="invoice-detail-label">
+
+                    Payment Terms
+
+                </span>
+
+                <strong id="previewPaymentTerms">
+
+                    -
+
+                </strong>
+
+            </div>
+
+            <div class="invoice-detail">
+
+                <span class="invoice-detail-label">
+
+                    Currency
+
+                </span>
+
+                <strong id="previewCurrency">
+
+                    USD ($)
+
+                </strong>
+
+            </div>
+
+            <div class="invoice-detail">
+
+                <span class="invoice-detail-label">
+
+                    Purchase Order
+
+                </span>
+
+                <strong id="previewPurchaseOrder">
+
+                    -
+
+                </strong>
+
+            </div>
+
+            <div class="invoice-detail">
+
+                <span class="invoice-detail-label">
+
+                    Reference
+
+                </span>
+
+                <strong id="previewReference">
+
+                    -
+
+                </strong>
+
+            </div>
+
+            <div class="invoice-detail">
+
+                <span class="invoice-detail-label">
+
+                    Project
+
+                </span>
+
+                <strong id="previewProjectName">
+
+                    -
+
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div
+        class="invoice-selection"
+        id="invoiceItemsSelection">
+
+        <table
+            class="invoice-items-table"
+            id="previewItemsTable">
+
+            <thead>
+
+                <tr>
+
+                    <th class="item-number">
+
+                        #
+
+                    </th>
+
+                    <th class="item-description">
+
+                        ITEM / DESCRIPTION
+
+                    </th>
+
+                    <th>
+
+                        QTY
+
+                    </th>
+
+                    <th>
+
+                        UNIT PRICE
+
+                    </th>
+
+                    <th class="amount-column">
+
+                        AMOUNT
+
+                    </th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="previewItemsBody"></tbody>
+
+        </table>
+
+    </div>
+
+    <div
+        class="invoice-selection"
+        id="invoiceTotalsSelection">
+
+        <div
+            class="invoice-totals-wrapper"
+            id="previewTotalsWrapper">
+
+            <div
+                class="invoice-total-row"
+                id="previewSubtotalRow">
+
+                <span id="previewSubtotalLabel">
+
+                    Subtotal
+
+                </span>
+
+                <strong id="previewSubtotal">
+
+                    $0.00
+
+                </strong>
+
+            </div>
+
+            <div
+                class="invoice-total-row"
+                id="previewDiscountRow">
+
+                <span id="previewDiscountLabel">
+
+                    Discount
+
+                </span>
+
+                <strong id="previewDiscount">
+
+                    $0.00
+
+                </strong>
+
+            </div>
+
+            <div
+                class="invoice-total-row"
+                id="previewTaxRow">
+
+                <span id="previewTaxLabel">
+
+                    Tax
+
+                </span>
+
+                <strong id="previewTax">
+
+                    $0.00
+
+                </strong>
+
+            </div>
+
+            <div
+                class="invoice-total-row"
+                id="previewShippingRow">
+
+                <span id="previewShippingLabel">
+
+                    Shipping
+
+                </span>
+
+                <strong id="previewShipping">
+
+                    $0.00
+
+                </strong>
+
+            </div>
+
+            <div
+                class="invoice-grand-total"
+                id="previewGrandTotalRow">
+
+                <span id="previewGrandTotalLabel">
+
+                    TOTAL DUE
+
+                </span>
+
+                <strong id="previewGrandTotal">
+
+                    $0.00
+
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div
+    class="invoice-selection"
+    id="invoicePaymentSelection">
+
+    <div
+        class="invoice-edit-badge"
+        id="invoicePaymentBadge">
+
+        Payment Information
+
+    </div>
+
+    <div class="invoice-payment">
+
+        <h4 class="invoice-payment-title">
+
+            PAYMENT INFORMATION
+
+        </h4>
+
+        <div class="invoice-payment-grid">
+
+            <div class="invoice-payment-item">
+
+                <span>
+                    Account Name
+                </span>
+
+                <strong id="previewPaymentAccountName">
+
+                    -
+
+                </strong>
+
+            </div>
+
+            <div class="invoice-payment-item">
+
+                <span>
+                    Bank Name
+                </span>
+
+                <strong id="previewPaymentBankName">
+
+                    -
+
+                </strong>
+
+            </div>
+
+            <div class="invoice-payment-item">
+
+                <span>
+                    Account Number
+                </span>
+
+                <strong id="previewPaymentAccountNumber">
+
+                    -
+
+                </strong>
+
+            </div>
+
+            <div class="invoice-payment-item">
+
+                <span>
+                    Payment Provider
+                </span>
+
+                <strong id="previewPaymentProvider">
+
+                    -
+
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <div
+        class="invoice-selection"
+        id="invoiceNotesSelection">
+
+        <div
+            class="invoice-edit-badge"
+            id="invoiceNotesBadge">
+
+            Notes
+
+        </div>
+
+        <div
+            class="invoice-notes"
+            id="previewNotesSection">
+
+            <h4
+                class="invoice-notes-title"
+                id="previewNotesTitle">
+
+                NOTES
+
+            </h4>
+
+            <p
+                class="invoice-notes-text"
+                id="previewNoteLine1">
+
+                No notes.
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <div
+        class="invoice-selection"
+        id="invoiceTermsSelection">
+
+        <div
+            class="invoice-edit-badge"
+            id="invoiceTermsBadge">
+
+            Terms & Conditions
+
+        </div>
+
+        <div
+            class="invoice-notes"
+            id="previewTermsSection">
+
+            <h4
+                class="invoice-section-heading">
+
+                TERMS & CONDITIONS
+
+            </h4>
+
+            <p
+                class="invoice-notes-text"
+                id="previewTerms">
+
+                No terms available.
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <div
+        class="invoice-selection"
+        id="invoiceSignatureSelection">
+
+        <div
+            class="invoice-edit-badge"
+            id="invoiceSignatureBadge">
+
+            Signature
+
+        </div>
+
+        <div class="invoice-signature">
+
+            <p>
+
+                <strong>
+
+                    Signed By:
+
+                </strong>
+
+                <span id="previewSignatureName"></span>
+
+                <span id="previewSignatureTitle"></span>
+
+            </p>
+
+            <img
+                id="previewSignatureImage"
+                alt="Signature">
+
+        </div>
+
+    </div>
+
+</div>
+
+                    </div>
+
+                </div>
+        
+        <section
+    class="invoice-action-card"
+    id="invoiceActionCard">
+
+    <div class="invoice-action-left">
+
+        <div class="invoice-action-info">
+
+            <i class="ri-information-line"></i>
+
+            <div>
+
+                <h3>
+                    Ready to save your invoice?
+                </h3>
+
+                <p>
+                    Save your work, send it to your client,
+                    or export it as a PDF.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div
+        class="invoice-action-right"
+        id="invoiceActionButtons">
+
+        <button
+            type="button"
+            class="secondary-button"
+            id="cancelInvoiceBtn"
+            style="display: none;">
+
+            Cancel
+
+        </button>
+
+        <button
+            type="button"
+            class="secondary-button"
+            id="saveInvoiceDraftButton" style="display:none;">
+
+            <i class="ri-save-3-line"></i>
+
+            <span>Save Draft</span>
+
+        </button>
+
+        <button
+            type="button"
+            class="secondary-button"
+            id="downloadInvoicePdfButton">
+
+            <i class="ri-download-2-line"></i>
+
+            <span>Download PDF</span>
+
+        </button>
+
+        <button
+            type="button"
+            class="secondary-button"
+            id="sendInvoiceButton">
+
+            <i class="ri-send-plane-line"></i>
+
+            <span>Send Invoice</span>
+
+        </button>
+
+        <button
+            type="button"
+            class="primary-button"
+            id="saveInvoiceButton"
+            style="display: none;">
+
+            <i class="ri-save-3-line"></i>
+
+            <span>Save Invoice</span>
+
+        </button>
+
+    </div>
+
+</section>
+        </section>
+
+    </div>
+
+</div>
+
+<div
+    class="page-loading-overlay"
+    id="pageLoadingOverlay"
+    hidden
+    aria-hidden="true"
+>
+    <div
+        class="page-loading-card"
+        role="status"
+        aria-live="polite"
+        aria-label="Loading"
+    >
+        <div class="page-loading-spinner"></div>
+
+        <div class="page-loading-text">
+            Loading invoices...
+        </div>
+    </div>
+</div>
+
+<div
+    class="invoice-result-overlay"
+    id="invoiceResultOverlay">
+
+    <div
+        class="invoice-result-modal"
+        id="invoiceResultModal">
+
+        <h3
+            id="invoiceResultTitle">
+
+            Invoice Result
+
+        </h3>
+
+        <p
+            id="invoiceResultMessage">
+
+            -
+
+        </p>
+
+        <button
+            type="button"
+            id="invoiceResultButton">
+
+            Close
+
+        </button>
+
+    </div>
+
+</div>
+
+<div
+    class="invoice-result-overlay"
+    id="invoiceResultOverlay">
+
+<div
+    class="invoice-limit-overlay"
+    id="invoiceLimitOverlay">
+
+    <div
+        class="invoice-limit-modal"
+        id="invoiceLimitModal">
+
+        <h3
+            id="invoiceLimitTitle">
+
+            Invoice Limit Reached
+
+        </h3>
+
+        <p
+            id="invoiceLimitMessage">
+
+            You've reached your invoice limit. Upgrade your plan.
+
+        </p>
+
+        <button
+            type="button"
+            id="invoiceLimitButton">
+
+            Upgrade Plan
+
+        </button>
+
+    </div>
+
+</div>
+
+</div>
+
+<div id="toastContainer"></div>
+<div
+    class="send-invoice-overlay"
+    id="sendInvoiceOverlay">
+</div>
+
+<div
+    class="send-invoice-modal"
+    id="sendInvoiceModal">
+
+    <div class="send-invoice-modal-header">
+
+        <div>
+
+            <h2>
+                Send Invoice
+            </h2>
+
+            <p>
+                Review the invoice before sending it to your client.
+            </p>
+
+        </div>
+
+        <button
+            type="button"
+            id="closeSendInvoiceButton"
+            class="send-invoice-close-button">
+
+            <i class="ri-close-line"></i>
+
+        </button>
+
+    </div>
+
+    <div class="send-invoice-modal-body">
+
+        <div class="send-invoice-client-box">
+
+           <div class="send-invoice-client-icon">
+
+    <img
+        id="sendInvoiceClientImage"
+        src=""
+        alt="Client">
+
+    <i
+        id="sendInvoiceClientImageFallbackIcon"
+        class="ri-user-3-line">
+    </i>
+
+</div>
+
+            <div>
+
+                <span>
+                    Sending to
+                </span>
+
+                <strong
+                    id="sendInvoiceClientName">
+                    -
+                </strong>
+
+                <p
+                    id="sendInvoiceClientEmail">
+                    -
+                </p>
+
+            </div>
+
+        </div>
+
+        <div
+            class="send-invoice-summary"
+            id="sendInvoiceSummary">
+
+            <div class="send-invoice-summary-row">
+
+                <span>
+                    Invoice Number
+                </span>
+
+                <strong
+                    id="sendInvoiceNumber">
+                    -
+                </strong>
+
+            </div>
+
+            <div class="send-invoice-summary-row">
+
+                <span>
+                    Invoice Title
+                </span>
+
+                <strong
+                    id="sendInvoiceTitle">
+                    -
+                </strong>
+
+            </div>
+
+            <div class="send-invoice-summary-row">
+
+                <span>
+                    Issue Date
+                </span>
+
+                <strong
+                    id="sendInvoiceIssueDate">
+                    -
+                </strong>
+
+            </div>
+
+            <div class="send-invoice-summary-row">
+
+                <span>
+                    Due Date
+                </span>
+
+                <strong
+                    id="sendInvoiceDueDate">
+                    -
+                </strong>
+
+            </div>
+
+            <div class="send-invoice-summary-row">
+
+                <span>
+                    Payment Terms
+                </span>
+
+                <strong
+                    id="sendInvoicePaymentTerms">
+                    -
+                </strong>
+
+            </div>
+
+            <div class="send-invoice-summary-row">
+
+                <span>
+                    Currency
+                </span>
+
+                <strong
+                    id="sendInvoiceCurrency">
+                    -
+                </strong>
+
+            </div>
+
+            <div class="send-invoice-summary-row">
+
+                <span>
+                    Payment Status
+                </span>
+
+                <strong
+                    id="sendInvoicePaymentStatus">
+                    -
+                </strong>
+
+            </div>
+
+            <div class="send-invoice-summary-row">
+
+                <span>
+                    Total Amount
+                </span>
+
+                <strong
+                    id="sendInvoiceAmount">
+                    -
+                </strong>
+
+            </div>
+
+        </div>
+
+        <div class="send-invoice-section">
+
+            <div class="send-invoice-section-header">
+
+                <h3>
+                    Invoice Items
+                </h3>
+
+            </div>
+
+            <div
+                class="send-invoice-items"
+                id="sendInvoiceItems">
+
+            </div>
+
+        </div>
+
+        <div
+            class="send-invoice-totals"
+            id="sendInvoiceTotals">
+
+            <div class="send-invoice-total-row">
+
+                <span>
+                    Subtotal
+                </span>
+
+                <strong
+                    id="sendInvoiceSubtotal">
+                    -
+                </strong>
+
+            </div>
+
+            <div class="send-invoice-total-row">
+
+                <span>
+                    Tax
+                </span>
+
+                <strong
+                    id="sendInvoiceTax">
+                    -
+                </strong>
+
+            </div>
+
+            <div class="send-invoice-total-row">
+
+                <span>
+                    Discount
+                </span>
+
+                <strong
+                    id="sendInvoiceDiscount">
+                    -
+                </strong>
+
+            </div>
+
+            <div class="send-invoice-total-row">
+
+                <span>
+                    Shipping
+                </span>
+
+                <strong
+                    id="sendInvoiceShipping">
+                    -
+                </strong>
+
+            </div>
+
+            <div class="send-invoice-total-row grand-total">
+
+                <span>
+                    Grand Total
+                </span>
+
+                <strong
+                    id="sendInvoiceGrandTotal">
+                    -
+                </strong>
+
+            </div>
+
+        </div>
+
+        <div
+            class="send-invoice-section"
+            id="sendInvoicePaymentSection">
+
+            <div class="send-invoice-section-header">
+
+                <h3>
+                    Payment Information
+                </h3>
+
+            </div>
+
+            <div
+                class="send-invoice-payment-details"
+                id="sendInvoicePaymentDetails">
+
+                <div class="send-invoice-payment-item">
+
+                    <span>
+                        Account Name
+                    </span>
+
+                    <strong
+                        id="sendInvoicePaymentAccountName">
+                        -
+                    </strong>
+
+                </div>
+
+                <div class="send-invoice-payment-item">
+
+                    <span>
+                        Bank Name
+                    </span>
+
+                    <strong
+                        id="sendInvoicePaymentBankName">
+                        -
+                    </strong>
+
+                </div>
+
+                <div class="send-invoice-payment-item">
+
+                    <span>
+                        Payment Provider
+                    </span>
+
+                    <strong
+                        id="sendInvoicePaymentProvider">
+                        -
+                    </strong>
+
+                </div>
+
+                <div class="send-invoice-payment-item">
+
+                    <span>
+                        Payment Method
+                    </span>
+
+                    <strong
+                        id="sendInvoicePaymentMethod">
+                        -
+                    </strong>
+
+                </div>
+
+                <div class="send-invoice-payment-item">
+
+                    <span>
+                        Account Number
+                    </span>
+
+                    <strong
+                        id="sendInvoicePaymentAccountNumber">
+                        -
+                    </strong>
+
+                </div>
+
+                <div class="send-invoice-payment-item">
+
+                    <span>
+                        Payment Reference
+                    </span>
+
+                    <strong
+                        id="sendInvoicePaymentReference">
+                        -
+                    </strong>
+
+                </div>
+
+                <div class="send-invoice-payment-item">
+
+                    <span>
+                        Payment Due
+                    </span>
+
+                    <strong
+                        id="sendInvoicePaymentDueDays">
+                        -
+                    </strong>
+
+                </div>
+
+                <div class="send-invoice-payment-item">
+
+                    <span>
+                        Payment Instructions
+                    </span>
+
+                    <strong
+                        id="sendInvoicePaymentInstructions">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div
+            class="send-invoice-section"
+            id="sendInvoiceNotesSection">
+
+            <label>
+                Notes
+            </label>
+
+            <div
+                class="send-invoice-text-display"
+                id="sendInvoiceNotes">
+                -
+            </div>
+
+        </div>
+
+        <div
+            class="send-invoice-section"
+            id="sendInvoiceTermsSection">
+
+            <label>
+                Terms & Conditions
+            </label>
+
+            <div
+                class="send-invoice-text-display"
+                id="sendInvoiceTerms">
+                -
+            </div>
+
+        </div>
+
+        <div
+            class="send-invoice-section"
+            id="sendInvoiceSignatureSection">
+
+            <div class="send-invoice-section-header">
+
+                <h3>
+                    Signature
+                </h3>
+
+            </div>
+
+            <div class="send-invoice-signature">
+
+                <strong
+                    id="sendInvoiceSignatureName">
+                    -
+                </strong>
+
+                <span
+                    id="sendInvoiceSignatureTitle">
+                    -
+                </span>
+
+                <img
+                    id="sendInvoiceSignatureImage"
+                    alt="Signature">
+
+            </div>
+
+        </div>
+
+        <div class="send-invoice-section">
+
+            <label
+                for="sendInvoiceMessage">
+
+                Message
+
+            </label>
+
+            <textarea
+                id="sendInvoiceMessage"
+                class="form-control"
+                rows="5"
+                placeholder="Enter a message for your client..."></textarea>
+
+        </div>
+
+    </div>
+
+    <div class="send-invoice-modal-footer">
+
+        <button
+            type="button"
+            id="cancelSendInvoiceButton"
+            class="secondary-button">
+
+            Cancel
+
+        </button>
+
+<button
+    type="button"
+    id="confirmSendInvoiceButton"
+    class="primary-button">
+
+    <i class="ri-send-plane-line"></i>
+    Send Invoice
+
+</button>
+
+    </div>
+
+</div>
+
+<div id="loadingOverlay" class="loading-overlay">
+    <div class="loading-container">
+        <div class="loading-spinner"></div>
+        <p class="loading-text">Please wait...</p>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<script src="currency-map.js"></script>
+<script src="invoice.js"></script>
+<script src="invoice2.js"></script>
+</body>
+
+</html>
